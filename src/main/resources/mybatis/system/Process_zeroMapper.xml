@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Process_zeroMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_PROCESS_ZERO(
+			COMPANY_ID,	
+			SYSPTOMDESCRIPTION,	
+			EMERGENCYRESPONSE,	
+			VERIFICATION,	
+			EFFCIENT,	
+			EXECUTIONDATE,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PRINCIPALD_ONENAME,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			UPDATETIME,
+			VALIDITY,
+			PROCESS_ZERO_ID
+		) values (
+			#{COMPANY_ID},	
+			#{SYSPTOMDESCRIPTION},	
+			#{EMERGENCYRESPONSE},	
+			#{VERIFICATION},	
+			#{EFFCIENT},	
+			now(),	
+			#{PRINCIPALNAME},	
+			#{EXECUTIVENAME},	
+			#{PRINCIPALD_ONENAME},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{UPDATETIME},
+			#{VALIDITY},
+			#{PROCESS_ZERO_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_PROCESS_ZERO
+		where 
+			PROCESS_ZERO_ID = #{PROCESS_ZERO_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_PROCESS_ZERO
+			set 
+				<if test="COMPANY_ID !=null and COMPANY_ID !=''">
+				COMPANY_ID = #{COMPANY_ID},
+				</if>
+				<if test="SYSPTOMDESCRIPTION !=null and SYSPTOMDESCRIPTION !=''">
+				SYSPTOMDESCRIPTION = #{SYSPTOMDESCRIPTION},
+				</if>
+				<if test="EMERGENCYRESPONSE !=null and EMERGENCYRESPONSE !=''">
+				EMERGENCYRESPONSE = #{EMERGENCYRESPONSE},
+				</if>
+				<if test="VERIFICATION !=null and VERIFICATION !=''">
+				VERIFICATION = #{VERIFICATION},
+				</if>
+				<if test="EFFCIENT !=null and EFFCIENT !=''">
+				EFFCIENT = #{EFFCIENT},
+				</if>
+				<if test="EXECUTIONDATE !=null and EXECUTIONDATE !=''">
+				EXECUTIONDATE = #{EXECUTIONDATE},
+				</if>
+				<if test="PRINCIPALNAME !=null and PRINCIPALNAME !=''">
+				PRINCIPALNAME = #{PRINCIPALNAME},
+				</if>
+				<if test="EXECUTIVENAME !=null and EXECUTIVENAME !=''">
+				EXECUTIVENAME = #{EXECUTIVENAME},
+				</if>
+				<if test="PRINCIPALD_ONENAME !=null and PRINCIPALD_ONENAME !=''">
+				PRINCIPALD_ONENAME = #{PRINCIPALD_ONENAME},
+				</if>
+				
+				<if test="CLIENT_PROBLEM_COLLECTION_ID !=null and CLIENT_PROBLEM_COLLECTION_ID !=''">
+				CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+				</if>
+				UPDATETIME = now(),
+				<if test="VALIDITY !=null and VALIDITY !=''">
+				VALIDITY = #{VALIDITY},
+				</if>
+				PROCESS_ZERO_ID = PROCESS_ZERO_ID
+			where 
+				PROCESS_ZERO_ID = #{PROCESS_ZERO_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			SYSPTOMDESCRIPTION,	
+			EMERGENCYRESPONSE,	
+			VERIFICATION,	
+			EFFCIENT,	
+			EXECUTIONDATE,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PRINCIPALD_ONENAME,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			UPDATETIME,
+			VALIDITY,
+			PROCESS_ZERO_ID
+		from 
+			FT_PROCESS_ZERO
+		where 
+			PROCESS_ZERO_ID = #{PROCESS_ZERO_ID}
+	</select>
+		<!-- 通过问题id获取数据 -->
+	<select id="findByProblemId" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			SYSPTOMDESCRIPTION,	
+			EMERGENCYRESPONSE,	
+			VERIFICATION,	
+			EFFCIENT,	
+			EXECUTIONDATE,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PRINCIPALD_ONENAME,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			UPDATETIME,
+			VALIDITY,
+			PROCESS_ZERO_ID
+		from 
+			FT_PROCESS_ZERO
+		where 
+			CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+			order by EXECUTIONDATE DESC 
+			LIMIT 1
+	</select>
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.SYSPTOMDESCRIPTION,	
+				a.EMERGENCYRESPONSE,	
+				a.VERIFICATION,	
+				a.EFFCIENT,	
+				a.EXECUTIONDATE,	
+				a.PRINCIPALNAME,	
+				a.EXECUTIVENAME,	
+				a.PRINCIPALD_ONENAME,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.UPDATETIME,
+				a.VALIDITY,
+				a.PROCESS_ZERO_ID
+		from 
+				FT_PROCESS_ZERO a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.SYSPTOMDESCRIPTION,	
+				a.EMERGENCYRESPONSE,	
+				a.VERIFICATION,	
+				a.EFFCIENT,	
+				a.EXECUTIONDATE,	
+				a.PRINCIPALNAME,	
+				a.EXECUTIVENAME,	
+				a.PRINCIPALD_ONENAME,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.UPDATETIME,
+				a.VALIDITY,
+				a.PROCESS_ZERO_ID
+				order by a.EXECUTIONDATE DESC
+		from 
+				FT_PROCESS_ZERO a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_PROCESS_ZERO
+		where 
+			PROCESS_ZERO_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

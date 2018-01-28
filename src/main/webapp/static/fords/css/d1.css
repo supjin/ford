@@ -1,0 +1,244 @@
+.fenxi_d1box{
+	background-color: white;
+	margin-top: 16px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+.dis{
+	display: none;
+}
+.fenxi_d1tit{
+	height: 65px;
+	line-height: 65px;
+	color: #4d4d57;
+	font-size: 20px;
+	text-align: center;
+}
+@media only screen and (min-width:1450px ) {
+	.tenxi_tab>thead>tr>td:last-child{
+		width: 235px;
+	}
+}
+@media only screen and (max-width:1450px ) {
+	.tenxi_tab>thead>tr>td:last-child{
+		width: 80px;
+	}
+	.fenxi_btnboxs>button:first-child+button{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}
+.tenxi_tab{
+	width: 95%;
+	margin: 0px auto;
+}
+.tenxi_tab>thead>tr{
+	background-color: #d7d7d7;
+	border-bottom: 1px solid #dedede;
+	border-top: 1px solid #dedede;
+	font-size: 16px;
+}
+.tenxi_tab>thead td{
+	padding: 10px 0px;
+	color: #666666;
+	font-size: 15px;
+}
+.tenxi_tab>thead>tr>td:first-child{
+	text-align: center;
+}
+.tenxi_tab>tbody>tr td:first-child{
+	text-align: center;
+}
+.tenxi_tab>tbody>tr{
+	border-bottom: 1px solid #dedede;
+}
+.tenxi_tab>tbody td{
+	color: #6a6a6c;
+	font-size: 14px;
+	padding: 10px 0px;
+}
+.fenxi_sea{
+	width: 120px;
+	height: 30px;
+	border: 1px solid #dedede;
+	padding-left: 10px;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+.fenxi_zhi{
+    word-wrap: break-word;
+    word-break:break-all;
+}
+.fenxi_btn{
+	display: block;
+	width: 60px;
+	height: 25px;
+	float: left;
+	margin-right: 15px;
+	text-align: center;
+	color: white;
+	background-color: #24cbb2;
+	border: none;
+	float: left;
+	border-radius: 7px;
+	outline: none;
+}
+.fenxi_btnboxs{
+	overflow: hidden;
+}
+.fenxi_btnxg{
+	margin-right: 20px;
+}
+.fenxi_btnsc{
+	background-color: #fa6262;
+}
+.xinze_r{
+	
+}
+.fenxi_baocun{
+	display: block;
+	width: 77px;
+	height: 28px;
+	text-align: center;
+	background-color: #24cbb2;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	margin: 30px auto 20px auto;
+	font-size: 16px;
+	outline: none;
+}
+.buzhoufen_tit{
+	color: #666666;
+	font-size: 18px;
+	line-height: 45px;
+	text-align: center;
+	border-bottom: 1px solid #dedede;
+	width: 95%;
+	margin: 20px auto 0px auto;
+}
+.fenxiino{
+	border: 1px solid #DEDEDE;
+	padding: 7px 0px;
+	box-sizing: border-box;
+}
+.fenixobtnx{
+	display: block;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    background-color: #24cbb2;
+    border: none;
+    float: right;
+    border-radius: 7px;
+    outline: none;
+    margin-right: 10px;
+}
+.tenxi_tab2 .fenxi_sea{
+	width: 150px;
+}
+.tenxi_tab2>thead>tr>td:first-child{
+	width: 100px;
+}
+.shangxia_box{
+	width: 386px;
+	height: 40px;
+	margin: 60px auto 80px auto;
+}
+.shangxia_box a{
+	display: block;
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #24CBB2;
+	font-size: 16px;
+	color: white;
+	border: none;
+	outline: none;
+}
+.shangxia_box a:first-child{
+	float: left;
+}
+.shangxia_box a:last-child{
+	float: right;
+}
+.dreds{
+	background-color: #edeff5;
+	height: 16px;
+}
+.d1_listbox{
+	width: 97%;
+}
+.d1_lista{
+	width: 100%;
+	height: 200px;
+	border: 1px solid #dedede;
+	border-radius: 5px;
+	padding: 5%;
+	box-sizing: border-box;
+	position: relative;
+	margin-top: 30px;
+}
+.d1_lisle{
+	margin-right: 86px;
+}
+.d1_buifo{
+	margin-bottom: 10px;
+}
+.d1_buifo>p{
+	color: #666666;
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+}
+.d1_buinbox{
+	width: 100%;
+    max-width: 170px;
+}
+.d1_buinbox>input{
+	border: 1px solid #dedede;
+	padding: 5px 0px;
+	width: 100%;
+    max-width: 170px;
+    color: #666666;
+    border-radius: 4px;
+}
+.d1_buinbox>select{
+	border: 1px solid #dedede;
+	padding: 5px 0px;
+	width: 100%;
+    max-width: 170px;
+    color: #666666;
+    border-radius: 4px;
+}
+.d1_lisri{
+	position: absolute;
+	width: 66px;
+	height: 100%;
+	top: 0px;
+	right: 20px;
+	text-align: center;
+}
+.d1_lisri>div{
+	width: 66px;
+	height: 66px;
+	border-radius: 50%;
+	border: 2px solid #24cab2;
+	text-align: center;
+	line-height: 66px;
+	box-sizing: border-box;
+	margin-top: 30px;
+}
+.d1_lisri>button{
+	width: 60px;
+	color: white;
+	height: 26px;
+	border: none;
+	background-color: #d7d7d7;
+	border-radius: 4px;
+	font-size: 14px;
+	margin-top: 30px;
+}			        								        			

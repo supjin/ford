@@ -1,0 +1,105 @@
+.actirelbox{
+	border-left: 1px solid #E4E4E4;
+	border-right: 1px solid #E4E4E4;
+	border-bottom: 1px solid #E4E4E4;
+	box-sizing: border-box;
+}
+.actireltop{
+	height: 46px;
+	line-height: 46px;
+	background: url(../img/pw/newbgbg.jpg);
+	text-align: center;
+	color: #004180;
+	font-size: 16px;
+	border-bottom: 1px solid #E4E4E4;
+	border-top: 3px solid #02457c;
+}
+.actirelul{
+	padding: 20px 70px 0px 70px;
+}
+.actirele{
+/******9****margin-top: 45px;******/
+}
+.he45{
+	height: 45px;
+	line-height: 30px;
+	color: red;
+	text-indent: 120px;
+}
+.actle{
+	float: left;
+	width: 120px;
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+	color: #004180;
+	font-size: 16px;
+}
+.actri{
+	float: left;
+	
+}
+.actin{
+	width: 890px;
+	height: 45px;
+	border: 1px solid #ccc;
+	box-sizing:border-box;
+	line-height:45px;
+	color: #444444;
+	text-indent: 10px;
+}
+.actren{
+	color: #004180;
+	margin-left: 10px;
+}
+.actiuser{
+	float: left;
+	width: 300px;
+	height: 200px;
+}
+.actiuser>img{
+	width: 100%;
+	height: 100%;
+	
+}
+.actibo{
+	float: left;
+	margin-left: 30px;
+}
+.actib{
+	width:120px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 16px;
+	background: #13a1e1;
+	color: white;
+	cursor: pointer;
+	border: 1px solid #2577f4;
+	box-sizing: border-box;
+}
+.actic{
+	margin-top: 80px;
+	width: 410px;
+	line-height: 30px;
+}
+.actiion{
+	width: 120px;
+	height: 45px;
+	color: white;
+	text-align: center;
+	line-height: 45px;
+	background: #1276c4;
+	border: none;
+	font-size: 16px;
+	float: right;
+}
+.acttio{
+	height: 45px;
+	margin:10px 80px 50px 0px;
+}
+.fuwenben{
+	width: 890px;
+	border: 1px solid #ccc;
+	height: 400px;
+}

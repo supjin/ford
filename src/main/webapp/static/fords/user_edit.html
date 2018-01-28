@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>成员录入</title>
+		<link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/public_d08.css" />
+		<link rel="stylesheet" href="css/list.css" />
+		<link rel="stylesheet" href="css/a_table.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap3.37.min.js"></script>
+	</head>
+
+	<body style="background-color:#edeff5;margin: 15px;">
+		<div class="oiswen_box oiswen_boxavite">
+			<!---顶部--->
+			<div class="oiswen_titop">
+				<div class="oiswen_titople">
+					<div class="oiswen_titoplea">成员录入</div>
+					<div class="oiswen_titopleb">
+						<a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span>
+						<a href="javascript:;">系统工具</a><span>/</span>
+						<a href="javascript:;">成员录入</a>
+					</div>
+				</div>
+			</div>
+			<!----问题采集---->
+			<div class="wenti_box">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-sm-6 col-md-4 col-lg-4">
+							<div class="inputboxa">
+								<p>用户名</p>
+								<input type="text" />
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4 col-lg-4">
+							<div class="inputboxa">
+								<p>密码</p>
+								<input type="text" />
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4 col-lg-4">
+							<div class="inputboxa">
+								<p>姓名</p>
+								<input type="text" />
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4 col-lg-4">
+							<div class="inputboxa">
+								<p>邮箱</p>
+								<input type="text" />
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4 col-lg-4">
+							<div class="inputboxa">
+								<p>电话号码</p>
+								<input type="text" />
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4 col-lg-4">
+							<div class="inputboxa">
+								<p>部门</p>
+								<input type="text" />
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4 col-lg-4">
+							<div class="inputboxa">
+								<p>子部门</p>
+								<input type="text" />
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4 col-lg-4">
+							<div class="inputboxa">
+								<p>岗位</p>
+								<select>
+									<option></option>
+								</select>
+							</div>
+						</div>
+
+					</div>
+					<div class="acq_boxtx">
+						<button type="button" class="jxbutton">取消</button>
+						<button type="button" class="tibutton">提交</button>
+						<button type="button" class="jxbutton">继续添加</button>
+					</div>
+
+				</div>
+
+			</div>
+			<script>
+				$(function() {
+					//失效输入框赋值
+					$(document).on("click", ".dropdown-menu>li", function() {
+						var a = $(this).children("a").html();
+						$(this).parents(".input-group").find("input").val(a);
+					})
+					//下拉框----初判责任部门(引用zcity.js)
+					//zcityrun('.zcityGroup');
+					//选择按钮js
+					/*$(document).on("change",".chebox input",function(){
+						var b=$(this).val();
+						if(b==1){
+							if($(this).is(":checked")){
+								$(this).prop("checked","checked");
+						        $(this).parent().siblings("label").children("input").removeAttr("checked");
+							}else{
+								
+							}
+						}else{
+							if($(this).is(":checked")){
+								$(this).prop("checked","checked");
+						        $(this).parent().siblings("label").children("input").removeAttr("checked");
+							}else{
+								
+							}
+						}
+						
+					})*/
+				})
+			</script>
+	</body>
+
+</html>

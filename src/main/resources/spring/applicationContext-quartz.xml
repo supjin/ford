@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">  
+  
+<beans>  
+<!-- 定时任务 -->  
+    <!-- 加入定时任务类 -->  
+    <bean id="hand" class="com.ft.springqtz.SpringQtzJob"></bean>  
+    <!-- 任务调度拦截 -->  
+    <bean id="jobHand" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+      <property name="targetObject">  
+        <ref bean="hand"/><!-- 指定具体拦截哪个定时任务 -->  
+      </property>  
+      <property name="targetMethod">  
+        <value>jobHand</value><!-- 指定要执行的类里面的哪个方法 -->  
+      </property>  
+    </bean>  
+    <!-- 用cron表达式定义定时任务执行时间 -->  
+    <bean id="dohand" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+      <property name="jobDetail">  
+         <ref bean="jobHand"/><!-- 指明要调用哪个任务 -->  
+      </property>  
+      <!-- cron表达式 -->  
+      <property name="cronExpression">  
+          <!-- 每天10点15点执行一次-->  
+          <value>0 30,0,0 8,13,15 ? * MON-FRI </value>  
+      </property>  
+    </bean>  
+      
+   <!--  <bean id="jobCard" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+      <property name="targetObject">  
+        <ref bean="hand"/>  
+      </property>  
+      <property name="targetMethod">  
+        <value>jobCard</value>  
+      </property>  
+    </bean>  
+    <bean id="docard" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+      <property name="jobDetail">  
+         <ref bean="jobCard"/>  
+      </property>  
+      cron表达式  
+      <property name="cronExpression">  
+          每天9:30和14:30执行一次  
+          <value>0 0/1 17 * * ? </value>  
+      </property>  
+    </bean>   -->
+    <!-- 让spring来自动管理quartz -->  
+    <bean id="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+            <property name="triggers">  
+                <list>  
+                    <ref bean="dohand"/>  
+                   <!--  <ref bean="docard"/>   -->
+                </list>  
+            </property> 
+    </bean>
+	</beans> 

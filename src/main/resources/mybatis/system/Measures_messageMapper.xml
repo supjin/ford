@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Measures_messageMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_MEASURES_MESSAGE(
+			MEASURESNAME,	
+			CREATETIME,	
+			DOTIME,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			COMPANY_ID,	
+			EFFICIENT,
+			VALIDATION,
+			ATTACHMENTNAME,
+			ATTACHMENTNURL,
+			RESPONSIBLE,
+			EXECUTIONDATE,
+			MEASURES_MESSAGE_ID
+		) values (
+			#{MEASURESNAME},	
+			now(),	
+			#{DOTIME},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{COMPANY_ID},	
+			#{EFFICIENT},
+			#{VALIDATION},
+			#{ATTACHMENTNAME},
+			#{ATTACHMENTNURL},
+			#{RESPONSIBLE},
+			#{EXECUTIONDATE},
+			#{MEASURES_MESSAGE_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_MEASURES_MESSAGE
+		where 
+			MEASURES_MESSAGE_ID = #{MEASURES_MESSAGE_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_MEASURES_MESSAGE
+			set 
+				<if test="CLIENT_PROBLEM_COLLECTION_ID !=null and CLIENT_PROBLEM_COLLECTION_ID !=''">
+					CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+				</if>
+				<if test="COMPANY_ID !=null and COMPANY_ID !=''">
+					COMPANY_ID = #{COMPANY_ID},
+				</if>
+				<if test="MEASURESNAME !=null and MEASURESNAME !=''">
+					MEASURESNAME = #{MEASURESNAME},
+				</if>
+				CREATETIME = CREATETIME,
+				<if test="DOTIME !=null and DOTIME !=''">
+					DOTIME = #{DOTIME},
+				</if>
+				<if test="EFFICIENT !=null and EFFICIENT !=''">
+					EFFICIENT = #{EFFICIENT},
+				</if>
+				<if test="VALIDATION !=null and VALIDATION !=''">
+					VALIDATION = #{VALIDATION},
+				</if>
+				<if test="ATTACHMENTNURL !=null">
+					ATTACHMENTNURL = #{ATTACHMENTNURL},
+				</if>
+				<if test="RESPONSIBLE !=null and RESPONSIBLE !=''">
+					RESPONSIBLE = #{RESPONSIBLE},
+				</if>
+				<if test="ATTACHMENTNAME !=null and ATTACHMENTNAME !=''">
+					ATTACHMENTNAME = #{ATTACHMENTNAME},
+				</if>
+				<if test="EXECUTIONDATE !=null and EXECUTIONDATE !=''">
+					EXECUTIONDATE = #{EXECUTIONDATE},
+				</if>
+			MEASURES_MESSAGE_ID = MEASURES_MESSAGE_ID
+			where 
+				MEASURES_MESSAGE_ID = #{MEASURES_MESSAGE_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.MEASURESNAME,	
+			a.CREATETIME,	
+			a.DOTIME,	
+			a.CLIENT_PROBLEM_COLLECTION_ID,	
+			a.COMPANY_ID,	
+			a.EFFICIENT,
+			a.VALIDATION,
+			a.ATTACHMENTNAME,
+			a.ATTACHMENTNURL,
+			a.RESPONSIBLE,
+			a.EXECUTIONDATE,
+			b.NAME,
+			a.MEASURES_MESSAGE_ID
+		from 
+			FT_MEASURES_MESSAGE a
+			LEFT JOIN SYS_USER b ON a.RESPONSIBLE = b.USER_ID
+		where 
+			MEASURES_MESSAGE_ID = #{MEASURES_MESSAGE_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.MEASURESNAME,	
+				a.CREATETIME,	
+				a.DOTIME,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.COMPANY_ID,	
+				a.EFFICIENT,
+				a.VALIDATION,
+				a.ATTACHMENTNAME,
+				a.ATTACHMENTNURL,
+				a.RESPONSIBLE,
+				a.EXECUTIONDATE,
+				a.MEASURES_MESSAGE_ID
+		from 
+				FT_MEASURES_MESSAGE a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.MEASURESNAME,	
+				a.CREATETIME,	
+				a.DOTIME,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.COMPANY_ID,	
+				a.EFFICIENT,
+				a.VALIDATION,	
+				a.ATTACHMENTNAME,
+				a.ATTACHMENTNURL,
+				a.RESPONSIBLE,
+				a.EXECUTIONDATE,
+				b.NAME,
+				a.MEASURES_MESSAGE_ID
+				
+		from 
+				FT_MEASURES_MESSAGE a
+				LEFT JOIN SYS_USER b ON a.RESPONSIBLE = b.USER_ID
+				where 1=1
+				and a.CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+				order by a.CREATETIME ASC
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_MEASURES_MESSAGE
+		where 
+			MEASURES_MESSAGE_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

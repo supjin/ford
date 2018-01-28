@@ -1,0 +1,385 @@
+.jitbox{
+    width: 100%;
+    min-width: 1200px;
+    height: 430px;
+    position: relative;
+    margin-top:10px;
+}
+.bannctn{
+    width: 100%;
+    min-width: 1200px;
+    height: 100%;
+    overflow: hidden;
+    margin-top:10px;
+}
+.dbnnul{
+    width: 50000px;
+    height: 100%;
+}
+.dbnnul li{
+    float: left;
+    width: 1200px;
+    height: 100%;
+    max-width: 1920px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.dbnnul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.dbnnul li img{
+    width: 100%;
+    height: 100%;
+}
+.banbhct{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -37px;
+    overflow: hidden;
+    z-index: 8;
+}
+.banbhct li{
+    width: 13px;
+    height: 13px;
+    border: 1px solid #003366;
+    background: #ffffff;
+    float: left;
+    margin: 0 5px;
+    cursor: pointer;
+    /*behavior: url(css/pie.htc);*/
+    border-radius: 50%;
+}
+.banbhct .dnow_li{
+    background: #003366;
+}
+/*****/
+
+.loucen{
+    margin-top: 30px;
+    overflow: hidden;
+}
+.hudbmi{
+    width: 1230px;
+    margin-top: 18px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.hudbmi li{
+    float: left;
+    width: 380px;
+    height: 320px;
+    margin-right: 30px;
+    overflow: hidden;
+}
+.hudbmi li a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.hudbmi img{
+    display: block;
+    width: 380px;
+    height: 232px;
+    transition: transform 0.5s;
+    -moz-transition: transform 0.5s; /* Firefox 4 */
+    -webkit-transition: transform 0.5s; /* Safari 鍜�Chrome */
+    -o-transition: transform 0.5s; /* Opera */
+}
+.hudbmi li:hover img{
+    transform:scale(1.06);
+    -webkit-transform:scale(1.06);
+    -moz-transform:scale(1.06);
+    -o-transform:scale(1.06);
+    -ms-transform:scale(1.06);
+}
+.bamdsm{
+    height: 90px;
+    color: #ffffff;
+    background: #ABABAB;
+    font-size: 14px;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.bamdsm div{
+    margin: 0 20px;
+    margin-top: 10px;
+}
+.bamdsm div:first-child{
+    margin-top: 18px;
+}
+
+
+.hdaoctn{
+    margin-top: 18px;
+    overflow: hidden;
+}
+.baodlef{
+    float: left;
+    width: 883px;
+    border: 1px solid #ededed;
+    position: relative;
+}
+.zuiximg{
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.baotle{
+    border-left: 8px solid #00438a;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 14px;
+    padding-left: 5px;
+    font-size: 18px;
+    color: #4b4b4b;
+    margin-top: 18px;
+}
+.bddcen{
+    margin: 0 14px;
+    margin-top: 20px;
+    margin-bottom: 18px;
+    overflow: hidden;
+}
+.xialef{
+    float: left;
+    width: 410px;
+}
+.xialef .toplis{
+    display: block;
+    color: #00438a;
+    font-size: 16px;
+    line-height: 1.5em;
+    height: 48px;
+    overflow: hidden;
+}
+.xialef > p{
+    font-size: 14px;
+    color: #999999;
+    line-height: 1.8em;
+    margin-top: 15px;
+    height: 100px;
+    overflow: hidden;
+}
+.zibdls{
+    font-size: 14px;
+    line-height: 2.2em;
+    margin-top: 40px;
+    height: 150px;
+    overflow: hidden;
+}
+.zibdls li:hover a{
+    color: #00438a;
+}
+.zibdls i{
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background: #00438a;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.zibdls a{
+    display: block;
+    width: 99%;
+    color: #7c7c7c;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.xiarig{
+    float: left;
+    margin-left: 18px;
+}
+.damad{
+    width: 426px;
+    height: 200px;
+    overflow: hidden;
+}
+.damad a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.damad a > img{
+    width: 100%;
+    height: 100%;
+}
+.hovecl{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: bottom 0.5s;
+    -moz-transition: bottom 0.5s; /* Firefox 4 */
+    -webkit-transition: bottom 0.5s; /* Safari 鍜�Chrome */
+    -o-transition: bottom 0.5s; /* Opera */
+}
+.tomind{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #454545;
+    filter:alpha(opacity=50);
+    opacity: 0.5;
+}
+.zhebitt{
+    position: relative;
+    top: 50%;
+    z-index: 3;
+    color: #ffffff;
+    font-size: 14px;
+    width: 75%;
+    margin: 0 auto;
+    max-height: 57px;
+    overflow: hidden;
+}
+.xiarig a:hover .hovecl{
+    bottom: 0;
+}
+
+.ximad{
+    overflow: hidden;
+    margin-top: 12px;
+}
+.ximad a{
+    float: left;
+    width: 207px;
+    height: 135px;
+    margin-left: 12px;
+    position: relative;
+    overflow: hidden;
+}
+.ximad a:first-child{
+    margin-left: 0;
+}
+.ximad img{
+    width: 100%;
+    height: 100%;
+}
+
+.baodrig{
+    float: left;
+    width: 298px;
+    margin-left: 15px;
+    border: 1px solid #ededed;
+    padding-bottom: 16px
+}
+.liyug{
+    font-size: 14px;
+    line-height: 2.2em;
+    margin: 0 10px;
+    margin-top: 15px;
+    height: 360px;
+    overflow: hidden;
+}
+.liyug li:hover a{
+    color: #00438a;
+}
+.liyug i{
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background: #00438a;
+    vertical-align: middle;
+    margin-right: 10px;
+    behavior: url(css/pie.htc);
+    border-radius: 50%;
+}
+.liyug a{
+    display: block;
+    width: 98%;
+    color: #7c7c7c;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hutulc{
+    overflow: hidden;
+    margin-top: 18px;
+}
+.hutulc li{
+    float: left;
+    width: 282px;
+    height: 172px;
+    margin-left: 24px;
+    overflow: hidden;
+}
+.hutulc li:first-child{
+    margin-left: 0;
+}
+.hutulc li:hover img{
+    transform:scale(1.06);
+    -webkit-transform:scale(1.06);
+    -moz-transform:scale(1.06);
+    -o-transform:scale(1.06);
+    -ms-transform:scale(1.06);
+}
+.hutulc a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.hutulc li img{
+    width: 100%;
+    height: 100%;
+    transition:transform 0.4s;
+    -webkit-transition:transform 0.4s;
+    -moz-transition:transform 0.4s;
+    -o-transition:transform 0.4s;
+}
+.xiaobt{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 38px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 22px;
+}
+.xiozhz{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #494949;
+    filter:alpha(opacity=40);
+    opacity: 0.4;
+    z-index: 2;
+}
+.xiaobt p{
+    position: relative;
+    z-index: 3;
+    margin: 0 6%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.xiozhz + p{
+    margin-top: 8px;
+}
+
+
+
+
+
+
+

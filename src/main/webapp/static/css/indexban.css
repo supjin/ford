@@ -1,0 +1,106 @@
+.banner{
+	width: 100%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+.banner2{
+	width: 1200px;
+	height: 420px;
+}
+.bannerlis>.bannera{
+	float: left;
+	width: 450px;
+	height: 100%;
+}
+.bannera>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.bannera>a>img{
+	width: 100%;
+	height: 100%;
+}
+.baninfo{
+	height:110px;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	color: white;
+	background: rgba(0,0,0,0.4);
+	font-size: 12px;
+	pointer-events: none;
+}
+.baninfoa{
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	padding-left: 380px;
+	box-sizing: border-box;
+	margin-top: 15px;
+}
+.baninfob{
+	height: 30px;
+	padding-left: 380px;
+	box-sizing: border-box;
+	margin-top: 10px;
+}
+.baninfob>img{
+	float: left;
+	width: 20px;
+	margin-right: 5px;
+}
+.baninfob>img:first-child{
+	width: 25px;
+}
+.baninfob>p{
+	float: left;
+	margin-top: 4px;
+}
+.banindex{
+	position: absolute;
+	height: 17px;
+	bottom: 0px;
+	left: 40%;
+	margin-left: -50px;
+	box-sizing: border-box;
+}
+.banindex>span{
+	float: left;
+	width:30px;
+	text-align: center;
+	line-height: 17px;
+	font-size: 12px;
+	color: white;
+	opacity: 0.8;
+	height: 17px;
+	display: block;
+	background: #151b17;
+	margin-right: 2px;
+	cursor: pointer;
+}
+.addban{
+	background:#d4090c !important;
+}
+.banle,
+.banri{
+	position: absolute;
+	top: 133px;
+}
+.banle{
+	left: 0px;
+}
+.banri{
+	right: 0px;
+}
+.bannerlis{
+	height: 241px;
+	width: auto;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}

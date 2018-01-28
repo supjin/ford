@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Line_problem_collectionMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_LINE_PROBLEM_COLLECTION(
+			COMPANY_ID,	
+			USERNAME,	
+			DOCUMENTDATE,	
+			TRACKINGNUMBER,	
+			QUESTIONCATEGORY,	
+			PRODUCTNAME,	
+			PROJECTNAME,	
+			UNQUALIFIEDQUANTITY,	
+			DOWNTIME,	
+			SERVRITY,	
+			PROBLEMSOURCE,	
+			DEFECTDESCRIPTION,	
+			WHETHERREPEAT,	
+			INCOMINGRALATED,	
+			SUPPLIERNAME,	
+			REFERENCELESSONS,	
+			FIRSTDEPARTMENT,	
+			TYPE,	
+			CREATETIME,	
+			UPDATETIME,	
+			DELETED,	
+			STATUS,	
+			PROCESSTATE,	
+			LINE_PROBLEM_COLLECTION_ID
+		) values (
+			#{COMPANY_ID},	
+			#{USERNAME},	
+			#{DOCUMENTDATE},	
+			#{TRACKINGNUMBER},	
+			#{QUESTIONCATEGORY},	
+			#{PRODUCTNAME},	
+			#{PROJECTNAME},	
+			#{UNQUALIFIEDQUANTITY},	
+			#{DOWNTIME},	
+			#{SERVRITY},	
+			#{PROBLEMSOURCE},	
+			#{DEFECTDESCRIPTION},	
+			#{WHETHERREPEAT},	
+			#{INCOMINGRALATED},	
+			#{SUPPLIERNAME},	
+			#{REFERENCELESSONS},	
+			#{FIRSTDEPARTMENT},	
+			#{TYPE},	
+			#{CREATETIME},	
+			#{UPDATETIME},	
+			#{DELETED},	
+			#{STATUS},	
+			#{PROCESSTATE},	
+			#{LINE_PROBLEM_COLLECTION_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_LINE_PROBLEM_COLLECTION
+		where 
+			LINE_PROBLEM_COLLECTION_ID = #{LINE_PROBLEM_COLLECTION_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_LINE_PROBLEM_COLLECTION
+			set 
+				COMPANY_ID = #{COMPANY_ID},
+				USERNAME = #{USERNAME},
+				DOCUMENTDATE = #{DOCUMENTDATE},
+				TRACKINGNUMBER = #{TRACKINGNUMBER},
+				QUESTIONCATEGORY = #{QUESTIONCATEGORY},
+				PRODUCTNAME = #{PRODUCTNAME},
+				PROJECTNAME = #{PROJECTNAME},
+				UNQUALIFIEDQUANTITY = #{UNQUALIFIEDQUANTITY},
+				DOWNTIME = #{DOWNTIME},
+				SERVRITY = #{SERVRITY},
+				PROBLEMSOURCE = #{PROBLEMSOURCE},
+				DEFECTDESCRIPTION = #{DEFECTDESCRIPTION},
+				WHETHERREPEAT = #{WHETHERREPEAT},
+				INCOMINGRALATED = #{INCOMINGRALATED},
+				SUPPLIERNAME = #{SUPPLIERNAME},
+				REFERENCELESSONS = #{REFERENCELESSONS},
+				FIRSTDEPARTMENT = #{FIRSTDEPARTMENT},
+				TYPE = #{TYPE},
+				CREATETIME = #{CREATETIME},
+				UPDATETIME = #{UPDATETIME},
+				DELETED = #{DELETED},
+				STATUS = #{STATUS},
+				PROCESSTATE = #{PROCESSTATE},
+			LINE_PROBLEM_COLLECTION_ID = LINE_PROBLEM_COLLECTION_ID
+			where 
+				LINE_PROBLEM_COLLECTION_ID = #{LINE_PROBLEM_COLLECTION_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			USERNAME,	
+			DOCUMENTDATE,	
+			TRACKINGNUMBER,	
+			QUESTIONCATEGORY,	
+			PRODUCTNAME,	
+			PROJECTNAME,	
+			UNQUALIFIEDQUANTITY,	
+			DOWNTIME,	
+			SERVRITY,	
+			PROBLEMSOURCE,	
+			DEFECTDESCRIPTION,	
+			WHETHERREPEAT,	
+			INCOMINGRALATED,	
+			SUPPLIERNAME,	
+			REFERENCELESSONS,	
+			FIRSTDEPARTMENT,	
+			TYPE,	
+			CREATETIME,	
+			UPDATETIME,	
+			DELETED,	
+			STATUS,	
+			PROCESSTATE,	
+			LINE_PROBLEM_COLLECTION_ID
+		from 
+			FT_LINE_PROBLEM_COLLECTION
+		where 
+			LINE_PROBLEM_COLLECTION_ID = #{LINE_PROBLEM_COLLECTION_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.USERNAME,	
+				a.DOCUMENTDATE,	
+				a.TRACKINGNUMBER,	
+				a.QUESTIONCATEGORY,	
+				a.PRODUCTNAME,	
+				a.PROJECTNAME,	
+				a.UNQUALIFIEDQUANTITY,	
+				a.DOWNTIME,	
+				a.SERVRITY,	
+				a.PROBLEMSOURCE,	
+				a.DEFECTDESCRIPTION,	
+				a.WHETHERREPEAT,	
+				a.INCOMINGRALATED,	
+				a.SUPPLIERNAME,	
+				a.REFERENCELESSONS,	
+				a.FIRSTDEPARTMENT,	
+				a.TYPE,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.DELETED,	
+				a.STATUS,	
+				a.PROCESSTATE,	
+				a.LINE_PROBLEM_COLLECTION_ID
+		from 
+				FT_LINE_PROBLEM_COLLECTION a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.USERNAME,	
+				a.DOCUMENTDATE,	
+				a.TRACKINGNUMBER,	
+				a.QUESTIONCATEGORY,	
+				a.PRODUCTNAME,	
+				a.PROJECTNAME,	
+				a.UNQUALIFIEDQUANTITY,	
+				a.DOWNTIME,	
+				a.SERVRITY,	
+				a.PROBLEMSOURCE,	
+				a.DEFECTDESCRIPTION,	
+				a.WHETHERREPEAT,	
+				a.INCOMINGRALATED,	
+				a.SUPPLIERNAME,	
+				a.REFERENCELESSONS,	
+				a.FIRSTDEPARTMENT,	
+				a.TYPE,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.DELETED,	
+				a.STATUS,	
+				a.PROCESSTATE,	
+				a.LINE_PROBLEM_COLLECTION_ID
+		from 
+				FT_LINE_PROBLEM_COLLECTION a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_LINE_PROBLEM_COLLECTION
+		where 
+			LINE_PROBLEM_COLLECTION_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

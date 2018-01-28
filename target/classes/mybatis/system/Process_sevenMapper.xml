@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Process_sevenMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_PROCESS_SEVEN(
+			COMPANY_ID,	
+			PRINCIPALNAME,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			EXECUTIVENAME,	
+			PRINCIPALD_FIVESNAME,	
+			VALIDITY,	
+			EXECUTIONDATE,	
+			UPDATETIME,	
+			PRECAUTION,	
+			VERIFICATIONURE,	
+			VERIFICATION,	
+			PROCESS_SEVEN_ID
+		) values (
+			#{COMPANY_ID},	
+			#{PRINCIPALNAME},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{EXECUTIVENAME},	
+			#{PRINCIPALD_FIVESNAME},	
+			#{VALIDITY},	
+			now(),	
+			#{UPDATETIME},	
+			#{PRECAUTION},	
+			#{VERIFICATIONURE},	
+			#{VERIFICATION},	
+			#{PROCESS_SEVEN_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_PROCESS_SEVEN
+		where 
+			PROCESS_SEVEN_ID = #{PROCESS_SEVEN_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_PROCESS_SEVEN
+			set 
+					<if test="COMPANY_ID !=null and COMPANY_ID !=''">
+			COMPANY_ID = #{COMPANY_ID},
+		</if>
+		<if test="PRINCIPALNAME !=null and PRINCIPALNAME !=''">
+			PRINCIPALNAME = #{PRINCIPALNAME},
+		</if>
+		<if test="CLIENT_PROBLEM_COLLECTION_ID !=null and CLIENT_PROBLEM_COLLECTION_ID !=''">
+			CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+		</if>
+		<if test="EXECUTIVENAME !=null and EXECUTIVENAME !=''">
+			EXECUTIVENAME = #{EXECUTIVENAME},
+		</if>
+		<if test="PRINCIPALD_FIVESNAME !=null and PRINCIPALD_FIVESNAME !=''">
+			PRINCIPALD_FIVESNAME = #{PRINCIPALD_FIVESNAME},
+		</if>
+		<if test="VALIDITY !=null and VALIDITY !=''">
+			VALIDITY = #{VALIDITY},
+		</if>
+				EXECUTIONDATE = EXECUTIONDATE,
+				UPDATETIME = now(),
+		<if test="PRECAUTION !=null and PRECAUTION !=''">
+			PRECAUTION = #{PRECAUTION},
+		</if>
+		<if test="VERIFICATIONURE !=null and VERIFICATIONURE !=''">
+			VERIFICATIONURE = #{VERIFICATIONURE},
+		</if>
+		<if test="VERIFICATION !=null and VERIFICATION !=''">
+			VERIFICATION = #{VERIFICATION},
+		</if>
+			PROCESS_SEVEN_ID = PROCESS_SEVEN_ID
+			where 
+				PROCESS_SEVEN_ID = #{PROCESS_SEVEN_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			PRINCIPALNAME,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			EXECUTIVENAME,	
+			PRINCIPALD_FIVESNAME,	
+			VALIDITY,	
+			EXECUTIONDATE,	
+			UPDATETIME,	
+			PRECAUTION,	
+			VERIFICATIONURE,	
+			VERIFICATION,	
+			PROCESS_SEVEN_ID
+		from 
+			FT_PROCESS_SEVEN
+		where 
+			PROCESS_SEVEN_ID = #{PROCESS_SEVEN_ID}
+	</select>
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findByPromId" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			PRINCIPALNAME,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			EXECUTIVENAME,	
+			PRINCIPALD_FIVESNAME,	
+			VALIDITY,	
+			EXECUTIONDATE,	
+			UPDATETIME,	
+			PRECAUTION,	
+			VERIFICATIONURE,	
+			VERIFICATION,	
+			PROCESS_SEVEN_ID
+		from 
+			FT_PROCESS_SEVEN
+		where 
+			CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</select>
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.PRINCIPALNAME,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.EXECUTIVENAME,	
+				a.PRINCIPALD_FIVESNAME,	
+				a.VALIDITY,	
+				a.EXECUTIONDATE,	
+				a.UPDATETIME,	
+				a.PRECAUTION,	
+				a.VERIFICATIONURE,	
+				a.VERIFICATION,	
+				a.PROCESS_SEVEN_ID
+		from 
+				FT_PROCESS_SEVEN a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.PRINCIPALNAME,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.EXECUTIVENAME,	
+				a.PRINCIPALD_FIVESNAME,	
+				a.VALIDITY,	
+				a.EXECUTIONDATE,	
+				a.UPDATETIME,	
+				a.PRECAUTION,	
+				a.VERIFICATIONURE,	
+				a.VERIFICATION,	
+				a.PROCESS_SEVEN_ID
+		from 
+				FT_PROCESS_SEVEN a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_PROCESS_SEVEN
+		where 
+			PROCESS_SEVEN_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

@@ -1,0 +1,51 @@
+.baidssb{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.baidssb:before {
+    content: "\e008";
+    font-family: 'Glyphicons Halflings';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    font-size: 14px;
+    color: #bdbdbd;
+    margin-top: -10px;
+    line-height: 20px;
+}
+
+.sowe_lse{
+    width: 100%;
+    height: 34px;
+    /*line-height: 30px;*/
+    border: 1px solid #dddddd;
+    padding: 2px;
+    padding-right: 30px;
+}
+.taocen_cn{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 101px;
+    overflow: auto;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-top: 0;
+    z-index: 10;
+    display: none;
+}
+.houxuciu{
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    /*margin-bottom: 2px;*/
+}
+.houxuciu li{
+    line-height: 30px;
+    padding: 0 2px;
+}
+.houxuciu li:hover{
+    background-color: #f3f3f3;
+}

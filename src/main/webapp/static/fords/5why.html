@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>5why</title>
+    <link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/public_d08.css" />
+    <link rel="stylesheet" href="css/d0.css" />
+    <link rel="stylesheet" href="css/a_table.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="js/bootstrap3.37.min.js" ></script>
+</head>
+<body style="background-color:#edeff5;margin: 15px;">
+<div class="oiswen_box oiswen_boxavite">
+    <!---顶部--->
+    <div class="oiswen_titop">
+        <div class="oiswen_titople">
+            <div class="oiswen_titoplea">5WHY</div>
+            <div class="oiswen_titopleb">
+                <a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span><a href="javascript:;">0公里问题</a><span>/</span><a href="javascript:;">5WHY</a>
+            </div>
+        </div>
+    </div>
+    <!----5WHY---->
+    <div class="w5_box">
+    	<table class="w5_tab" cellpadding="0" cellspacing="0">
+    		<thead>
+    			<tr>
+    				<td colspan="2">失效模式（产生原因）：焊点虚焊<button class="w5_xinzbtn" type="button">新增</button></td>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    	<table class="w5_tab" cellpadding="0" cellspacing="0">
+    		<thead>
+    			<tr>
+    				<td colspan="2">失效模式（流出原因）：为何不良品没有被检出?<button class="w5_xinzbtn" type="button">新增</button></td>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    	<table class="w5_tab" cellpadding="0" cellspacing="0">
+    		<thead>
+    			<tr>
+    				<td colspan="2">针对预防措施的系统原因：系统上为何让不良品出现?<button class="w5_xinzbtn" type="button">新增</button></td>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    			<tr>
+    				<td>为何</td>
+    				<td><input class="w5_input" type="text"/><button type="button" class="w5_scbtn">删除</button></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+	<button type="button" class="scr_tijiaobtn">提交</button>
+    
+</div>
+<script>
+    $(function(){
+	    //新增事件
+	    $(document).on("click",".w5_xinzbtn",function(){
+	    	var str='<tr><td>为何</td><td><input class="w5_input"type="text"/><button type="button"class="w5_scbtn">删除</button></td></tr>';
+	    	$(this).parents(".w5_tab").children("tbody").append(str);
+	    	
+	    })
+	    //删除事件
+	    $(document).on("click",".w5_scbtn",function(){
+	    	$(this).parents("tr").remove();
+	    })
+    })
+</script>
+</body>
+</html>

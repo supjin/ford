@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="IQC_problemMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_IQC_PROBLEM(
+			APPLICANT,	
+			BILLDATE,	
+			OCCURENTDATE,	
+			PARTCODING,	
+			BATCHNUMBER,	
+			SANPLI,	
+			FALUREMODEL,	
+			DEFECTSNUMBER,	
+			RESPONSEBLEMAN,	
+			DEFECTDESCRIP,	
+			REMARK,	
+			CREATETIME,	
+			UPDATETIME,	
+			DELETED,	
+			FINISHSTATE,	
+			PROBLEMMODL,	
+			TRACKINGNUMBER,	
+			DAOHUODATE,	
+			
+			SENDEMAIL,
+			REQUIREDATE,
+			ISREAPED,
+			ISEIGHTD,
+			FINISHTIMEA,
+			FINISHTIMEB,
+			
+			FILEURL,
+			SHIJIDATE,
+			WANCDATE,
+			DUICELIN,
+			DUICEYON,
+			FASRESON,
+			LIURESON,
+			SENDMAN,
+			PARTNAME,
+			GYNAME,
+			
+			IQC_PROBLEM_ID
+		) values (
+			#{APPLICANT},	
+			#{BILLDATE},	
+			#{OCCURENTDATE},	
+			#{PARTCODING},	
+			#{BATCHNUMBER},	
+			#{SANPLI},	
+			#{FALUREMODEL},	
+			#{DEFECTSNUMBER},	
+			#{RESPONSEBLEMAN},	
+			#{DEFECTDESCRIP},	
+			#{REMARK},	
+			now(),	
+			#{UPDATETIME},	
+			'0',	
+			'1',	
+			#{PROBLEMMODL},	
+			#{TRACKINGNUMBER},	
+			#{DAOHUODATE},
+				
+			#{SENDEMAIL},
+			#{REQUIREDATE},
+			#{ISREAPED},
+			'1',
+			#{FINISHTIMEA},
+			#{FINISHTIMEB},
+			#{FILEURL},
+			#{SHIJIDATE},
+			#{WANCDATE},
+			#{DUICELIN},
+			#{DUICEYON},
+			#{FASRESON},
+			#{LIURESON},
+			#{SENDMAN},
+			#{PARTNAME},
+			#{GYNAME},
+			#{IQC_PROBLEM_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<update id="delete" parameterType="pd">
+		update  FT_IQC_PROBLEM
+		set DELETED=1
+		where 
+			IQC_PROBLEM_ID = #{IQC_PROBLEM_ID}
+	</update>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_IQC_PROBLEM
+			set 
+				<if test="APPLICANT !=null and APPLICANT !=''">
+				APPLICANT = #{APPLICANT},
+				</if>
+				<if test="BILLDATE !=null and BILLDATE !=''">
+				BILLDATE = #{BILLDATE},
+				</if>
+				<if test="OCCURENTDATE !=null and OCCURENTDATE !=''">
+				OCCURENTDATE = #{OCCURENTDATE},
+				</if>
+				<if test="PARTCODING !=null and PARTCODING !=''">
+				PARTCODING = #{PARTCODING},
+				</if>
+				<if test="BATCHNUMBER !=null and BATCHNUMBER !=''">
+				BATCHNUMBER = #{BATCHNUMBER},
+				</if>
+				<if test="SANPLI !=null and SANPLI !=''">
+				SANPLI = #{SANPLI},
+				</if>
+				<if test="FALUREMODEL !=null and FALUREMODEL !=''">
+				FALUREMODEL = #{FALUREMODEL},
+				</if>
+				<if test="DEFECTSNUMBER !=null and DEFECTSNUMBER !=''">
+				DEFECTSNUMBER = #{DEFECTSNUMBER},
+				</if>
+				<if test="RESPONSEBLEMAN !=null and RESPONSEBLEMAN !=''">
+				RESPONSEBLEMAN = #{RESPONSEBLEMAN},
+				</if>
+				<if test="DEFECTDESCRIP !=null and DEFECTDESCRIP !=''">
+				DEFECTDESCRIP = #{DEFECTDESCRIP},
+				</if>
+				<if test="REMARK !=null and REMARK !=''">
+				REMARK = #{REMARK},
+				</if>
+				
+				CREATETIME = CREATETIME,
+				UPDATETIME = now(),
+				<if test="DELETED !=null and DELETED !=''">
+				DELETED = #{DELETED},
+				</if>
+				<if test="FINISHSTATE !=null and FINISHSTATE !=''">
+				FINISHSTATE = #{FINISHSTATE},
+				</if>
+				<if test="PROBLEMMODL !=null and PROBLEMMODL !=''">
+				PROBLEMMODL = #{PROBLEMMODL},
+				</if>
+				<if test="TRACKINGNUMBER !=null and TRACKINGNUMBER !=''">
+				TRACKINGNUMBER = #{TRACKINGNUMBER},
+				</if>
+				<if test="DAOHUODATE !=null and DAOHUODATE !=''">
+				DAOHUODATE = #{DAOHUODATE},
+				</if>
+				<if test="SENDEMAIL !=null and SENDEMAIL !=''">
+				SENDEMAIL = #{SENDEMAIL},
+				</if>
+				<if test="REQUIREDATE !=null and REQUIREDATE !=''">
+				REQUIREDATE = #{REQUIREDATE},
+				</if>
+				<if test="ISREAPED !=null and ISREAPED !=''">
+				ISREAPED = #{ISREAPED},
+				</if>
+				<if test="ISEIGHTD !=null and ISEIGHTD !=''">
+				ISEIGHTD = #{ISEIGHTD},
+				</if>
+				<if test="FINISHTIMEA !=null and FINISHTIMEA !=''">
+				FINISHTIMEA = #{FINISHTIMEA},
+				</if>
+				<if test="FINISHTIMEB !=null and FINISHTIMEB !=''">
+				FINISHTIMEB = #{FINISHTIMEB},
+				</if>
+				<if test="FILEURL !=null and FILEURL !=''">
+				FILEURL = #{FILEURL},
+				</if>
+				<if test="SHIJIDATE !=null and SHIJIDATE !=''">
+				SHIJIDATE = #{SHIJIDATE},
+				</if>
+				<if test="WANCDATE !=null and WANCDATE !=''">
+				WANCDATE = #{WANCDATE},
+				</if>
+				<if test="DUICELIN !=null and DUICELIN !=''">
+				DUICELIN = #{DUICELIN},
+				</if>
+				<if test="DUICEYON !=null and DUICEYON !=''">
+				DUICEYON = #{DUICEYON},
+				</if>
+				<if test="FASRESON !=null and FASRESON !=''">
+				FASRESON = #{FASRESON},
+				</if>
+				<if test="LIURESON !=null and LIURESON !=''">
+				LIURESON = #{LIURESON},
+				</if>
+				<if test="SENDMAN !=null and SENDMAN !=''">
+				SENDMAN = #{SENDMAN},
+				</if>
+				<if test="PARTNAME !=null and PARTNAME !=''">
+				PARTNAME = #{PARTNAME},
+				</if>
+				<if test="GYNAME !=null and GYNAME !=''">
+				GYNAME = #{GYNAME},
+				</if>
+			IQC_PROBLEM_ID = IQC_PROBLEM_ID
+			where 
+				IQC_PROBLEM_ID = #{IQC_PROBLEM_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+				a.APPLICANT,	
+				a.BILLDATE,	
+				a.OCCURENTDATE,	
+				a.PARTCODING,	
+				a.BATCHNUMBER,	
+				a.SANPLI,	
+				a.FALUREMODEL,	
+				a.DEFECTSNUMBER,	
+				a.RESPONSEBLEMAN,	
+				a.DEFECTDESCRIP,	
+				a.REMARK,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.DELETED,	
+				a.FINISHSTATE,	
+				a.PROBLEMMODL,	
+				a.TRACKINGNUMBER,	
+				a.DAOHUODATE,	
+				a.SENDEMAIL,
+				a.REQUIREDATE,
+				a.ISREAPED,
+				a.ISEIGHTD,
+				a.FINISHTIMEA,
+				a.FINISHTIMEB,
+				a.FILEURL,
+				a.SHIJIDATE,
+				a.WANCDATE,
+				a.DUICELIN,
+				a.DUICEYON,
+				a.FASRESON,
+				a.LIURESON,
+				a.SENDMAN,
+				a.PARTNAME,
+				a.GYNAME,
+				c.NAME as USERNAME,
+				c.USER_ID,
+				e.NAME as SENNAME,
+				f.FAILURENAME,
+				a.IQC_PROBLEM_ID
+		from 
+			FT_IQC_PROBLEM a
+			
+			
+			LEFT JOIN SYS_USER c ON a.RESPONSEBLEMAN = c.USER_ID
+			LEFT JOIN SYS_USER e ON a.APPLICANT = e.USER_ID
+			LEFT JOIN FT_FAILUREMODE_MANAGEMENT f ON f.FAILURENAME = a.FALUREMODEL
+			
+		where 
+			IQC_PROBLEM_ID = #{IQC_PROBLEM_ID}
+			limit 1
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.APPLICANT,	
+				a.BILLDATE,	
+				a.OCCURENTDATE,	
+				a.PARTCODING,	
+				a.BATCHNUMBER,	
+				a.SANPLI,	
+				a.FALUREMODEL,	
+				a.DEFECTSNUMBER,	
+				a.RESPONSEBLEMAN,	
+				a.DEFECTDESCRIP,	
+				a.REMARK,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.DELETED,	
+				a.FINISHSTATE,	
+				a.PROBLEMMODL,	
+				a.TRACKINGNUMBER,	
+				a.DAOHUODATE,	
+				a.SENDEMAIL,
+				a.REQUIREDATE,
+				a.ISREAPED,
+				a.ISEIGHTD,
+				a.FINISHTIMEA,
+				a.FINISHTIMEB,
+				a.FILEURL,
+				a.SHIJIDATE,
+				a.WANCDATE,
+				a.DUICELIN,
+				a.DUICEYON,
+				a.FASRESON,
+				a.LIURESON,
+				a.SENDMAN,
+				a.PARTNAME,
+				a.GYNAME,
+				c.NAME as USERNAMES,
+				a.IQC_PROBLEM_ID
+		from 
+				FT_IQC_PROBLEM a
+				
+			left JOIN SYS_USER c ON a.RESPONSEBLEMAN = c.USER_ID
+			where 1=1
+			and a.DELETED=0
+			<if test="pd.RESPONSEBLEMAN != null and pd.RESPONSEBLEMAN != ''">
+			and (a.FINISHSTATE=1 or a.FINISHSTATE=2)
+			and a.RESPONSEBLEMAN = #{pd.RESPONSEBLEMAN}
+			</if>
+			<if test="pd.oderleader != null and pd.oderleader != ''">
+			and a.FINISHSTATE=3
+			</if>
+			<if test="pd.PARTNAME != null and pd.PARTNAME != ''">
+			and a.PARTNAME = #{pd.PARTNAME}
+			</if>
+			<if test="pd.GYNAME != null and pd.GYNAME != ''">
+			and a.GYNAME = #{pd.GYNAME}
+			</if>
+			<if test="pd.FALUREMODEL != null and pd.FALUREMODEL != ''">
+			and a.FALUREMODEL like CONCAT('%',#{pd.FALUREMODEL},'%')
+			</if>
+			<if test="pd.LTDATE!=null and pd.LTDATE!=''"><!-- 发生时间检索 -->
+			and a.OCCURENTDATE &gt;= #{pd.LTDATE}
+			</if>
+			<if test="pd.GTDATE!=null and pd.GTDATE!=''"><!-- 发生时间检索 -->
+				and a.OCCURENTDATE &lt;= #{pd.GTDATE}
+			</if>
+				order by a.OCCURENTDATE DESC,a.CREATETIME DESC
+	</select>
+	<!-- 列表 -->
+	<select id="qindatalistPage" parameterType="page" resultType="pd">
+		select
+				a.APPLICANT,	
+				a.BILLDATE,	
+				a.OCCURENTDATE,	
+				a.PARTCODING,	
+				a.BATCHNUMBER,	
+				a.SANPLI,	
+				a.FALUREMODEL,	
+				a.DEFECTSNUMBER,	
+				a.RESPONSEBLEMAN,	
+				a.DEFECTDESCRIP,	
+				a.REMARK,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.DELETED,	
+				a.FINISHSTATE,	
+				a.PROBLEMMODL,	
+				a.TRACKINGNUMBER,	
+				a.DAOHUODATE,	
+				a.SENDEMAIL,
+				a.REQUIREDATE,
+				a.ISREAPED,
+				a.ISEIGHTD,
+				a.FINISHTIMEA,
+				a.FINISHTIMEB,
+				a.FILEURL,
+				a.SHIJIDATE,
+				a.WANCDATE,
+				a.DUICELIN,
+				a.DUICEYON,
+				a.FASRESON,
+				a.LIURESON,
+				a.SENDMAN,
+				a.PARTNAME,
+				a.GYNAME,
+				c.NAME as USERNAMES,
+				a.IQC_PROBLEM_ID
+		from 
+				FT_IQC_PROBLEM a
+				
+			left JOIN SYS_USER c ON a.RESPONSEBLEMAN = c.USER_ID
+			where 1=1
+			and a.DELETED=0
+			
+			<if test="pd.GYNAME != null and pd.GYNAME != ''">
+			and a.GYNAME = #{pd.GYNAME}
+			</if>
+			<if test="pd.FALUREMODEL != null and pd.FALUREMODEL != ''">
+			and a.FALUREMODEL  = #{pd.FALUREMODEL}
+			</if>
+			<if test="pd.LTDATE!=null and pd.LTDATE!=''"><!-- 发生时间检索 -->
+			and a.OCCURENTDATE &gt;= #{pd.LTDATE}
+			</if>
+			<if test="pd.GTDATE!=null and pd.GTDATE!=''"><!-- 发生时间检索 -->
+				and a.OCCURENTDATE &lt;= #{pd.GTDATE}
+			</if>
+			<if test="pd.RESPONSEBLEMAN!=null and pd.RESPONSEBLEMAN!=''">
+				and a.RESPONSEBLEMAN = #{pd.RESPONSEBLEMAN}
+			</if>
+			<if test="pd.PARTNAME!=null and pd.PARTNAME!=''">
+				and a.PARTNAME = #{pd.PARTNAME}
+			</if>
+			<!-- group by d.CODE -->
+				order by a.OCCURENTDATE DESC,a.CREATETIME DESC
+	</select>
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.APPLICANT,	
+				a.BILLDATE,	
+				a.OCCURENTDATE,	
+				a.PARTCODING,	
+				a.BATCHNUMBER,	
+				a.SANPLI,	
+				a.FALUREMODEL,	
+				a.DEFECTSNUMBER,	
+				a.RESPONSEBLEMAN,	
+				a.DEFECTDESCRIP,	
+				a.REMARK,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.DELETED,	
+				a.FINISHSTATE,	
+				a.PROBLEMMODL,	
+				a.TRACKINGNUMBER,	
+				a.DAOHUODATE,	
+				a.SENDEMAIL,
+				a.REQUIREDATE,
+				a.ISREAPED,
+				a.ISEIGHTD,
+				a.FINISHTIMEA,
+				a.FINISHTIMEB,
+				a.FILEURL,
+				a.SHIJIDATE,
+				a.WANCDATE,
+				a.DUICELIN,
+				a.DUICEYON,
+				a.FASRESON,
+				a.LIURESON,
+				a.SENDMAN,
+				a.SENDMAN,
+				a.PARTNAME,
+				c.NAME as USERNAMES,
+				a.IQC_PROBLEM_ID
+		from 
+				FT_IQC_PROBLEM a
+				LEFT JOIN SYS_USER c ON a.RESPONSEBLEMAN = c.USER_ID
+				where 1=1
+				and a.DELETED=0
+				<if test="RESPONSEBLEMAN != null and RESPONSEBLEMAN != ''">
+				and a.RESPONSEBLEMAN = #{RESPONSEBLEMAN}
+				and (a.FINISHSTATE=1 or a.FINISHSTATE=2)
+				</if>
+				<if test="oderleader != null and oderleader != ''">
+				and a.FINISHSTATE=3
+				</if>
+				order by a.OCCURENTDATE DESC,a.CREATETIME DESC
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_IQC_PROBLEM
+		where 
+			IQC_PROBLEM_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

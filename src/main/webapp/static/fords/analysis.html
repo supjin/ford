@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>每日分析</title>
+    <link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/public_d08.css" />
+    <link rel="stylesheet" href="css/defect.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/analysis.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="js/bootstrap3.37.min.js" ></script>
+    <script type="text/javascript" src="js/echarts.min.js" ></script>
+    <script type="text/javascript" src="js/pw_eharts1.js" ></script>
+    <script type="text/javascript" src="js/pw_eharts2.js" ></script>
+    <script type="text/javascript" src="js/pw_eharts3.js" ></script>
+</head>
+<body style="background-color:#edeff5;margin: 15px;">
+<div class="oiswen_box oiswen_boxavite">
+    <!---顶部--->
+    <div class="oiswen_titop">
+        <div class="oiswen_titople">
+            <div class="oiswen_titoplea">每日分析</div>
+            <div class="oiswen_titopleb">
+                <a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span><a href="javascript:;">现场问题</a><span>/</span><a href="javascript:;">每日分析</a>
+            </div>
+        </div>
+    </div>
+    <!---内容--->
+    <div class="defect_box">
+    	<!--内容头-->
+    	<div class="defect_top clearfix">
+    		<div class="defect_date">
+    			<span>生产日期：</span><input type="date"/><span class="defect_dains">至</span><input type="date" />
+    		</div>
+    		<div class="defect_sele">
+    			<span>生产小组：</span>
+    			<select>
+    				<option>吃鸡小队</option>
+    				<option>扎堆2</option>
+    			</select>
+    		</div>
+    		<div class="defect_sele">
+    			<span>产品名称：</span>
+    			<select>
+    				<option>吃鸡小队</option>
+    				<option>扎堆2</option>
+    			</select>
+    		</div>
+    	</div>
+    </div>
+    <!----统计图----->
+	<div class="container cont_box">
+	    <div class="row">
+	        <div class="col-md-7 col-lg-7">
+	        	<!--当总数小于等于30的时候是黄色上升按钮；大于30红色上升按钮-->
+	        	<div class="constona">
+	        		<p class="constona_p">PPM TOP10</p>
+	        		<table cellpadding="0" cellspacing="0" class="cons_table">
+	        			<thead>
+	        				<tr>
+	        					<td style="width: 70px;">序号</td>
+	        					<td>日期</td>
+	        					<td>缺陷代码</td>
+	        					<td>缺陷名称</td>
+	        					<td>总数</td>
+	        					<td style="width:100px;">是否上升</td>
+	        				</tr>
+	        			</thead>
+	        			<tbody>
+	        				<tr>
+	        					<td>1</td>
+	        					<td>2017-12-22</td>
+	        					<td>SBEX012</td>
+	        					<td>破坏性试验</td>
+	        					<td>47</td>
+	        					<td><span class="conimga shangbtn"></span></td>
+	        				</tr>
+	        				<tr>
+	        					<td>2</td>
+	        					<td>2017-12-22</td>
+	        					<td>SBEX012</td>
+	        					<td>破坏性试验</td>
+	        					<td>46</td>
+	        					<td><span class="conimga shangbtn"></span></td>
+	        				</tr>
+	        				<tr>
+	        					<td>2</td>
+	        					<td>2017-12-22</td>
+	        					<td>SBEX012</td>
+	        					<td>破坏性试验</td>
+	        					<td>46</td>
+	        					<td><span class="conimga shangbtn"></span></td>
+	        				</tr>
+	        				<tr>
+	        					<td>2</td>
+	        					<td>2017-12-22</td>
+	        					<td>SBEX012</td>
+	        					<td>破坏性试验</td>
+	        					<td>45</td>
+	        					<td><span class="conimga shangbtn"></span></td>
+	        				</tr>
+	        				<tr>
+	        					<td>2</td>
+	        					<td>2017-12-22</td>
+	        					<td>SBEX012</td>
+	        					<td>破坏性试验</td>
+	        					<td>44</td>
+	        					<td><span class="conimga shangbtn"></span></td>
+	        				</tr>
+	        				<tr>
+	        					<td>2</td>
+	        					<td>2017-12-22</td>
+	        					<td>SBEX012</td>
+	        					<td>破坏性试验</td>
+	        					<td>42</td>
+	        					<td><span class="conimga shangbtn"></span></td>
+	        				</tr>
+	        				<tr>
+	        					<td>2</td>
+	        					<td>2017-12-22</td>
+	        					<td>SBEX012</td>
+	        					<td>破坏性试验</td>
+	        					<td>31</td>
+	        					<td><span class="conimga shangbtn"></span></td>
+	        				</tr>
+	        				<tr>
+	        					<td>2</td>
+	        					<td>2017-12-22</td>
+	        					<td>SBEX012</td>
+	        					<td>破坏性试验</td>
+	        					<td>30</td>
+	        					<td><span class="conimgb shangbtn"></span></td>
+	        				</tr>
+	        				<tr>
+	        					<td>2</td>
+	        					<td>2017-12-22</td>
+	        					<td>SBEX012</td>
+	        					<td>破坏性试验</td>
+	        					<td>20</td>
+	        					<td><span class="conimgb shangbtn"></span></td>
+	        				</tr>
+	        				<tr>
+	        					<td>2</td>
+	        					<td>2017-12-22</td>
+	        					<td>SBEX012</td>
+	        					<td>破坏性试验</td>
+	        					<td>10</td>
+	        					<td><span class="conimgb shangbtn"></span></td>
+	        				</tr>
+	        			</tbody>
+	        		</table>
+	        	</div>
+	        </div>
+	        <div class="col-md-5 col-lg-5">
+	        	<div class="constona">
+	        		<p class="constona_p">TOP10</p>
+	        		<div class="con_table">
+	        			<div id="main" class="con_tabbiao"></div><!---柱状图表---->
+	        			<ul class="con_tabul clearfix">
+	        			    <li class="ana_bg1"><em></em><span>端部成型表面不良成型表面不良水电费-分裂</span></li>
+	        			    <li class="ana_bg2"><em></em><span>端部成型表面不良成型表面不良水电费-分裂</span></li>
+	        			    <li class="ana_bg3"><em></em><span>端部成型表面不良成型表面分裂</span></li>
+	        			    <li class="ana_bg4"><em></em><span>端部成型表面不良成型表面分裂</span></li>
+	        			    <li class="ana_bg5"><em></em><span>端部成型表面不良成型表面不良水电费-分裂</span></li>
+	        			    <li class="ana_bg6"><em></em><span>端部成型表面不良成型表面不良水电费-分裂</span></li>
+	        			    <li class="ana_bg7"><em></em><span>端部成型表面不良成型表面分裂</span></li>
+	        			    <li class="ana_bg8"><em></em><span>端部成型表面不良成型表面分裂</span></li>
+	        			    <li class="ana_bg9"><em></em><span>端部成型表面不良成型表面不良水电费-分裂</span></li>
+	        			    <li class="ana_bg10"><em></em><span>端部成型表面不良成型表面不良水电费-分裂</span></li>
+	        			</ul>
+	        		</div>
+	            </div>
+	        </div>
+	        <div class="col-md-7 col-lg-7">
+	        	<div class="constona">
+	        		<p class="constona_p">零件TOP10</p>
+	        		<div class="con_table2">
+	        		    <div id="huan" class="huancss"></div><!---环形图--->
+	        		</div>
+	            </div>
+	        </div>
+	        <div class="col-md-5 col-lg-5">
+	        	<div class="constona">
+	        		<p class="constona_p">设备</p>
+	        		<div class="con_table2">
+	        			<div id="shan" class="shancss"></div><!---扇型图--->
+	        		</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>
+<script>
+	$(function(){
+		//循环序号1-10
+		for(var a=1;a<11;a++){
+			//console.log(a);
+			$(".cons_table>tbody>tr").eq(a-1).children("td").eq(0).html(a);
+		}
+		//上升按钮事件
+		$(document).on("click",".shangbtn",function(){
+			var _this=this;
+			parent.layer.open({
+	        	type:1,//类型
+				title:"",//标题
+				content:'<div class="pwalerttit">是否上升该问题？</div>',
+				area:['500px','230px'],//宽高
+				closeBtn: 0,//不显示右上角关闭按钮
+				shadeClose:false,//是否点击遮罩关闭
+				scrollbar: false,//是否允许浏览器出现滚动条
+				btn:['是','否'],
+				btnAlign: 'c',//按钮居中
+				yes:function(index,layero){
+					
+					parent.layer.close(index);//关闭弹
+				},
+				btn2:function(index){
+					parent.layer.close(index);//关闭弹
+				}
+	        })
+		})
+	})
+</script>
+</body>
+
+</html>

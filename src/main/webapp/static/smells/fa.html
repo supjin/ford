@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<title>发布气味</title>
+		<link rel="stylesheet" href="css/pw_public.css" />
+		<link rel="stylesheet" href="css/header.css" />
+		<link rel="stylesheet" href="css/fa.css" />
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/header.js"></script>
+	</head>
+
+	<body>
+		<!------------------------头部-------------------->
+		<div class="headerboxs">
+			<div class="headerbox">
+				<!---左边logo和标题--->
+				<div class="logoimg"><img src="img/logoimg.png" /></div>
+				<div class="logotext">嗅觉体验测试仪OET-1</div>
+				<!---导航条--->
+				<ul class="logotab">
+					<li class="top_active"><a href="index.html">全部</a></li>
+					<li><a href="javascript:;">汽车内饰</a></li>
+					<li><a href="javascript:;">香水</a></li>
+					<li><a href="javascript:;">汽车内饰</a></li>
+					<li><a href="javascript:;">香水</a></li>
+					<li><a href="javascript:;">汽车内饰</a></li>
+				</ul>
+				<!----按钮组---->
+				<div class="logobtn">
+					<a href="login.html">登录</a>
+					<a href="fa.html">发布气味</a>
+				</div>
+			</div>
+		</div>
+		<!----------------中部----------------------->
+		<div class="pageboxs">
+			<div class="pagebox">
+				<div class="fabox">
+					<h2 class="fatit">发布气味</h2>
+					<div class="fa">
+						<div class="fana">气味名称：</div>
+						<input type="text" class="fain" />
+						<div class="clex"></div>
+					</div>
+					<div class="fa">
+						<div class="fana">栏目分类：</div>
+						<select class="sele">
+							<option>汽车</option>
+							<option>香水</option>
+							<option>走,喝鸡汤</option>
+							<option>皮皮虾</option>
+							<option>神户牛肉</option>
+						</select>
+						<div class="clex"></div>
+					</div>
+					<div class="fa">
+						<div class="fana">气味类别：</div>
+						<select class="sele">
+							<option>酸味</option>
+							<option>甜味</option>
+							<option>苦味</option>
+							<option>辣味</option>
+							
+						</select>
+						<div class="clex"></div>
+					</div>
+					<div class="fa" style="position: relative;">
+						<div class="fana">气味介绍：</div>
+						<textarea class="fatext"></textarea>
+						<div class="positext">还可输入<span>195</span>字</div>
+						<div class="clex"></div>
+					</div>
+					<div class="fa">
+						<div class="fana">气味图像：</div>
+						<div class="faimgbox"><p>点击上传图片</p><p>图片大小为678*361px</p><img id="preview" src="" /></div>
+						<input type="file" class="dis" id="file_upload" />
+						<div class="clex"></div>
+					</div>
+					<div class="fa">
+						<div class="fana"></div>
+						<div class="fabtn">发布</div>
+						<div class="clex"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!----------------底部----------------->
+		<div class="footerboxs">
+			<div class="footerbox">
+				<!-------版权信息-------->
+				<div class="footerban">
+					<p>版权所有：重庆浪尖渝力创新研究院</p>
+					<p>地址：重庆市沙坪坝区大学城<span></span>邮编：100037</p>
+					<p>渝ICP备10008632号<span></span>服务热线：123888888</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function() {
+				//字数
+				//限制textarea字数
+				var len = parseInt($(".positext span").text());
+				$(".fatext").bind("keydown keyup input propertychange", function() {
+					var curLength = $(".fatext").val().length;
+					//背景隐藏显示
+					if ($(this).val() == "" || $(this).val() == undefined) {
+						$(this).siblings(".zuhaozi").show();
+					} else {
+						$(this).siblings(".zuhaozi").hide();
+					}
+					//判断字数截取
+					if (curLength > len) {
+						var num = $(".fatext").val().substr(0, len);
+						$(".fatext").val(num);
+					}
+					$(".positext").children("span").text(len - $(".fatext").val().length);
+				});
+				$(".faimgbox").click(function() {
+						$("#file_upload").click();
+					})
+					//添加图片预览功能-------dataURL就是图片地址
+				$("#file_upload").change(function() {
+					var $file = $(this);
+					var fileObj = $file[0];
+					var windowURL = window.URL || window.webkitURL;
+					var dataURL;
+					var $img = $("#preview");
+					if (fileObj && fileObj.files && fileObj.files[0]) {
+						dataURL = windowURL.createObjectURL(fileObj.files[0]);
+						$img.attr('src', dataURL);
+					} else {
+						dataURL = $file.val();
+						var imgObj = document.getElementById("preview");
+						// 两个坑:
+						// 1、在设置filter属性时，元素必须已经存在在DOM树中，动态创建的Node，也需要在设置属性前加入到DOM中，先设置属性在加入，无效；
+						// 2、src属性需要像下面的方式添加，上面的两种方式添加，无效；
+						imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+						imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+					}
+				});
+			})
+		</script>
+	</body>
+
+</html>

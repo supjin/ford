@@ -1,0 +1,132 @@
+.reqinfotop{
+	width: 100%;
+	height: 46px;
+	border-bottom: 1px solid #E4E4E4;
+	border-top: 3px solid #08408a;
+	line-height: 46px;
+	color: #08408a;
+	font-size: 18px;
+	background: url(../img/newbgbg.jpg);
+	text-indent: 15px;
+}
+.reqinfocon{
+	padding: 20px 40px 20px 40px;
+	overflow: hidden;
+}
+.reqinfoa{
+	width: 100%;
+	height: 38px;
+	color: #08408a;
+}
+.reqinfoa>p{
+	float: left;
+	height: 38px;
+	line-height: 38px;
+}
+.reqinfoaa{
+	margin-right: 57px;
+}
+.reqinfoab{
+	margin-right: 57px;
+}
+.reqinfoac>p{
+	line-height: 38px;
+	float: left;
+}
+.reqinfoac>a{
+	display: block;
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-top: 9px;
+}
+.fena{
+	background: url(../img/pw/reqa_03.jpg) no-repeat;
+}
+.fenb{
+	background: url(../img/pw/reqb_03.jpg) no-repeat;
+}
+.fenc{
+	background: url(../img/pw/reqc_03.jpg) no-repeat;
+}
+.reqinfob{
+	margin-top: 30px;
+	height: 16px;
+	line-height: 16px;
+	color: #08408a;
+}
+.reqinfob>p{
+	float: left;
+	font-size: 16px;
+}
+.reqinfob>p:first-child{
+	width: 6px;
+	height: 16px;
+	margin-right: 3px;
+	background: #08408a;
+}
+.reqinfoc{
+	line-height: 32px;
+	text-indent: 30px;
+	margin-top: 15px;
+}
+.reqinfoc img {
+    max-width: 100%;
+}
+.rea{
+	margin-top: 10px;
+}
+.rea>a{
+	display: block;
+	text-indent: 5px;
+	height: 35px;
+	line-height: 35px;
+	color: #268fd0;
+}
+.lxdivbox{
+	width: 100%;
+	height: 209px;
+	padding: 15px 10px 0px 15px;
+	box-sizing: border-box;
+}
+.bordera{
+	border-bottom: 1px solid #E4E4E4;
+	border-left: 1px solid #E4E4E4;
+	border-right: 1px solid #E4E4E4;
+}
+.lxdiv{
+	width: 100%;
+	height: 40px;
+	color: #01448a;
+}
+.lxdiv>img{
+	float: left;
+	width: 30px;
+	height: 24px;
+	margin-top: 7px;
+}
+.lxdiv>p{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+}
+.lxddd{
+	height: 40px;
+	line-height: 40px;
+}
+.lxddd>p{
+	float: left;
+}
+.lxddd>p:last-child{
+	/*width: 180px;*/
+	line-height: 25px;
+	padding-top: 8px;
+}
+.lxddd p span {
+	display: inline-block;
+	width: 180px;
+	vertical-align: top;
+	height: 50px;
+	overflow: hidden;
+}

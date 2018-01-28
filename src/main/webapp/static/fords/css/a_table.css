@@ -1,0 +1,369 @@
+@charset "utf-8";
+.wenti_box{
+	background-color: white;
+	padding: 20px;
+	box-sizing: border-box;
+	margin-top: 10px;
+}
+.wenti_box .container{
+	width: 100%;
+	color: #666666;
+	font-size: 16px;
+}
+.inputboxa{
+	margin: 0px auto 20px auto;
+}
+.container .inputboxa .form-control{
+	padding-left: 5px;
+}
+.inputboxb{
+	margin-bottom: 20px;
+}
+.inputboxa>p{
+    height: 30px;
+    line-height: 30px;
+}
+.inputboxb>p{
+    height: 30px;
+    line-height: 30px;
+}
+.inputboxa>.tadiv{
+    border: 1px solid #dedede;
+    color: #666666;
+    height: 35px;
+    line-height: 33px;
+    width: 100%;
+    text-indent: 5px;
+}
+.inputboxa>select{
+	border: 1px solid #dedede;
+	height: 35px;
+	width: 100%;
+	color: #666666;
+	text-indent: 5px;
+}
+.inputboxa>textarea{
+	border: 1px solid #dedede;
+	color: #666666;
+	width: 100%;
+	resize: none;
+	min-height: 100px;
+	word-break:break-all;
+	text-indent: 5px;
+}
+.inputboxb>textarea{
+	border: 1px solid #dedede;
+	color: #666666;
+	width: 100%;
+	resize: none;
+	min-height: 100px;
+	word-break:break-all;
+	text-indent: 5px;
+}
+.inputboxa>input{
+	color: #666666;
+	border: 1px solid #dedede;
+	width: 100%;
+	height: 35px;
+	padding: 4px 0px;
+	text-indent: 5px;
+}
+.inputboxa>.input-group{
+	height: 35px;
+}
+.inputboxa>.input-group>input{
+	border-radius: 0px;
+	border-color: #dedede;
+}
+.inputboxa>.input-group button{
+	border-radius: 0px;
+    border-color: #dedede;
+}
+.chebox{
+	height: 35px;
+	color: #666666;
+	line-height: 35px;
+}
+.chebox label{
+	font-weight: normal;
+	margin-bottom: 0px;
+	vertical-align: middle;
+}
+.chebox label input{
+	vertical-align: middle;
+	width: 15px;
+    display: inline-block;
+    height: 15px;
+    margin: 0px;
+}
+.chebox label:first-child{
+	margin-right: 15px;
+}
+.acq_box{
+	
+}
+.tibutton{
+	width: 100px;
+    height: 31px;
+    outline: none;
+    color: white;
+    border: none;
+    background-color: #24cbb2;
+    font-size: 16px;
+    margin: 0 50px;
+}
+.jxbutton{
+	width: 100px;
+    height: 31px;
+    outline: none;
+    color: white;
+    border: none;
+    background-color: #ff7697;
+    font-size: 16px;
+    margin: 0 50px;
+}
+.acq_boxtj{
+	 margin: 100px auto 270px auto;
+	 text-align: center;
+}
+.acq_boxtx{
+	 margin: 100px auto 115px auto;
+	 text-align: center;
+}
+.zcityGroup .zcityItem{
+	width: 50% !important;
+}
+.zcityGroup .zcityItem:first-child .zcityItem-head{
+	border-right: none !important;
+}
+.zcityGroup .zcityItem .zcityItem-head .currentValue{
+	color: #666666 !important;
+}
+.xuanzeb{
+	width: 50%;
+}
+.dropdown-menu{
+	height: 190px;
+	overflow-y: auto;
+}
+.advsse>select{
+	border: 1px solid #dedede;
+	float: left;
+	width: 50%;
+	padding: 5px 0px;
+}
+.advsse>select:first-child{
+	border-right: none;
+}
+/****排查表css**/
+.scr_table{
+	width: 100%;
+	margin-top: 20px;
+	font-size: 14px;
+	color: #666666;
+}
+.scr_table>thead{
+	
+}
+.scr_table>thead>tr{
+	background-color:#dedfe4;
+}
+.scr_table>tbody>tr{
+	background-color:white;
+}
+.scr_table>thead tr td:first-child,.scr_table>tbody tr:first-child td:first-child,.scr_table>tbody tr:first-child+tr td:first-child{
+	padding-left: 2% !important;
+}
+.scr_table>tbody tr:first-child td:first-child{
+	border-right: 1px solid transparent;
+}
+.scr_table thead td{
+	padding: 15px 0px;
+}
+.scr_table tbody tr:first-child td{
+	padding: 10px 0px;
+}
+.scr_table td{
+	border: 1px solid #dedede;
+	box-sizing: border-box;
+	position: relative;
+}
+.scr_table td>span{
+	font-size: 12px;
+}
+.addzengbtn{
+	background-color: #24cab2;
+	color: white;
+	border-radius:5px;
+	text-align: center;
+	display: block;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0px auto;
+}
+.scr_scbtn{
+	background-color: #f86470;
+	color: white;
+	border-radius:5px;
+	text-align: center;
+	display: block;
+	width: 90px;
+	height: 28px;
+	line-height: 28px;
+	margin: 5px auto;
+}
+.scr_tijiaobtn{
+	border: none;
+	background-color: #24cab2;
+	color: white;
+	width: 80px;
+	height: 35px;
+	display: block;
+	margin: 30px auto;
+	outline: none;
+}
+.scr_input{
+	border: none;
+	width: 100%;
+	height: 30px;
+	outline: none;
+	padding: 0px 5px;
+}
+.scr_input2{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	text-indent: 8%;
+}
+.c_tcolor{
+	color: #e82600;
+	font-size: 26px;
+}
+.scr_tijiaobtnss{
+	float: right;
+	width: 75px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    background-color: #24cbb2;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin: 2px 40px 0px 0px;
+}
+/***5why*****/
+.w5_box{
+	width: 100%;
+}
+.w5_tab{
+	width: 100%;
+	font-size: 14px;
+	color: #6a6a6c;
+	margin-top: 20px;
+}
+.w5_tab>thead{
+	background-color: #dedfe4;
+	font-size: 16px;
+}
+.w5_tab>thead>tr>td{
+	padding-left: 25px;
+}
+.w5_tab>tbody{
+	background-color: white;
+}
+.w5_tab td{
+	padding: 10px 0px;
+	border: 1px solid #dedede;
+	position: relative;
+}
+.w5_tab>tbody>tr>td:first-child{
+	width: 80px;
+	text-align: center;
+}
+.w5_tab>tbody>tr>td:last-child{
+	padding-left: 20px;
+	color: #979797;
+}
+.w5_input{
+	border: none;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	padding-right: 100px;
+}
+.w5_xinzbtn{
+	float: right;
+	margin-right: 1%;
+	background-color: #24cab2;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 2px 20px;
+	font-size: 14px;
+	outline: none;
+}
+.w5_scbtn{
+	position: absolute;
+	top: 9px;
+	right: 1%;
+	border: none;
+	display: block;
+	height: 24px;
+	font-size: 14px;
+	color: white;
+	width: 68px;
+	background-color: #fa6262;
+	border-radius: 4px;
+	outline: none;
+}
+/***供应商管理***/
+.sup_mantab{
+	width: 100%;
+	font-size: 16px;
+	color: #666666;
+}
+.sup_mantab td{
+	position: relative;
+}
+.sup_mantab tr>td:last-child{
+	text-align: center;
+}
+.sup_mantab thead{
+	background-color: #EDEFF5;
+}
+.sup_mantab thead td{
+	padding: 10px 0px;
+}
+.sup_mantab thead tr>td:first-child{
+	text-indent: 5px;
+}
+.sup_mantab tbody td{
+	height: 40px;
+	border: 1px solid #dedede;
+}
+.sup_mantab td input{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	border: none;
+	text-indent: 5px;
+}
+.supzeng_btn,.supsc_btn{
+	border: none;
+	outline: none;
+	width: 55px;
+	height: 24px;
+	border-radius: 4px;
+	color: white;
+	font-size: 12px;
+}
+.supzeng_btn{
+	background-color: #24CAB2;
+}
+.supsc_btn{
+	background-color: #FA6262;
+}

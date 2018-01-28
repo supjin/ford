@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>IQC问题3</title>
+		<link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/public_d08.css" />
+		<link rel="stylesheet" href="css/list.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/iqc.css" />
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap3.37.min.js"></script>
+	</head>
+
+	<body style="background-color:#edeff5;margin: 15px;">
+		<div class="oiswen_box oiswen_boxavite">
+			<!---顶部--->
+			<div class="oiswen_titop">
+				<div class="oiswen_titople">
+					<div class="oiswen_titoplea">IQC问题</div>
+					<div class="oiswen_titopleb">
+						<a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span>
+						<a href="javascript:;">IQC问题</a>
+					</div>
+				</div>
+			</div>
+			<!-- 头 -->
+			<div class="shijian_box">
+				<div class="shijian_tit">C520-阅读灯开关失效</div>
+				<ul class="shijian_ul">
+					<li>事件编号：CJ5A-13K767-DF3AM1</li>
+					<li>产品名称：福特汽车</li>
+					<li>问题类型：功能问题</li>
+					<li>客户名称：长安福特</li>
+					<li>创建时间：2017-12-12</li>
+					<li>负责人：客户经理1</li>
+				</ul>
+				<div class="shijian_div">
+					<div class="shijian_d">
+						<p>16</p>
+						<em>进行天数</em>
+					</div>
+				</div>
+			</div>
+			<!---颈---->
+			<div class="iqc_list1con">
+				<!-----li的5种状态（d_active23\d_active22\d_active3\d_active4\没有class的时候）；使用列子：<li class="d_active22">。----->
+				<ul class="iqc_ulbox clearfix">
+					<li class="d_active23">
+						<a href="IQC_1.html">
+							<em>√</em>
+							<span>发送IQC问题通知</span>
+						</a>
+						<div class="d_yydd"></div>
+					</li>
+					<li class="d_active23">
+						<a href="IQC_2.html">
+							<em>√</em>
+							<span>客户反馈8D报告</span>
+						</a>
+						<div class="d_yydd"></div>
+					</li>
+					<li class="d_active22">
+						<a href="IQC_3.html">
+							<em>3</em>
+							<span>领导确认</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!---表---->
+			<div class="iqc_listbot">
+				<div class="iqc_listbox clearfix">
+				<div class="iqc_list" style="margin-left: 71%;">
+					<p class="iqc_listtit">领导确认</p>
+					<ul class="iqc_listul">
+						<li>
+							<div class="clearfix word_teme"><p>2017-12-30</p><p>已发送</p></div>
+							<div class="clearfix word_box">
+								<em class="word_img"></em>
+								<div class="word_tit"><p>客户反馈8D报告</p><p>16MB</p></div>
+								<a class="word_xiaimg" href="javascript:;"></a>
+							</div>
+							<div class="clearfix word_teme2"><p>2017-12-30</p><p>由于资料不齐，未通过审核</p></div>
+						</li>
+						<li>
+							<div class="clearfix word_teme"><p>2017-12-30</p><p>已发送</p></div>
+							<div class="clearfix word_box">
+								<em class="word_img"></em>
+								<div class="word_tit"><p>客户反馈8D报告</p><p>16MB</p></div>
+								<a class="word_xiaimg" href="javascript:;"></a>
+							</div>
+							<div class="word_info2 clearfix"><a href="javascript:;" class="word_bobtn">驳回</a><a href="javascript:;" class="word_tongbtn">通过</a></div>
+						</li>
+					</ul>
+				</div>
+				</div>
+			</div>
+
+		</div>
+		<script>
+			$(function(){
+				//驳回按钮事件
+				$(document).on("click",".word_bobtn",function(){
+					//prompt层
+					parent.layer.prompt({
+			        	formType:2,//输入框类型，支持0（文本）默认1（密码）2（多行文本）
+						title:"请填写驳回原因",//标题
+						area:['320px','295px'],//宽高
+						shadeClose:false,//是否点击遮罩关闭
+						scrollbar: true,//是否允许浏览器出现滚动条
+						//btnAlign: 'c'//按钮居中
+					},function(value,index){//value是输入值
+						parent.layer.close(index);//关闭弹
+					})
+				})
+			})
+		</script>
+	</body>
+
+</html>

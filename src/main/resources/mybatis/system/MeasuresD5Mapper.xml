@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MeasuresD5Mapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_MEASURESD5(
+		    schedule_time,
+			PRINCIPALNAME,
+			creation_time,
+			update_time,
+		    efficient,
+			MEASURES,	
+			VALIDATION,	
+			ATTACHMENT,	
+			PROCESS_FIVE_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			COMPANY_ID,	
+			MEASURESD5_ID
+		) values (
+		    #{schedule_time},
+		    #{PRINCIPALNAME},
+			now(),
+			now(),
+		    #{efficient},
+			#{MEASURES},	
+			#{VALIDATION},	
+			#{ATTACHMENT},	
+			#{PROCESS_FIVE_ID},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{COMPANY_ID},	
+			#{MEASURESD5_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_MEASURESD5
+		where 
+			MEASURESD5_ID = #{MEASURESD5_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_MEASURESD5
+			set 
+			update_time=now(),
+			<if test="schedule_time!=null and schedule_time!=''">
+			  schedule_time=#{schedule_time},
+			</if>
+            <if test=" PRINCIPALNAME!=null and PRINCIPALNAME !=''">
+			 PRINCIPALNAME=#{PRINCIPALNAME},
+			</if>
+			<if test="efficient!=null and efficient!=''">
+			   efficient=#{efficient},
+			</if>
+			<if test=" MEASURES!=null and  MEASURES!=''">
+			  MEASURES = #{MEASURES},
+			</if>
+			<if test=" VALIDATION!=null and VALIDATION !=''">
+			  VALIDATION = #{VALIDATION},
+			</if>
+			<if test=" ATTACHMENT!=null and  ATTACHMENT!=''">
+			  ATTACHMENT = #{ATTACHMENT},
+			</if>
+			<if test=" PROCESS_FIVE_ID!=null and  PROCESS_FIVE_ID!=''">
+			  PROCESS_FIVE_ID = #{PROCESS_FIVE_ID},
+			</if>
+			<if test=" CLIENT_PROBLEM_COLLECTION_ID!=null and  CLIENT_PROBLEM_COLLECTION_ID!=''">
+			 CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+			</if>
+			<if test=" COMPANY_ID!=null and  COMPANY_ID!=''">
+			  COMPANY_ID = #{COMPANY_ID},
+			</if>
+			    
+			MEASURESD5_ID = MEASURESD5_ID
+			where 
+				MEASURESD5_ID = #{MEASURESD5_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+		schedule_time,
+		PRINCIPALNAME,
+		    efficient,
+			MEASURES,	
+			VALIDATION,	
+			ATTACHMENT,	
+			PROCESS_FIVE_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			COMPANY_ID,	
+			MEASURESD5_ID
+		from 
+			FT_MEASURESD5
+		where 
+			MEASURESD5_ID = #{MEASURESD5_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select  a.schedule_time,
+		        a.PRINCIPALNAME,
+		        a.efficient,
+				a.MEASURES,	
+				a.VALIDATION,	
+				a.ATTACHMENT,	
+				a.PROCESS_FIVE_ID,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.COMPANY_ID,	
+				a.MEASURESD5_ID
+		from 
+				FT_MEASURESD5 a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select   
+		        a.creation_time,
+		        a.schedule_time,
+		        a.PRINCIPALNAME, 
+		        a.efficient,
+				a.MEASURES,	
+				a.VALIDATION,	
+				a.ATTACHMENT,	
+				a.PROCESS_FIVE_ID,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.COMPANY_ID,	
+				b.NAME,
+				a.MEASURESD5_ID
+		from 
+				FT_MEASURESD5 a
+				LEFT JOIN SYS_USER b ON a.PRINCIPALNAME = b.USER_ID
+				where 
+				a.CLIENT_PROBLEM_COLLECTION_ID=#{CLIENT_PROBLEM_COLLECTION_ID}
+				
+				ORDER BY a.creation_time asc
+				
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_MEASURESD5
+		where 
+			MEASURESD5_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

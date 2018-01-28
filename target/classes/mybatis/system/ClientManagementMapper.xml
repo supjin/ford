@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ClientManagementMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_CLIENTMANAGEMENT(
+			FACTORY,	
+			DEPARTMENT,	
+			LINKSNAEM,	
+			JOBWORKS,	
+			PHONES,	
+			EMAILS,	
+			REMARKS,	
+			CREATETIME,	
+			UPDATETIME,	
+			COMPANY_ID,	
+			SORT,	
+			DELETED,	
+			ADDRESS,
+			CLIENTMANAGEMENT_ID
+		) values (
+			#{FACTORY},	
+			#{DEPARTMENT},	
+			#{LINKSNAEM},	
+			#{JOBWORKS},	
+			#{PHONES},	
+			#{EMAILS},	
+			#{REMARKS},	
+			now(),	
+			now(),
+			#{COMPANY_ID},	
+			#{SORT},	
+			'0',	
+			#{ADDRESS},
+			#{CLIENTMANAGEMENT_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<update id="delete" parameterType="pd">
+		update  FT_CLIENTMANAGEMENT
+		set  DELETED=1
+		where 
+			CLIENTMANAGEMENT_ID = #{CLIENTMANAGEMENT_ID}
+	</update>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_CLIENTMANAGEMENT
+			set 
+				FACTORY = #{FACTORY},
+				DEPARTMENT = #{DEPARTMENT},
+				LINKSNAEM = #{LINKSNAEM},
+				JOBWORKS = #{JOBWORKS},
+				PHONES = #{PHONES},
+				EMAILS = #{EMAILS},
+				REMARKS = #{REMARKS},
+				CREATETIME = CREATETIME,
+				UPDATETIME = now(),
+				COMPANY_ID = #{COMPANY_ID},
+				SORT = #{SORT},
+				ADDRESS = #{ADDRESS},
+			CLIENTMANAGEMENT_ID = CLIENTMANAGEMENT_ID
+			where 
+				CLIENTMANAGEMENT_ID = #{CLIENTMANAGEMENT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			FACTORY,	
+			DEPARTMENT,	
+			LINKSNAEM,	
+			JOBWORKS,	
+			PHONES,	
+			EMAILS,	
+			REMARKS,	
+			CREATETIME,	
+			UPDATETIME,	
+			COMPANY_ID,	
+			SORT,	
+			DELETED,	
+			ADDRESS,
+			CLIENTMANAGEMENT_ID
+		from 
+			FT_CLIENTMANAGEMENT
+		where 
+			CLIENTMANAGEMENT_ID = #{CLIENTMANAGEMENT_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.FACTORY,	
+				a.DEPARTMENT,	
+				a.LINKSNAEM,	
+				a.JOBWORKS,	
+				a.PHONES,	
+				a.EMAILS,	
+				a.REMARKS,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.COMPANY_ID,	
+				a.SORT,	
+				a.DELETED,	
+				a.ADDRESS,
+				a.CLIENTMANAGEMENT_ID
+		from 
+				FT_CLIENTMANAGEMENT a
+				where a.DELETED=0
+				order by a.CREATETIME DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.FACTORY,	
+				a.DEPARTMENT,	
+				a.LINKSNAEM,	
+				a.JOBWORKS,	
+				a.PHONES,	
+				a.EMAILS,	
+				a.REMARKS,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.COMPANY_ID,	
+				a.SORT,	
+				a.DELETED,	
+				a.ADDRESS,
+				a.CLIENTMANAGEMENT_ID
+		from 
+				FT_CLIENTMANAGEMENT a
+	</select>
+		<!-- 列表(全部) -->
+	<select id="listAllFactory" parameterType="pd" resultType="pd">
+		select
+				a.DEPARTMENT,	
+				a.CLIENTMANAGEMENT_ID
+		from 
+				FT_CLIENTMANAGEMENT a
+				group by a.DEPARTMENT
+				order by a.DEPARTMENT
+	</select>
+	<!-- 列表(全部) -->
+	<select id="listAllName" parameterType="pd" resultType="pd">
+		select
+				a.LINKSNAEM,	
+				a.CLIENTMANAGEMENT_ID
+		from 
+				FT_CLIENTMANAGEMENT a
+				group by a.LINKSNAEM
+				order by a.LINKSNAEM
+	</select>
+	<!-- 批量删除 -->
+	<update id="deleteAll" parameterType="String">
+		update  FT_CLIENTMANAGEMENT
+		set DELETED=1
+		where 
+			CLIENTMANAGEMENT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</update>
+	
+</mapper>

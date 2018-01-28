@@ -1,0 +1,381 @@
+@charset "utf-8";
+.list_divin>span{
+	width: 90px;
+    display: inline-block;
+    text-align: center;
+}
+.list_divs input{
+	width: 160px;
+}
+.goncsbox>.list_topbtns{
+	position: absolute;
+	bottom: 0px;
+	right: 20px;
+}
+.iqc_ulbox{
+	padding-left: 0px;
+	margin-bottom: 0px;
+	width: 80%;
+	min-width: 750px;
+	margin-left: 1%;
+}
+.iqc_ulbox>li{
+	width: 40%;
+	float: left;
+	text-align: left;
+	position: relative;
+	overflow: hidden;
+}
+.iqc_ulbox>li:last-child{
+	width: 209px;
+}
+.iqc_ulbox>li>.d_yydd{
+	top: 17px;
+	left: 0px;
+}
+.iqc_ulbox>li>a{
+	color: #666666;
+	display: inline-block;
+	background-color: white;
+	position: relative;
+	z-index: 1;
+	padding: 0px 20px;
+}
+.iqc_ulbox>li>a>em{
+	display: inline-block;
+	font-style: normal;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #666666;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 35px;
+	font-size: 16px;
+	margin-right: 7px;
+}
+.iqc_ulbox>li>a>span{
+	display: inline-block;
+	
+}
+.iqc_ulbox>.d_active23 a em{
+	border-color: #24cbb2;
+	color: #24cbb2;
+}
+.iqc_ulbox>.d_active23 .d_yydd{
+	background-image:url(../img/tosas.jpg);
+	height: 2px;
+	top: 19px;
+}
+.iqc_ulbox>.d_active22 a em{
+	border-color: #24cbb2;
+	color: white;
+	background-color: #24cbb2;
+}
+.iqc_ulbox>.d_active22 .d_yydd{
+	background-image:url(../img/tosas.jpg);
+	height: 2px;
+	top: 19px;
+}
+.iqc_ulbox>.d_active3 a em{
+	border-color: #fa6262;
+	color: white;
+	background-color: #fa6262;
+}
+.iqc_ulbox>.d_active3 .d_yydd{
+	background-image: url(../img/tosc.jpg);
+}
+.iqc_ulbox>.d_active4 a em {
+	border-color: #FAAD62;
+	color: white;
+	background-color: #FAAD62;
+}
+.iqc_ulbox>.d_active4 .d_yydd {
+    background-image: url(../img/tosd.jpg);
+}
+.addsbox a:first-child{
+	/*margin-bottom: 20px;*/
+}
+.iqc_yuan{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	
+}
+.insonctit{
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	color: #666666;
+	text-indent: 15px;
+	margin: 10px 0px;
+}
+.insonc_box{
+	background-color: white;
+	padding: 20px;
+	margin-top: 10px;
+}
+.insonc_box>.container{
+	width: 100%;
+}
+.iqc1div{
+	line-height: 25px;
+	padding: 5px 0px;
+	color: #666666;
+}
+.iqcbtnas{
+	margin: 0px auto;
+	width: 88px;
+}
+.iqcbtnas a{
+	float: left;
+	margin-right: 5px;
+}
+.iqcbtna{
+	display: block;
+	border: none;
+	border-radius: 4px;
+	outline: none;
+	background-color: #24CAB2;
+    color: white;
+    padding: 5px 25px;
+    margin: 20px auto;
+}
+.iqc_yuanbg1{
+	background-color: #24cbb2;
+}
+.iqc_yuanbg2{
+	background-color: #fa6262;
+}
+.iqc_yuanbg3{
+	background-color: #faad62;
+}
+.iqc_yuanbg4{
+	background-color: #c6c6c6;
+}
+/*****iqc1****/
+.iqc_list1con{
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding: 25px 0px;
+}
+.iqc_listbot{
+	background-color: white;
+    padding: 30px 10px;	
+}
+.iqc_listbox{
+	width: 80%;
+	padding-left: 2%;
+	min-width: 750px;
+	min-height: 315px;
+}
+.iqc_list{
+	background-color: #f2f2f2;
+	width: 380px;
+	padding: 20px;
+	color: #898989;
+	float: left;
+}
+.iqc_listtit{
+	color: #24cbb2;
+	height: 28px;
+	line-height: 28px;
+	font-size: 16px;
+}
+.iqc_listul{
+	padding-left: 0px;
+	margin-bottom: 0px;
+}
+.iqc_listul>li{
+	border-top: 1px solid #dedede;
+	padding-bottom: 20px;
+}
+.iqc_listul>li:first-child{
+	border-top: 1px solid transparent;
+}
+.iqc_listul>li:last-child{
+	padding-bottom: 0px;
+}
+.word_teme{
+	height: 22px;
+	line-height: 22px;
+	margin: 20px 0px;
+}
+.word_teme2{
+	height: 22px;
+	line-height: 22px;
+	margin-top: 20px;
+}
+.word_teme>p:first-child,.word_teme2>p:first-child{
+	float: left;
+}
+.word_teme>p:last-child,.word_teme2>p:last-child{
+	float: right;
+}
+.word_box{
+	background-color: white;
+	padding: 38px 15px;
+}
+.word_img{
+	float: left;
+	width: 40px;
+	height: 44px;
+	display: block;
+	background-image: url(../img/word.png);
+	background-repeat: no-repeat;
+}
+.word_tit{
+	float: left;
+	margin-left: 14px;
+}
+.word_tit>p{
+	height: 22px;
+	line-height: 22px;
+	width: 230px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.word_xiaimg{
+	display: block;
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin-top: 12px;
+	background-image: url(../img/word_xia.png);
+	background-repeat: no-repeat;
+}
+.word_info{
+	height: 22px;
+	line-height: 22px;
+	margin-top: 20px;
+}
+.word_info2{
+	height:28px;
+	margin: 20px auto 0px auto;
+	width: 212px;
+}
+.word_bobtn{
+	float: left;
+	border: 1px solid #dedede;
+	color: #b8b8b8;
+	display: block;
+	width: 88px;
+	line-height: 28px;
+	text-align: center;
+	background-color: white;
+}
+.word_tongbtn{
+	float: right;
+	background-color: #b8b8b8;
+	color: white;
+	display: block;
+	width: 88px;
+	line-height: 28px;
+	text-align: center;
+}
+.word_info2>p:first-child{
+	float: left;
+}
+.word_info>p:last-child{
+	float: right;
+}
+.word_tixing{
+	background-color: #b8b8b8;
+	color: white;
+	height: 22px;
+	width: 64px;
+	line-height: 22px;
+	text-align: center;
+	font-size: 12px;
+	cursor: pointer;
+}
+.layui-layer>.layui-layer-btn>a{
+	padding: 0px 63px !important;
+}
+.iqc2div{
+	color: #666666;
+	padding: 10px 0px;
+}
+.iqc2div>em{
+	display: block;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+}
+.iqc2div>select{
+	float: left;
+	height: 30px;
+	border: 1px solid #dedede;
+	width: 50%;
+	max-width: 220px;
+}
+.iqc2div>span{
+	display: block;
+	float: left;
+	height: 30px;
+	width: 50%;
+	line-height: 30px;
+	max-width: 220px;
+}
+.iqc2div>input{
+	display: block;
+	float: left;
+	height: 30px;
+	width: 50%;
+	line-height: 30px;
+	border: 1px solid #dedede;
+	max-width: 220px;
+}
+.iqc2div>.idsosnt{
+	float: left;
+	height: 30px;
+	width: 50%;
+	line-height: 30px;
+}
+.idsosnt>label{
+	color: #666666;
+	font-weight: normal;
+	margin-left: 5px;
+}
+.idsosnt>label>input{
+	vertical-align: middle;
+	margin-top: 0px;
+}
+.idsosnt>label>span{
+	vertical-align: middle;
+}
+.iqc2div>textarea{
+	border: 1px solid #dedede;
+	resize: none;
+	width: 100%;
+	height: 60px;
+}
+.iqc2div>.iqc2divbo{
+	width: 100%;
+	line-height: 25px;
+	margin-top: 35px;
+	word-break:break-all
+}
+/***问题浏览页***/
+.iqc_boxtit{
+	color: #666666;
+	overflow: hidden;
+	font-size: 20px;
+	line-height: 40px;
+	width: 220px;
+	margin: 20px auto 20px auto;
+}
+.iqc_boxtit>span{
+	display: inline-block;
+	width: 35px;
+	line-height: 35px;
+	text-align: center;
+    color: white;
+    border-radius: 50%;
+    margin-top: 2.5px;
+    margin-right: 5px;
+    float: left;
+    background-color: #24CAB2;
+}

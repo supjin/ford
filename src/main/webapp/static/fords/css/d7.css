@@ -1,0 +1,242 @@
+.d7_boxs{
+	box-sizing: border-box;
+	margin-top: 16px;
+}
+/**********重构d0css**********/
+.d7_boxs>.jinji_box{
+	margin-bottom: 16px;
+	margin-top: 0px;
+}
+.d7_ul{
+	margin-bottom: 60px;
+}
+.d7_titsbox{
+	padding: 0px 30px;
+	box-sizing: border-box;
+	background-color: white;
+}
+.d7_tits{
+	font-size: 20px;
+	color: #4d4d57;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	border-bottom: 1px solid #dedede;
+}
+.d7_yufang{
+	margin-top: 25px;
+}
+.d7_yubtn{
+	display: block;
+	line-height: 35px;
+	height: 35px;
+	width: 140px;
+	text-align: center;
+	margin: 0px auto;
+	font-size: 16px;
+	color: white;
+	background-color: #24CBB2;
+	border-radius: 10px;
+}
+.d7_yubtn2{
+	display: block;
+	line-height: 35px;
+	height: 35px;
+	width: 200px;
+	text-align: center;
+	margin: 0px auto;
+	font-size: 16px;
+	color: white;
+	background-color: #24CBB2;
+	border-radius: 10px;
+}
+.d7_wentit{
+	display: block;
+	width: 110px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	color: white;
+	background-color: #24CBB2;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+.d7table{
+	width: 100%;
+	background-color: #fcfcfc;
+	color: #7e7e7e;
+	font-size: 16px;
+}
+.d7table label{
+	font-weight: normal;
+}
+.d7table td{
+	border: 1px solid #dedede;
+	padding: 5px 0px;
+	box-sizing: border-box;
+	height: 51px;
+}
+.d7table tr td:first-child{
+	text-align: center;
+	width: 200px;
+}
+.d7table tr td:nth-of-type(2){
+	width: 150px;
+}
+.d7table tr td:nth-of-type(3){
+	position: relative;
+	padding-right: 95px;
+	box-sizing: border-box;
+}
+.d7table tr td:nth-of-type(4){
+	width: 170px;
+}
+.d7_inputs{
+	width: 90%;
+	padding: 0px 10%;
+	box-sizing: border-box;
+	margin: 0px auto;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+.d7_inputs>label{
+	cursor: pointer;
+	margin-bottom: 0px;
+}
+.d7_inputs>label>input{
+	margin-right: 3px;
+	vertical-align: middle;
+	margin-top: 0px;
+}
+.d7_inputs>label:first-child{
+	float: left;
+}
+.d7_inputs>label:last-child{
+	float: right;
+}
+.d7_inodsi{
+	overflow: hidden;
+}
+.shangchuan{
+	float: left;
+    width: 30px;
+    height: 22px;
+    background-image: url(../img/wenjiancolo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.shangchuan>input{
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+.d7_intita{
+	float: left;
+	overflow: hidden;
+	width: 100px;
+}
+.d7_intita img{
+	width: 100%;	
+}
+.d7_intita .jinjiuddd .jinjiudtits{
+	line-height: 45px !important;
+}
+.d7_scbtn {
+	border: none;
+	background-color: #fa6262;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    padding: 3px 20px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+.d7_btnos button{
+	border: none;
+	background-color: #24CBB2;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    padding: 3px 20px;
+    border-radius: 5px;
+}
+.d7_wenjian{
+	background-color: white;
+	padding: 30px;
+}
+.wenjianbox{
+	overflow: hidden;
+}
+.wenjianbox>.jinjiuddd{
+	float: left;
+	margin-right: 5px;
+}
+.d7_ziding{
+	overflow: hidden;
+}
+.d7_ziding>div{
+	float: left;
+	width: 80px;
+	text-align: center;
+	cursor: pointer;
+}
+.d7_ziding>input{
+	float: left;
+	border: 1px solid #dedede;
+	box-sizing: border-box;
+	width: 116px;
+}
+.inzidi{
+	border: 1px solid #dedede;
+	box-sizing: border-box;
+}
+.zidinbtn{
+	display: block;
+	width: 80px;
+	height: 34px;
+	line-height: 34px;
+	border-radius: 5px;
+	background-color: #24CBB2;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	box-sizing: border-box;
+	margin-top: 20px;
+}
+.d7_dbots{
+	width: 190px;
+	margin: 0px auto;
+}
+.d7_dbots>p{
+	color: #4d4d57;
+	font-size: 20px;
+	vertical-align: middle;
+	display: inline-block;
+	line-height: 30px;
+	margin-right: 30px;
+}
+.d7_dbots>a{
+	display: inline-block;
+	width: 75px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #24cbb2;
+	color: white;
+	text-align: center;
+	border-radius: 10px;
+}

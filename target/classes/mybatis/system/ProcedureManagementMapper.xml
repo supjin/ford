@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProcedureManagementMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_PROCEDUREMANAGEMENT(
+			`PROCEDURE` ,	
+			SORT,	
+			CREATETIME,	
+			UPDATETIME,	
+			PROCODE,
+			DELETED,
+			PROCEDUREMANAGEMENT_ID
+		) values (
+			#{PROCEDURE},	
+			#{SORT},	
+			now(),	
+			now(),	
+			#{PROCODE},
+			#{DELETED},
+			#{PROCEDUREMANAGEMENT_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<update id="delete" parameterType="pd">
+		update  FT_PROCEDUREMANAGEMENT
+		set DELETED=1
+		where 
+			PROCEDUREMANAGEMENT_ID = #{PROCEDUREMANAGEMENT_ID}
+	</update>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_PROCEDUREMANAGEMENT
+			set 
+				PROCEDURE = #{PROCEDURE},
+				SORT = #{SORT},
+				CREATETIME = CREATETIME,
+				UPDATETIME = now(),
+				PROCODE = #{PROCODE},
+				DELETED = #{DELETED},
+			PROCEDUREMANAGEMENT_ID = PROCEDUREMANAGEMENT_ID
+			where 
+				PROCEDUREMANAGEMENT_ID = #{PROCEDUREMANAGEMENT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			`PROCEDURE`,	
+			SORT,
+			PROCODE,	
+			CREATETIME,	
+			UPDATETIME,	
+			DELETED,
+			PROCEDUREMANAGEMENT_ID
+		from 
+			FT_PROCEDUREMANAGEMENT
+		where 
+			PROCEDUREMANAGEMENT_ID = #{PROCEDUREMANAGEMENT_ID}
+	</select>
+	
+		<!-- 通过ID获取数据 -->
+	<select id="findByName" parameterType="pd" resultType="pd">
+		select 
+			`PROCEDURE`,	
+			SORT,	
+			PROCODE,
+			CREATETIME,	
+			UPDATETIME,	
+			DELETED,
+			PROCEDUREMANAGEMENT_ID
+		from 
+			FT_PROCEDUREMANAGEMENT
+		where 
+			`PROCEDURE` = #{PROCEDURE}
+			
+			limit 1
+	</select>
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.`PROCEDURE`,	
+				a.SORT,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.PROCODE,
+				a.DELETED,
+				a.PROCEDUREMANAGEMENT_ID
+		from 
+				FT_PROCEDUREMANAGEMENT a
+				where a.DELETED=0
+				order by a.CREATETIME DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.`PROCEDURE`,	
+				a.SORT,	
+				a.CREATETIME,	
+				a.UPDATETIME,
+				a.PROCODE,	
+				a.DELETED,
+				a.PROCEDUREMANAGEMENT_ID
+		from 
+				FT_PROCEDUREMANAGEMENT a
+				where a.DELETED=0
+				order by a.CREATETIME DESC
+	</select>
+	
+	<!-- 批量删除 -->
+	<update id="deleteAll" parameterType="String">
+		update  FT_PROCEDUREMANAGEMENT
+		set
+		DELETED=1
+		where 
+			PROCEDUREMANAGEMENT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</update>
+	
+</mapper>

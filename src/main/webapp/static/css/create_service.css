@@ -1,0 +1,151 @@
+
+
+.liyige{
+    border-top: 3px solid #00458A;
+    height: 46px;
+    position: relative;
+    color: white;
+    line-height: 46px;
+    font-size: 18px;
+    overflow: hidden;
+    border-bottom: 1px solid #E4E4E4;
+    background: url(../img/newbgbg.jpg);
+}
+.tlelef{
+    float: left;
+}
+.tlelef .nowzc {
+    background: #00458a;
+    color: white;
+}
+.tlelef>a {
+    float: left;
+    padding: 0px 20px;
+    color: #00458A;
+}
+.tlelef>a:hover{
+    background: #00458a;
+    color: white;
+}
+.tlerig{
+    float: right;
+    margin-right: 20px;
+}
+.tlerig input{
+    vertical-align: middle;
+    width: 250px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px 0 0 5px;
+}
+.tlerig button{
+    width: 50px;
+    border: 0;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    outline: none;
+    background: #00458a;
+    text-indent: 0.5em;
+    letter-spacing: 0.5em;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.tlerig button:active{
+    background: #00356b;
+}
+
+
+.baifbox{
+    overflow: hidden;
+    margin-top: 10px;
+    width: 1257px;
+}
+.baifbox li{
+    float: left;
+    width: 360px;
+    margin-right: 57px;
+    margin-bottom: 27px;
+    border: 1px solid #eeeeee;
+}
+
+.baifuw{
+    width: 360px;
+    height: 150px;
+}
+.baifuw img{
+    width: 100%;
+    height: 100%;
+}
+.cyfwma {
+    margin: 20px 18px;
+}
+.cytle{
+    font-size: 18px;
+    color: #373737;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fuwjies{
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.8em;
+    height: 73px;
+    overflow: hidden;
+}
+.booqfl{
+    overflow: hidden;
+    font-size: 14px;
+    color: #aeaeae;
+    margin-top: 50px;
+}
+.hdfle{
+    float: left;
+    width: 64px;
+    padding: 0 10px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #bcbcbc;
+    overflow: hidden;
+}
+.gongsm{
+    float: right;
+    line-height: 28px;
+    width: 212px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+}
+
+.chakgd{
+    display: block;
+    width: 560px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #dfdfdf;
+    text-align: center;
+    font-size: 14px;
+    color: #9f9f9f;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.chakgd:active{
+    background: #fdfdfd;
+}
+
+
+
+
+
+
+
+
+
+
+

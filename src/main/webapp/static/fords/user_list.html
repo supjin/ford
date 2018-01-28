@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/public_d08.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/list.css" />
+    <link rel="stylesheet" href="css/pagination.css" />
+    <link rel="stylesheet" href="css/experience.css" />
+    <link rel="stylesheet" href="css/system_tools.css" />
+    <link rel="stylesheet" href="css/pw_alert.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="js/pw_alert.js" ></script>
+    <script type="text/javascript" src="js/bootstrap3.37.min.js" ></script>
+    <script type="text/javascript" src="js/jquery.pagination.js" ></script>
+</head>
+<body style="background-color:#edeff5;margin: 15px;">
+<div class="oiswen_box oiswen_boxavite">
+    <!---顶部--->
+    <div class="oiswen_titop">
+        <div class="oiswen_titople">
+            <div class="oiswen_titoplea">用户管理</div>
+            <div class="oiswen_titopleb">
+                <a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span><a href="javascript:;">系统管理</a><span>/</span><a href="javascript:;">用户管理</a>
+            </div>
+        </div>
+    </div>
+	<!--主体--->
+	<div class="content">
+		<!--导出-->
+		<div class="dao_box clearfix">
+			<input type="text" placeholder="用户名、姓名、工号"/>
+			<a href="javascript:;">导出</a>
+		</div>
+		<!--表--->
+	    <table cellpadding="0" cellspacing="0" class="lins_table">
+	    	<thead>
+	    		<tr>
+	    			<td style="width: 24px;"><input class="chebox pull-right" type="checkbox"/></td>
+	    			<td style="width: 65px;">序号</td>
+	    			<td style="width: 10%;">用户名</td>
+	    			<td style="width: 10%;">姓名</td>
+	    			<td style="width: 10%;">工号</td>
+	    			<td style="width: 10%;">邮箱</td>
+	    			<td style="width: 10%;">联系方式</td>
+	    			<td style="width: 10%;">部门</td>
+	    			<td style="width: 10%;">子部门</td>
+	    			<td style="width: 10%;">岗位</td>
+	    			<td style="width: 10%;">最近登录</td>
+	    			<td style="width: 40px;">操作</td>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr>
+	    			<td><input class="pull-right" type="checkbox"/></td>
+	    			<td>1</td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td></td>
+	    			<td>WIR ASY AMBNT L</td>
+	    			<td></td>
+	    			<td></td>
+	    			<td>DS73 14E072 AM</td>
+	    			<td>FDA003S</td>
+	    			<td><div class="cuozuo_box clearfix"><a href="javascript:;" class="equi_bianji"></a><a href="javascript:;" class="equi_sc"></a></div></td>
+	    		</tr>
+	    	</tbody>
+	    </table>
+	    <!---添加删除--->
+	    <div class="equi_btn">
+	    	<a href="javascript:;">添加</a>
+	    	<a href="javascript:;" class="anniu_scbtn">删除</a>
+	    </div>
+        <!-----分页--->
+    	<div class="pages">
+	        <div id="Pagination"></div>
+	        <div class="searchPage">
+	          <span class="page-sum">共<strong class="allPage">15</strong>页</span>
+	          <span class="page-go">跳转<input type="text">页</span>
+	          <a href="javascript:;" class="page-btn">GO</a>
+	        </div>
+	    </div>		
+		
+	</div>
+</div>
+<script>
+    //分页
+	$(document).ready(function() {
+	    $("#Pagination").pagination("15");
+    });
+	
+</script>
+<script>
+	$(function(){
+		//判断大全选
+		$(document).on("change",".chebox",function(){
+			if($(this).is(':checked')){
+				$(".lins_table>tbody input[type='checkbox']").each(function(){
+					$(this).prop("checked","checked");
+				})
+			}else{
+				$(".lins_table>tbody input[type='checkbox']").each(function(){
+					$(this).removeAttr("checked");
+				})
+			}
+		})
+		//判断小全选
+		var len=$(".lins_table>tbody input[type='checkbox']").length;
+		$(document).on("change",".lins_table>tbody input[type='checkbox']",function(){
+			var i=0;
+			//遍历input;
+			$(".lins_table>tbody input[type='checkbox']").each(function(){
+			    if($(this).is(":checked")){
+			    	i++;
+			    }
+		    })
+			//判断i
+			if(i==len){
+				$(".chebox").prop("checked","checked");
+				
+			}else{
+				$(".chebox").removeAttr("checked");
+			}
+			
+		})
+		xuhao();
+		//循环序号1-10
+		function xuhao(){
+			var xuhao=$(".lins_table tbody tr").length;
+			for(var a=1;a<=xuhao;a++){
+				$(".lins_table>tbody>tr").eq(a-1).children("td").eq(1).html(a);
+			}
+		}
+		
+		//图标删除功能
+		$(document).on("click",".equi_sc",function(){
+			var a=$(this).parents("tr").index();//得到下标
+			//在父页面弹出一个弹窗
+			parent.layer.open({
+	        	type:1,//类型
+				title:"",//标题
+				content:'<div class="pwalerttit">你确定删除？</div>',
+				area:['500px','230px'],//宽高
+				closeBtn: 0,//不显示右上角关闭按钮
+				shadeClose:false,//是否点击遮罩关闭
+				scrollbar: true,//是否允许浏览器出现滚动条
+				btn:['确定','取消'],
+				btnAlign: 'c',//按钮居中
+				yes:function(index,layero){
+					$(".lins_table tbody tr").eq(a).remove();
+					xuhao();
+					parent.layer.close(index);//关闭弹
+				},
+				btn2:function(index){
+					parent.layer.close(index);//关闭弹
+				}
+	        })
+		})
+		//按钮删除功能
+		$(".anniu_scbtn").click(function(){
+			var is=0;//用于判断选中没有
+			$(".lins_table>tbody input[type='checkbox']").each(function(){
+			    if($(this).is(":checked")){
+			    	is++;
+			    }
+		    })
+			if(is==0){//当没有选中的时候
+				//在父页面弹出一个弹窗
+				parent.layer.open({
+		        	type:1,//类型
+					title:"",//标题
+					content:'<div class="pwalerttit">您没有选择任何内容</div>',
+					area:['500px','230px'],//宽高
+					closeBtn: 0,//不显示右上角关闭按钮
+					shadeClose:false,//是否点击遮罩关闭
+					scrollbar: true,//是否允许浏览器出现滚动条
+					btn:['确定'],
+					btnAlign: 'c',//按钮居中
+					yes:function(index,layero){
+						parent.layer.close(index);//关闭弹
+					}
+		        })
+			}else{
+				//在父页面弹出一个弹窗
+				parent.layer.open({
+		        	type:1,//类型
+					title:"",//标题
+					content:'<div class="pwalerttit">你确定删除？</div>',
+					area:['500px','230px'],//宽高
+					closeBtn: 0,//不显示右上角关闭按钮
+					shadeClose:false,//是否点击遮罩关闭
+					scrollbar: true,//是否允许浏览器出现滚动条
+					btn:['确定','取消'],
+					btnAlign: 'c',//按钮居中
+					yes:function(index,layero){
+						//遍历每一个复选框;把每一个选中的都删除
+						$(".lins_table>tbody input[type='checkbox']").each(function(){
+						    if($(this).is(":checked")){
+						    	$(this).parents("tr").remove();
+						    }
+					    })
+						xuhao();
+						parent.layer.close(index);//关闭弹
+					},
+					btn2:function(index){
+						parent.layer.close(index);//关闭弹
+					}
+		        })
+			}
+		})
+		
+	})
+</script>
+</body>
+
+</html>

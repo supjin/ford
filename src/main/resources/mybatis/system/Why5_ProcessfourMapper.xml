@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Why5_ProcessfourMapper">
+	
+	<select id="findByProblemId" parameterType="pd" resultType="pd">
+		select 
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			TYPE,	
+			WHY,	
+			CREATETIME,	
+			UPDATETIME,	
+			WHY5_PROCESSFOUR_ID
+		from 
+			FT_WHY5_PROCESSFOUR
+		where 
+			CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</select> 
+	<delete id="deleteByProblemId" parameterType="pd">
+		delete from FT_WHY5_PROCESSFOUR
+		where 
+			CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</delete> 
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_WHY5_PROCESSFOUR(
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			TYPE,	
+			WHY,	
+			CREATETIME,	
+			UPDATETIME,	
+			WHY5_PROCESSFOUR_ID
+		) values (
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{TYPE},	
+			#{WHY},	
+			#{CREATETIME},	
+			#{UPDATETIME},	
+			#{WHY5_PROCESSFOUR_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_WHY5_PROCESSFOUR
+		where 
+			WHY5_PROCESSFOUR_ID = #{WHY5_PROCESSFOUR_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_WHY5_PROCESSFOUR
+			set 
+				CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+				TYPE = #{TYPE},
+				WHY = #{WHY},
+				CREATETIME = #{CREATETIME},
+				UPDATETIME = #{UPDATETIME},
+			WHY5_PROCESSFOUR_ID = WHY5_PROCESSFOUR_ID
+			where 
+				WHY5_PROCESSFOUR_ID = #{WHY5_PROCESSFOUR_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			TYPE,	
+			WHY,	
+			CREATETIME,	
+			UPDATETIME,	
+			WHY5_PROCESSFOUR_ID
+		from 
+			FT_WHY5_PROCESSFOUR
+		where 
+			WHY5_PROCESSFOUR_ID = #{WHY5_PROCESSFOUR_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.TYPE,	
+				a.WHY,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.WHY5_PROCESSFOUR_ID
+		from 
+				FT_WHY5_PROCESSFOUR a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.TYPE,	
+				a.WHY,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.WHY5_PROCESSFOUR_ID
+		from 
+				FT_WHY5_PROCESSFOUR a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_WHY5_PROCESSFOUR
+		where 
+			WHY5_PROCESSFOUR_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

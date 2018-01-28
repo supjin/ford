@@ -1,0 +1,63 @@
+.bajig{
+    width: 100%;
+    min-width: 1200px;
+    height: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cyctn{
+    border-top:2px solid #00458A;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+.lefcot{
+    float: left;
+    width: 223px;
+    padding-top: 20px;
+}
+.lefcot img{
+    width: 223px;
+    height: 84px;
+}
+.lefcot div{
+    margin: 20px 0;
+    font-size: 16px;
+    color: #444444;
+}
+.rigcot{
+    float: left;
+    width: 957px;
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 2em;
+}
+.ritle{
+    font-size: 26px;
+    color: #444444;
+    margin: 30px 0;
+}
+.jianctn{
+    color: #666666;
+}
+.jianctn p{
+    text-indent: 2em;
+    margin-bottom: 25px;
+}
+.jianctn div{
+    color: #666666;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

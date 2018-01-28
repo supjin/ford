@@ -1,0 +1,15 @@
+.fen_navlis{
+	height:80px;
+	line-height:80px;
+	text-align: center;
+}
+.fen_navlis span{
+	margin:0px 8px;
+}
+.fen_navlis a{
+	text-decoration: none;
+	color:#6B6B6B;
+}
+.fen_navlis .fen_active{
+	color:#08c;
+}

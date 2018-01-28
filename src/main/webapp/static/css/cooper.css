@@ -1,0 +1,124 @@
+.coopertop{
+	border-top: 3px solid #00458A;
+    height: 46px;
+    line-height: 46px;
+    font-size: 18px;
+    overflow: hidden;
+    border-bottom: 1px solid #E4E4E4;
+    background: url(../img/pw/newbgbg.jpg);
+}
+.coopertop>li{
+	float: left;
+}
+.coopoli{
+	background: #00458A;
+	color: white !important;
+}
+.coopertop>li>a{
+	display: block;
+	padding: 0px 20px;
+	color: #00458A;
+}
+.coopertop>li>a:hover{
+	background: #00458A;
+	color: white !important;
+}
+.coopertop_rig li{
+	width: 50%;
+	text-align: center;
+}
+.coopertop_rig li a{
+	padding: 0px;
+}
+.cooperul{
+	padding: 10px 0px 0px 0px;
+}
+.cooperul>li{
+	padding: 15px 5px 20px 15px;
+	box-sizing: border-box;
+	color: #464646;
+	border-top: 1px solid #E4E4E4;
+}
+.cooperul>li:first-child{
+	border-top: 0px solid #E4E4E4;
+}
+.cooph{
+	height: 30px;
+	line-height: 30px;
+	color: #434343;
+	font-size: 16px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.cooph:hover{
+	color: #00458A;
+}
+.coopn{
+	height: 30px;
+	line-height: 30px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+.coopn>p:first-child{
+	float: left;
+	width: 360px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.coopn>p:last-child{
+	float: left;
+}
+.coopcon{
+	line-height: 25px;
+	margin-top: 15px;
+}
+/*****复制***/
+.newulle{
+	padding:5px 15px 0px 15px;
+	box-sizing: border-box;
+}
+.newulle>li{
+	height: 52px;
+	border-top: 1px dashed #E4E4E4;
+	overflow: hidden;
+}
+.newulle>li:first-child{
+	border-top: 0px solid #E4E4E4;
+}
+.newulle>li>span{
+	display: inline-block;
+	width: 3px;
+	height: 3px;
+	background: #878787;
+	margin-right: 7px;
+	float: left;
+	margin-top: 25px;
+}
+.newulle>li>a{
+	float: left;
+	display: inline-block;
+	width: auto;
+	max-width: 255px;
+	height: 52px;
+	line-height: 52px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.newulle>li>p{
+	float: right;
+	height: 52px;
+	line-height: 52px;
+}
+.newulle>li:hover a{
+	color: #ce2528;
+}
+.rigdls{
+
+}
+.ulliimgg,.ulliimgg>a{
+	height: 152px;
+}
+/*****复制以上***/

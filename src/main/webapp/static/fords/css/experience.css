@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/*.content { background: #fff; }
+.content>.screen { padding-top: 14px; }
+.content span:nth-of-type(1) { margin-left: 30px; }
+.content span:nth-of-type(4) { margin-right: 40px; }
+.content span { margin-right: 30px; }
+.content span select { width: 260px;height: 30px;border-radius: 5px; }
+.content span i { font-style: normal;margin: 0 18px; }
+.content span input { width: 150px;border-radius: 5px; }
+p { display: inline-block;color: #fff;background: #01b99d;width: 56px;height: 30px;border-radius: 5px;text-align: center;line-height: 30px; }
+*/
+.handle { padding: 22px 0; }
+.handle button { width: 56px;height: 30px;text-align: center;line-height: 30px;margin-right: 15px;border: 0;border-radius: 5px;color: #fff;outline: none; }
+.handle button:nth-of-type(1) { background: #00b89c; }
+.handle button:nth-of-type(2) { background: #f9666e; }
+.handle button:nth-of-type(3) { background: #ffaa3d; }
+.handle button:nth-of-type(4) { background: #589acc; }
+.content{
+	background-color: white;
+	border: 1px solid #dedede;
+	padding: 0px 20px;
+}
+.content .list_divin>select{
+	width: 260px;
+}
+.exp_btn{
+	float: left;
+	display: block;
+	background-color:#01b99d;
+	color: white;
+	font-size: 14px;
+	border-radius: 5px;
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 15px;
+}
+.lins_table{
+	width: 100%;
+	border: 1px solid #e3e3e3;
+	color: #666666;
+	margin-bottom: 40px;
+}
+.lins_table>thead>tr{
+    background-color: #fbfbfb;
+}
+.lins_table>tbody>tr{
+	border-top: 1px solid #dedede;
+	text-align: center;
+}
+.lins_table td{
+	padding: 9px 0px;
+	text-align: center;
+}
+.lins_table td input{
+	width: 16px;
+	height: 16px;
+	margin-top: 0px;
+}
+.lins_table tr td:nth-of-type(2){
+	text-align: center;
+}

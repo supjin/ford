@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Question_feedbackMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_QUESTION_FEEDBACK(
+	
+			REPLY_TIME,	
+			REPLY_PROGRAM,	
+			CUSTOMER_REPLY,	
+			ATTACHMENTNAME_PROGRAM,	
+			ATTACHMENTNAME_CUSTOMER,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			QUESTION_FEEDBACK_ID,
+			CLOSED_TIME,
+			CREATE_TIME,
+			UPDATE_TIME
+		) values (
+		
+			#{REPLY_TIME},	
+			#{REPLY_PROGRAM},	
+			#{CUSTOMER_REPLY},	
+			#{ATTACHMENTNAME_PROGRAM},	
+			#{ATTACHMENTNAME_CUSTOMER},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{QUESTION_FEEDBACK_ID},
+			#{CLOSED_TIME},
+			now(),
+			now()
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_QUESTION_FEEDBACK
+		where 
+			QUESTION_FEEDBACK_ID = #{QUESTION_FEEDBACK_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_QUESTION_FEEDBACK
+			set 
+			
+				REPLY_TIME = #{REPLY_TIME},
+				REPLY_PROGRAM = #{REPLY_PROGRAM},
+				CUSTOMER_REPLY = #{CUSTOMER_REPLY},
+				ATTACHMENTNAME_PROGRAM = #{ATTACHMENTNAME_PROGRAM},
+				ATTACHMENTNAME_CUSTOMER = #{ATTACHMENTNAME_CUSTOMER},
+				CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+				CLOSED_TIME=#{CLOSED_TIME},
+				UPDATE_TIME=now(),
+			QUESTION_FEEDBACK_ID = QUESTION_FEEDBACK_ID
+			where 
+				QUESTION_FEEDBACK_ID = #{QUESTION_FEEDBACK_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			
+			REPLY_TIME,	
+			REPLY_PROGRAM,	
+			CUSTOMER_REPLY,	
+			ATTACHMENTNAME_PROGRAM,	
+			ATTACHMENTNAME_CUSTOMER,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			QUESTION_FEEDBACK_ID,
+			CLOSED_TIME,
+			CREATE_TIME,
+			UPDATE_TIME
+		from 
+			FT_QUESTION_FEEDBACK
+		where 
+			QUESTION_FEEDBACK_ID = #{QUESTION_FEEDBACK_ID}
+	</select>
+	<!-- 通过问题ID获取数据 -->
+	<select id="findByCliId" parameterType="pd" resultType="pd">
+		select 
+			
+			REPLY_TIME,	
+			REPLY_PROGRAM,	
+			CUSTOMER_REPLY,	
+			ATTACHMENTNAME_PROGRAM,	
+			ATTACHMENTNAME_CUSTOMER,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			QUESTION_FEEDBACK_ID,
+			CLOSED_TIME,
+			CREATE_TIME,
+			UPDATE_TIME
+		from 
+			FT_QUESTION_FEEDBACK
+		where 
+			CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</select>
+	<!-- 问题id取数据 -->
+	<select id="listfindByProblemId" parameterType="pd" resultType="pd">
+		select 
+			
+				a.REPLY_TIME,	
+				a.REPLY_PROGRAM,	
+				a.CUSTOMER_REPLY,	
+				a.ATTACHMENTNAME_PROGRAM,	
+				a.ATTACHMENTNAME_CUSTOMER,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.QUESTION_FEEDBACK_ID,
+				a.CLOSED_TIME,
+				a.CREATE_TIME,
+				a.UPDATE_TIME
+		from 
+			FT_QUESTION_FEEDBACK a
+		where 
+			a.CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</select>
+	
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+			
+				a.REPLY_TIME,	
+				a.REPLY_PROGRAM,	
+				a.CUSTOMER_REPLY,	
+				a.ATTACHMENTNAME_PROGRAM,	
+				a.ATTACHMENTNAME_CUSTOMER,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.QUESTION_FEEDBACK_ID,
+				a.CLOSED_TIME,
+				a.CREATE_TIME,
+				a.UPDATE_TIME
+				
+		from 
+				FT_QUESTION_FEEDBACK a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+		
+				a.REPLY_TIME,	
+				a.REPLY_PROGRAM,	
+				a.CUSTOMER_REPLY,	
+				a.ATTACHMENTNAME_PROGRAM,	
+				a.ATTACHMENTNAME_CUSTOMER,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.QUESTION_FEEDBACK_ID,
+				a.CLOSED_TIME,a.CREATE_TIME,a.UPDATE_TIME
+		from 
+				FT_QUESTION_FEEDBACK a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_QUESTION_FEEDBACK
+		where 
+			QUESTION_FEEDBACK_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

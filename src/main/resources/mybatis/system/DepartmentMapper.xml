@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DepartmentMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_DEPARTMENT(
+			DEPARTMENT_NAME,	
+			COMPANY_ID,	
+			COMPANY_PID,	
+			CREATION_TIME,	
+			USER_ID,	
+			DEPARTMENT_ID
+		) values (
+			#{DEPARTMENT_NAME},	
+			#{COMPANY_ID},	
+			#{COMPANY_PID},	
+			now(),	
+			#{USER_ID},	
+			#{DEPARTMENT_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_DEPARTMENT
+		where 
+			DEPARTMENT_ID = #{DEPARTMENT_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_DEPARTMENT
+			set 
+			
+			<if test="DEPARTMENT_NAME !=null and DEPARTMENT_NAME !=''">
+			   DEPARTMENT_NAME = #{DEPARTMENT_NAME},
+			</if>
+			<if test="COMPANY_ID !=null and COMPANY_ID !=''">
+			   COMPANY_ID = #{COMPANY_ID},
+			</if>
+			<if test="COMPANY_PID !=null and COMPANY_PID !=''">
+			  COMPANY_PID = #{COMPANY_PID},
+			</if>
+			<if test="CREATION_TIME !=null and CREATION_TIME !=''">
+			  CREATION_TIME = #{CREATION_TIME},
+			</if>
+			<if test="USER_ID !=null and USER_ID !=''">
+			 USER_ID = #{USER_ID},
+			</if>
+			DEPARTMENT_ID = DEPARTMENT_ID
+			where 
+				DEPARTMENT_ID = #{DEPARTMENT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			DEPARTMENT_NAME,	
+			COMPANY_ID,	
+			COMPANY_PID,	
+			CREATION_TIME,	
+			USER_ID,	
+			DEPARTMENT_ID
+		from 
+			FT_DEPARTMENT
+		where 
+			DEPARTMENT_ID = #{DEPARTMENT_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select  b.COMPANY_NAME,
+				a.DEPARTMENT_NAME,	
+				a.COMPANY_ID,	
+				a.COMPANY_PID,	
+				a.CREATION_TIME,	
+				a.USER_ID,	
+				a.DEPARTMENT_ID
+		from 
+				FT_DEPARTMENT a
+				
+
+            LEFT JOIN ft_company  b ON a.COMPANY_ID=b.COMPANY_ID
+				
+			where 1=1
+			<if test="pd.DEPARTMENT_NAME!=null and pd.DEPARTMENT_NAME!=''">
+				     and a.DEPARTMENT_NAME like CONCAT('%',#{pd.DEPARTMENT_NAME},'%') 
+			</if>
+			
+			<if test="pd.COMPANY_ID!=null and pd.COMPANY_ID!=''">
+				and    a.COMPANY_ID=#{pd.COMPANY_ID}
+			</if>	
+				
+			
+				
+				
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.DEPARTMENT_NAME,	
+				a.COMPANY_ID,	
+				a.COMPANY_PID,	
+				a.CREATION_TIME,	
+				a.USER_ID,	
+				a.DEPARTMENT_ID
+		from 
+				FT_DEPARTMENT a
+				<if test="pd.DEPARTMENT_NAME!=null and pd.DEPARTMENT_NAME!=''">
+				     and a.DEPARTMENT_NAME like CONCAT('%',#{pd.DEPARTMENT_NAME},'%') 
+				</if>
+	</select>
+	<!-- 列表(根据公司id) -->
+	<select id="listAllByCOMPANY_ID" parameterType="pd" resultType="pd">
+		select
+				a.DEPARTMENT_NAME,	
+				a.COMPANY_ID,	
+				a.COMPANY_PID,	
+				a.CREATION_TIME,	
+				a.USER_ID,	
+				a.DEPARTMENT_ID
+		from 
+				FT_DEPARTMENT a
+				where 
+				a.COMPANY_ID=#{COMPANY_ID}
+				
+	</select>
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_DEPARTMENT
+		where 
+			DEPARTMENT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

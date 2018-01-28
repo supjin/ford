@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>供应商问题清单</title>
+    <link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/public_d08.css" />
+    <link rel="stylesheet" href="css/list.css" />
+    <link rel="stylesheet" href="css/pagination.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/iqc.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="js/bootstrap3.37.min.js" ></script>
+    <script type="text/javascript" src="js/jquery.pagination.js" ></script>
+    <script type="text/javascript" src="laydate/laydate.js" ></script>
+</head>
+<body style="background-color:#edeff5;margin: 15px;">
+<div class="oiswen_box oiswen_boxavite">
+    <!---顶部--->
+    <div class="oiswen_titop">
+        <div class="oiswen_titople">
+            <div class="oiswen_titoplea">供应商问题清单</div>
+            <div class="oiswen_titopleb">
+                <a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span><a href="javascript:;">供应商问题清单</a>
+            </div>
+        </div>
+    </div>
+    <!-- 新建 -->
+    <div class="goncsbox clearfix">
+        <div class="container list_divbox">
+		    <div class="row">
+		        <div class="col-md-6">
+		        	<div class="list_divtop">
+		        		<span class="list_divtoptit">发生时间：</span>
+		        		<div class="list_divtopmin clearfix">
+		        			<input type="text" class="layui-input test-item pull-left pw_layimg"/>
+			        		<span class="fl">　至　</span>
+			        		<input type="text" class="layui-input test-item pull-left pw_layimg"/>
+		        		</div>
+		        	</div>
+		        </div>
+		        <div class="col-md-6">
+		        	<div class="list_divtop">
+		        		<span class="list_divtoptit">失效模式：</span>
+		        		<div class="list_divtopmin clearfix">
+		        			<select style="float: left;width: 33%;">
+		        				<option>哈哈</option>
+		        			</select>
+			        		<span style="width: 22%;float: left;">责任人：</span>
+			        		<select style="float: left;width: 38%;">
+		        				<option>哈哈</option>
+		        			</select>
+		        		</div>
+		        	</div>
+		        </div>      
+		    </div>
+		    <div class="row">
+		    	<div class="col-sm-6">
+		        	<div class="list_divtop">
+		        		<span class="list_divtoptit">供应商名称：</span>
+		        		<div class="list_divtopmin">
+		        			<select>
+		        				<option>哈哈</option>
+		        			</select>
+		        		</div>
+		        	</div>
+		        </div>
+		        <div class="col-sm-6">
+		        	<div class="list_divtop">
+		        		<span class="list_divtoptit">零件名称：</span>
+		        		<div class="list_divtopmin">
+		        			<select>
+		        				<option>哈哈</option>
+		        			</select>
+		        		</div>
+		        	</div>
+		        </div> 
+		    </div>
+		 </div>
+		 <!---按钮组--->
+		 <div class="list_btns">
+		 	<button type="button"  onclick="bca_lik()">新增录入</button>
+		 	<button type="button">导出</button>
+		 </div>
+    </div>
+    <!-- 问题列表 -->
+    <div class="went_bxo">
+        <div class="list_thta">
+        	<table cellpadding="0" cellspacing="0" class="list_table">
+        		<thead>
+        			<tr>
+        				<td style="width:5%;">序号</td>
+		    	    	<td style="width: 10%;">发生日期</td>
+		                <td style="width: 10%;">零件编码 </td>
+		                <td style="width: 15%;">零件名称</td>
+		                <td style="width: 15%;">供应商名称</td>
+		                <td style="width: 10%;">失效模式</td>
+		                <td style="width: 15%;">临时对策</td>
+		                <td style="width: 5%;">责任人</td>
+		                <td style="width: 5%;">关闭状态 </td>
+		                <td style="width: 110px;">操作</td>
+		    	   </tr>
+        		</thead>
+        	    <tbody>
+        	    	<tr>
+        	    		<td>1</td>
+        	    		<td>2018-10-12</td>
+        	    		<td>零件名称零件名称</td>
+        	    		<td>DEFE584852</td>
+        	    		<td>描述描述描</td>
+        	    		<td>模式avc</td>
+        	    		<td>对策ABC三刀的</td>
+        	    		<td>吴子飞</td>
+        	    		<td><a href="javascript:;" class="iqc_yuan iqc_yuanbg1"></a></td>
+        	    		<td>
+        	    			<div class="addsbox clearfix iqcbtnas">
+        	    				<a class="liulanbtn" href="javascript:;"><em></em><span>浏览</span></a>
+        	    				<a class="bianjibtn" href="acquisition_able.html"><em></em><span>编辑</span></a>
+        	    				<a class="scbtn" href="javascript:;"><em></em><span>删除</span></a>
+        	    			</div>
+        	    		</td>
+        	    	</tr>
+        	    	<tr>
+        	    		<td>1</td>
+        	    		<td>2018-10-12</td>
+        	    		<td>零件名称零件名称</td>
+        	    		<td>DEFE584852</td>
+        	    		<td>描述描述描</td>
+        	    		<td>模式avc</td>
+        	    		<td>对策ABC三刀的</td>
+        	    		<td>吴子飞</td>
+        	    		<td><a href="javascript:;" class="iqc_yuan iqc_yuanbg1"></a></td>
+        	    		<td>
+        	    			<div class="addsbox clearfix iqcbtnas">
+        	    				<a class="liulanbtn" href="javascript:;"><em></em><span>浏览</span></a>
+        	    				<a class="bianjibtn" href="acquisition_able.html"><em></em><span>编辑</span></a>
+        	    				<a class="scbtn" href="javascript:;"><em></em><span>删除</span></a>
+        	    			</div>
+        	    		</td>
+        	    	</tr>
+        	    	<tr>
+        	    		<td>1</td>
+        	    		<td>2018-10-12</td>
+        	    		<td>零件名称零件名称</td>
+        	    		<td>DEFE584852</td>
+        	    		<td>描述描述描</td>
+        	    		<td>模式avc</td>
+        	    		<td>对策ABC三刀的</td>
+        	    		<td>吴子飞</td>
+        	    		<td><a href="javascript:;" class="iqc_yuan iqc_yuanbg1"></a></td>
+        	    		<td>
+        	    			<div class="addsbox clearfix iqcbtnas">
+        	    				<a class="liulanbtn" href="javascript:;"><em></em><span>浏览</span></a>
+        	    				<a class="bianjibtn" href="acquisition_able.html"><em></em><span>编辑</span></a>
+        	    				<a class="scbtn" href="javascript:;"><em></em><span>删除</span></a>
+        	    			</div>
+        	    		</td>
+        	    	</tr>
+        	    	<tr>
+        	    		<td>1</td>
+        	    		<td>2018-10-12</td>
+        	    		<td>零件名称零件名称</td>
+        	    		<td>DEFE584852</td>
+        	    		<td>描述描述描</td>
+        	    		<td>模式avc</td>
+        	    		<td>对策ABC三刀的</td>
+        	    		<td>吴子飞</td>
+        	    		<td><a href="javascript:;" class="iqc_yuan iqc_yuanbg1"></a></td>
+        	    		<td>
+        	    			<div class="addsbox clearfix iqcbtnas">
+        	    				<a class="liulanbtn" href="javascript:;"><em></em><span>浏览</span></a>
+        	    				<a class="bianjibtn" href="acquisition_able.html"><em></em><span>编辑</span></a>
+        	    				<a class="scbtn" href="javascript:;"><em></em><span>删除</span></a>
+        	    				<!----下面的编辑、删除按钮是灰色，点击没效果--->
+        	    				<!--<a class="bianjibtn_as pull-left"><em></em><span>编辑</span></a>
+        	    				<a class="scbtn_as pull-left" href="javascript:;"><em></em><span>删除</span></a>-->
+        	    			</div>
+        	    		</td>
+        	    	</tr>
+        	    </tbody>
+        	</table>
+        </div>
+        <!-----分页--->
+    	<div class="pages">
+	        <div id="Pagination"></div>
+	        <div class="searchPage">
+	          <span class="page-sum">共<strong class="allPage">15</strong>页</span>
+	          <span class="page-go">跳转<input type="text">页</span>
+	          <a href="javascript:;" class="page-btn">GO</a>
+	        </div>
+	    </div>
+    </div>
+
+</div>
+<script>
+	//同时绑定多个
+	lay('.test-item').each(function(){
+		laydate.render({
+		    elem: this
+		    ,trigger: 'click'//点击出发日期
+		    ,type: 'date'//年月日
+		    ,format: 'yyyy-MM-dd'//自定义格式
+		    ,theme: 'molv'//墨绿色
+		});
+	});
+	//分页
+	$(document).ready(function() {
+	    $("#Pagination").pagination("15");
+    });
+    //序号循环方法123456
+    xuhao();
+    function xuhao(){
+    	var s=$(".list_table>tbody tr").length;
+	    //循环序号1-10
+		for(var a=1;a<=s;a++){
+			//console.log(a);
+			$(".list_table>tbody>tr").eq(a-1).children("td").eq(0).html(a);
+		}
+    }
+    //删除方法
+    var a;
+    $(document).on("click",".scbtn",function(){
+    	var _this=this;
+    	parent.layer.open({
+        	type:1,//类型
+			title:"",//标题
+			content:'<div class="pwalerttit">你确定删除该问题？</div>',
+			area:['500px','230px'],//宽高
+			closeBtn: 0,//不显示右上角关闭按钮
+			shadeClose:false,//是否点击遮罩关闭
+			scrollbar: false,//是否允许浏览器出现滚动条
+			btn:['确定','取消'],
+			btnAlign: 'c',//按钮居中
+			yes:function(index,layero){
+				$(_this).parents("tr").remove();
+				xuhao();
+				parent.layer.close(index);//关闭弹
+			},
+			btn2:function(index){
+				parent.layer.close(index);//关闭弹
+			}
+        })
+    })
+    function bca_lik(){
+    	window.location.href="iqc_add.html";
+    }
+</script>
+</body>
+</html>

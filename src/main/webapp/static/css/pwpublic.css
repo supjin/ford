@@ -1,0 +1,40 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:0.28rem/1.5 tahoma, arial, \5b8b\4f53;color: #7b7b7b;font-family: Microsoft Yahei;}
+html{font-size: 50px;}
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+body{background-color: #f3f6ff;}
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; color: #5e5e5e;}
+a:hover { text-decoration:underline; }
+a:link{
+    text-decoration:none;
+}
+a:visited{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:none;
+}
+a:active{
+    text-decoration:none;
+}
+a,a:hover,a:active,a:visited,a:link,a:focus{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline:none;
+    /*background: none;*/
+    text-decoration: none;
+}
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+.clearfix:after {content: ".";display: block;height: 0;width: 0;clear: both;overflow: hidden;visibility: hidden;}
+.clearfix { *zoom:1; }
+.fl{float: left;}
+.fr{float: right;}
+.dis{display: none;}

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CauseD4Mapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_CAUSED4(
+		   ATTACHMENT,
+		    type,
+		    contribution,
+		    creation_time,
+			OCCUR,	
+			SYSTEMS,	
+			ESCAPE,	
+			VALIDATION,	
+			PROCESS_FOUR_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			COMPANY_ID,	
+			causes,
+			occurrences,
+			ISREPEAT,
+			CAUSED4_ID
+		) values (
+			#{ATTACHMENT},
+		    #{type},
+		    #{contribution},
+		    now(),
+			#{OCCUR},	
+			#{SYSTEMS},	
+			#{ESCAPE},	
+			#{VALIDATION},	
+			#{PROCESS_FOUR_ID},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{COMPANY_ID},	
+			#{causes},
+			#{occurrences},
+			#{ISREPEAT},
+			#{CAUSED4_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_CAUSED4
+		where 
+			CAUSED4_ID = #{CAUSED4_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_CAUSED4
+			set 
+			
+			<if test=" contribution !=null and contribution !=''">
+		        contribution=#{contribution},
+		    </if>
+		    <if test=" OCCUR !=null and OCCUR !=''">
+		        OCCUR = #{OCCUR},
+		    </if>
+		    <if test=" SYSTEMS !=null and SYSTEMS !=''">
+		        SYSTEMS = #{SYSTEMS},
+		    </if>
+		    <if test=" ESCAPE !=null and ESCAPE !=''">
+		        ESCAPE = #{ESCAPE},
+		    </if>
+		    <if test=" PROCESS_FOUR_ID !=null and PROCESS_FOUR_ID !=''">
+		        PROCESS_FOUR_ID = #{PROCESS_FOUR_ID},
+		    </if>
+		    <if test=" CLIENT_PROBLEM_COLLECTION_ID !=null and CLIENT_PROBLEM_COLLECTION_ID !=''">
+		        CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+		    </if>
+		    <if test=" COMPANY_ID !=null and COMPANY_ID !=''">
+		        COMPANY_ID = #{COMPANY_ID},
+		    </if>
+		    <if test=" causes !=null and causes !=''">
+		    causes = #{causes},
+		    </if>
+		    <if test=" occurrences !=null and occurrences !=''">
+		    occurrences = #{occurrences},
+		    </if>
+			<if test=" ISREPEAT !=null and ISREPEAT !=''">
+		    ISREPEAT = #{ISREPEAT},
+		    </if>
+		    <if test=" ATTACHMENT !=null">
+		        ATTACHMENT = #{ATTACHMENT},
+		    </if>
+		    
+			    
+			CAUSED4_ID = CAUSED4_ID
+			where 
+				CAUSED4_ID = #{CAUSED4_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+		
+		    ATTACHMENT,
+		    type,
+		    contribution,
+		    creation_time,
+			OCCUR,	
+			SYSTEMS,	
+			ESCAPE,	
+			VALIDATION,	
+			PROCESS_FOUR_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			COMPANY_ID,	
+			causes,
+			occurrences,
+			ISREPEAT,
+			CAUSED4_ID
+		from 
+			FT_CAUSED4
+		where 
+			CAUSED4_ID = #{CAUSED4_ID}
+	</select>
+	<!-- 通过ID获取数据 -->
+	<select id="findByD4Id" parameterType="pd" resultType="pd">
+		select 
+		
+		    ATTACHMENT,
+		    type,
+		    contribution,
+		    creation_time,
+			OCCUR,	
+			SYSTEMS,	
+			ESCAPE,	
+			VALIDATION,	
+			PROCESS_FOUR_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			COMPANY_ID,	
+			causes,
+			occurrences,
+			ISREPEAT,
+			CAUSED4_ID
+		from 
+			FT_CAUSED4
+		where 
+			CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+			and COMPANY=${COMPANY_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select  
+		
+		        a.ATTACHMENT,
+		         a.type,
+		        a.contribution,
+		        a.creation_time,
+				a.OCCUR,	
+				a.SYSTEMS,	
+				a.ESCAPE,	
+				a.VALIDATION,	
+				a.PROCESS_FOUR_ID,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.COMPANY_ID,	
+				a.causes,
+				a.occurrences,
+				a.ISREPEAT,
+				a.CAUSED4_ID
+		from 
+				FT_CAUSED4 a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				
+				a.ATTACHMENT,
+		        a.type,
+				a.contribution,
+		        a.creation_time,
+				a.OCCUR,	
+				a.SYSTEMS,	
+				a.ESCAPE,	
+				a.VALIDATION,	
+				a.PROCESS_FOUR_ID,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.COMPANY_ID,	
+				a.causes,
+				a.occurrences,
+				a.ISREPEAT,
+				a.CAUSED4_ID
+		from 
+				FT_CAUSED4 a
+				
+				where 
+				a.CLIENT_PROBLEM_COLLECTION_ID=#{CLIENT_PROBLEM_COLLECTION_ID}
+				<if test="type !=null and type !=''">
+				and a.type = #{type}
+				</if>
+				ORDER BY a.creation_time asc
+				
+				
+				
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_CAUSED4
+		where 
+			CAUSED4_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Client_problem_collectionMapper">
+
+
+	<!-- 新增 -->
+	<insert id="save" parameterType="pd">
+		insert into
+		FT_CLIENT_PROBLEM_COLLECTION(
+		COMPANY_ID,
+		USERNAME,
+		DOCUMENTDATE,
+		TRACKINGNUMBER,
+		PRODUCTNAME,
+		QUESTIONCATEGORY,
+		PROBLEMSOURCE,
+		PROJECTNAME,
+		CLIENTSNAME,
+		COMPLAINTCLASSIFICATION,
+		DEFECTDESCRIPTION,
+		OCCURRENCEDATE,
+		PRODUCTIONBATCH,
+		FAILUREMODE,
+		UNQUALIFIEDQUANTITY,
+		WHETHERREPEAT,
+		INCOMINGRALATED,
+		SUPPLIERNAME,
+		REFERENCELESSONS,
+		FIRSTDEPARTMENT,
+		TYPE,
+		CREATETIME,
+		UPDATETIME,
+		TITLE,
+		DELETED,
+		QUESTIONLINK,
+		USERID,
+		PROCESSTATE,
+		FACTORYMOLD,
+		STATUS,
+		COMPLAINANT,
+		PRODUCTNUMBER,CLIENTPROBLEMTRACKINGNUMBER,
+
+		CLIENT_PROBLEM_COLLECTION_ID
+		) values (
+		#{COMPANY_ID},
+		#{USERNAME},
+		#{DOCUMENTDATE},
+		#{TRACKINGNUMBER},
+		#{PRODUCTNAME},
+		#{QUESTIONCATEGORY},
+		#{PROBLEMSOURCE},
+		#{PROJECTNAME},
+		#{CLIENTSNAME},
+		#{COMPLAINTCLASSIFICATION},
+		#{DEFECTDESCRIPTION},
+		#{OCCURRENCEDATE},
+		#{PRODUCTIONBATCH},
+		#{FAILUREMODE},
+		#{UNQUALIFIEDQUANTITY},
+		#{WHETHERREPEAT},
+		#{INCOMINGRALATED},
+		#{SUPPLIERNAME},
+		#{REFERENCELESSONS},
+		#{FIRSTDEPARTMENT},
+		#{TYPE},
+		now(),
+		#{UPDATETIME},
+		#{TITLE},
+		'0',
+		#{QUESTIONLINK},
+		#{USERID},
+		'-1',
+		#{FACTORYMOLD},
+		#{STATUS},
+		#{COMPLAINANT},
+		#{PRODUCTNUMBER},#{CLIENTPROBLEMTRACKINGNUMBER},
+		#{CLIENT_PROBLEM_COLLECTION_ID}
+		)
+	</insert>
+
+
+	<!-- 删除 -->
+	<delete id="delete" parameterType="pd">
+		update
+		FT_CLIENT_PROBLEM_COLLECTION
+		set DELETED =1
+		where
+		CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</delete>
+
+
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update FT_CLIENT_PROBLEM_COLLECTION
+		set
+		<if test="COMPANY_ID !=null and COMPANY_ID !=''">
+			COMPANY_ID = #{COMPANY_ID},
+		</if>
+		<if test="USERNAME !=null and USERNAME !=''">
+			USERNAME = #{USERNAME},
+		</if>
+		<if test="DOCUMENTDATE !=null and DOCUMENTDATE !=''">
+			DOCUMENTDATE = #{DOCUMENTDATE},
+		</if>
+		<if test="TRACKINGNUMBER !=null and TRACKINGNUMBER !=''">
+			TRACKINGNUMBER = #{TRACKINGNUMBER},
+		</if>
+		<if test="PRODUCTNAME !=null and PRODUCTNAME !=''">
+			PRODUCTNAME = #{PRODUCTNAME},
+		</if>
+		<if test="QUESTIONCATEGORY !=null and QUESTIONCATEGORY !=''">
+			QUESTIONCATEGORY = #{QUESTIONCATEGORY},
+		</if>
+		<if test="PROBLEMSOURCE !=null and PROBLEMSOURCE !=''">
+			PROBLEMSOURCE = #{PROBLEMSOURCE},
+		</if>
+		<if test="PROJECTNAME !=null and PROJECTNAME !=''">
+			PROJECTNAME = #{PROJECTNAME},
+		</if>
+		<if test="CLIENTSNAME !=null and CLIENTSNAME !=''">
+			CLIENTSNAME = #{CLIENTSNAME},
+		</if>
+		<if test="COMPLAINTCLASSIFICATION !=null and COMPLAINTCLASSIFICATION !=''">
+			COMPLAINTCLASSIFICATION = #{COMPLAINTCLASSIFICATION},
+		</if>
+		<if test="DEFECTDESCRIPTION !=null and DEFECTDESCRIPTION !=''">
+			DEFECTDESCRIPTION = #{DEFECTDESCRIPTION},
+		</if>
+		<if test="OCCURRENCEDATE !=null and OCCURRENCEDATE !=''">
+			OCCURRENCEDATE = #{OCCURRENCEDATE},
+		</if>
+		<if test="PRODUCTIONBATCH !=null and PRODUCTIONBATCH !=''">
+			PRODUCTIONBATCH = #{PRODUCTIONBATCH},
+		</if>
+		<if test="FAILUREMODE !=null and FAILUREMODE !=''">
+			FAILUREMODE = #{FAILUREMODE},
+		</if>
+		<if test="UNQUALIFIEDQUANTITY !=null and UNQUALIFIEDQUANTITY !=''">
+			UNQUALIFIEDQUANTITY = #{UNQUALIFIEDQUANTITY},
+		</if>
+		<if test="WHETHERREPEAT !=null and WHETHERREPEAT !=''">
+			WHETHERREPEAT = #{WHETHERREPEAT},
+		</if>
+		<if test="INCOMINGRALATED !=null and INCOMINGRALATED !=''">
+			INCOMINGRALATED = #{INCOMINGRALATED},
+		</if>
+		<if test="SUPPLIERNAME !=null and SUPPLIERNAME !=''">
+			SUPPLIERNAME = #{SUPPLIERNAME},
+		</if>
+		<if test="REFERENCELESSONS !=null and REFERENCELESSONS !=''">
+			REFERENCELESSONS = #{REFERENCELESSONS},
+		</if>
+		<if test="FIRSTDEPARTMENT !=null and FIRSTDEPARTMENT !=''">
+			FIRSTDEPARTMENT = #{FIRSTDEPARTMENT},
+		</if>
+		<if test="TYPE !=null and TYPE !=''">
+			TYPE = #{TYPE},
+		</if>
+		CREATETIME = CREATETIME,
+		UPDATETIME = now(),
+		<if test="TITLE !=null and TITLE !=''">
+			TITLE = #{TITLE},
+		</if>
+		<if test="DELETED !=null and DELETED !=''">
+			DELETED = #{DELETED},
+		</if>
+		<if test="QUESTIONLINK !=null and QUESTIONLINK !=''">
+			QUESTIONLINK = #{QUESTIONLINK},
+		</if>
+		<if test="USERID !=null and USERID !=''">
+			USERID = #{USERID},
+		</if>
+		<if test="PROCESSTATE !=null and PROCESSTATE !=''">
+			PROCESSTATE = #{PROCESSTATE},
+		</if>
+		<if test="FACTORYMOLD !=null and FACTORYMOLD !=''">
+			FACTORYMOLD = #{FACTORYMOLD},
+		</if>
+		<if test="STATUS !=null and STATUS !=''">
+			STATUS = #{STATUS},
+		</if>
+		<if test="COMPLAINANT !=null and COMPLAINANT !=''">
+			COMPLAINANT = #{COMPLAINANT},
+		</if>
+		<if test="PRODUCTNUMBER !=null and PRODUCTNUMBER !=''">
+			PRODUCTNUMBER = #{PRODUCTNUMBER},
+		</if>
+
+		<if
+			test="CLIENTPROBLEMTRACKINGNUMBER !=null and CLIENTPROBLEMTRACKINGNUMBER !=''">
+			CLIENTPROBLEMTRACKINGNUMBER = #{CLIENTPROBLEMTRACKINGNUMBER},
+		</if>
+		CLIENT_PROBLEM_COLLECTION_ID = CLIENT_PROBLEM_COLLECTION_ID
+		where
+		CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</update>
+
+
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select
+		a.COMPANY_ID,
+		a.USERNAME,
+		a.DOCUMENTDATE,
+		a.TRACKINGNUMBER,
+		a.PRODUCTNAME,
+		a.QUESTIONCATEGORY,
+		a.PROBLEMSOURCE,
+		a.PROJECTNAME,
+		a.CLIENTSNAME,
+		a.COMPLAINTCLASSIFICATION,
+		a.DEFECTDESCRIPTION,
+		a.OCCURRENCEDATE,
+		a.PRODUCTIONBATCH,
+		a.FAILUREMODE,
+		a.UNQUALIFIEDQUANTITY,
+		a.WHETHERREPEAT,
+		a.INCOMINGRALATED,
+		a.SUPPLIERNAME,
+		a.REFERENCELESSONS,
+		a.FIRSTDEPARTMENT,
+		a.TYPE,
+		a.CREATETIME,
+		a.UPDATETIME,
+		a.TITLE,
+		a.DELETED,
+		a.QUESTIONLINK,
+		a.USERID,
+		a.PROCESSTATE,
+		a.FACTORYMOLD,
+		a.ISPLAN,
+		a.STATUS,
+		a.COMPLAINANT,
+		a.PRODUCTNUMBER,a.CLIENTPROBLEMTRACKINGNUMBER,
+		b.DEPARTMENT_ID,
+		b.NAME,
+		a.CLIENT_PROBLEM_COLLECTION_ID
+		from
+		FT_CLIENT_PROBLEM_COLLECTION a
+		LEFT
+		JOIN SYS_USER b ON a.FIRSTDEPARTMENT = b.USER_ID
+		where
+		CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</select>
+
+
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+		a.COMPANY_ID,
+		a.USERNAME,
+		a.DOCUMENTDATE,
+		a.TRACKINGNUMBER,
+		a.PRODUCTNAME,
+		a.QUESTIONCATEGORY,
+		a.PROBLEMSOURCE,
+		a.PROJECTNAME,
+		a.CLIENTSNAME,
+		a.COMPLAINTCLASSIFICATION,
+		a.DEFECTDESCRIPTION,
+		a.OCCURRENCEDATE,
+		a.PRODUCTIONBATCH,
+		a.FAILUREMODE,
+		a.UNQUALIFIEDQUANTITY,
+		a.WHETHERREPEAT,
+		a.INCOMINGRALATED,
+		a.SUPPLIERNAME,
+		a.REFERENCELESSONS,
+		a.FIRSTDEPARTMENT,
+		a.TYPE,
+		a.CREATETIME,
+		a.UPDATETIME,
+		a.TITLE,
+		a.DELETED,
+		a.QUESTIONLINK,
+		a.USERID,
+		a.PROCESSTATE,
+		a.FACTORYMOLD,
+		a.ISPLAN,
+		a.STATUS,
+		a.COMPLAINANT,
+		a.PRODUCTNUMBER,a.CLIENTPROBLEMTRACKINGNUMBER,
+		b.NAME,
+		a.CLIENT_PROBLEM_COLLECTION_ID
+		from
+		FT_CLIENT_PROBLEM_COLLECTION a
+		LEFT
+		JOIN SYS_USER b ON a.FIRSTDEPARTMENT = b.USER_ID
+		where 1=1
+		and a.DELETED=0
+		<if test="pd.TYPE != null and pd.TYPE != ''">
+			and a.TYPE = #{pd.TYPE}
+		</if>
+		<if test="pd.PRODUCTNAME != null and pd.PRODUCTNAME != ''">
+			and a.PRODUCTNAME like CONCAT('%',#{pd.PRODUCTNAME},'%')
+
+		</if>
+		<if test="pd.CLIENTSNAME != null and pd.CLIENTSNAME != ''">
+			and a.CLIENTSNAME like CONCAT('%',#{pd.CLIENTSNAME},'%')
+		</if>
+		<if test="pd.FACTORYMOLD != null and pd.FACTORYMOLD != ''">
+			and a.FACTORYMOLD like CONCAT('%',#{pd.FACTORYMOLD},'%')
+		</if>
+		<if test="pd.NAME != null and pd.NAME != ''">
+			and b.NAME like CONCAT('%',#{pd.NAME},'%')
+		</if>
+		<if test="pd.CREATESTART!=null and pd.CREATESTART!=''"><!-- 发生时间检索 -->
+			and a.OCCURRENCEDATE &gt;= #{pd.CREATESTART}
+		</if>
+		<if test="pd.CREATEEND!=null and pd.CREATEEND!=''"><!-- 发生时间检索 -->
+			and a.OCCURRENCEDATE &lt;= #{pd.CREATEEND}
+		</if>
+		<if test="pd.FAILUREMODE != null and pd.FAILUREMODE != ''">
+			and a.FAILUREMODE like CONCAT('%',#{pd.FAILUREMODE},'%')
+		</if>
+		order by a.OCCURRENCEDATE  DESC,a.CREATETIME DESC
+	</select>
+
+	<!-- 审核列表 -->
+	<select id="verifydatalistPage" parameterType="page" resultType="pd">
+		select
+		a.COMPANY_ID,
+		a.USERNAME,
+		a.DOCUMENTDATE,
+		a.TRACKINGNUMBER,
+		a.PRODUCTNAME,
+		a.QUESTIONCATEGORY,
+		a.PROBLEMSOURCE,
+		a.PROJECTNAME,
+		a.CLIENTSNAME,
+		a.COMPLAINTCLASSIFICATION,
+		a.DEFECTDESCRIPTION,
+		a.OCCURRENCEDATE,
+		a.PRODUCTIONBATCH,
+		a.FAILUREMODE,
+		a.UNQUALIFIEDQUANTITY,
+		a.WHETHERREPEAT,
+		a.INCOMINGRALATED,
+		a.SUPPLIERNAME,
+		a.REFERENCELESSONS,
+		a.FIRSTDEPARTMENT,
+		a.TYPE,
+		a.CREATETIME,
+		a.UPDATETIME,
+		a.TITLE,
+		a.DELETED,
+		a.QUESTIONLINK,
+		a.USERID,
+		a.PROCESSTATE,
+		a.FACTORYMOLD,
+		a.ISPLAN,
+		a.STATUS,
+		a.COMPLAINANT,
+		a.PRODUCTNUMBER,a.CLIENTPROBLEMTRACKINGNUMBER,
+		a.CLIENT_PROBLEM_COLLECTION_ID
+		from
+		FT_CLIENT_PROBLEM_COLLECTION a
+		where
+		1=1
+		and a.DELETED =0
+		and a.PROCESSTATE=9
+		order by a.CREATETIME DESC
+	</select>
+	<!-- 问题反馈列表 -->
+	<select id="feedbackdatalistPage" parameterType="page"
+		resultType="pd">
+		select
+		a.COMPANY_ID,
+		a.USERNAME,
+		a.DOCUMENTDATE,
+		a.TRACKINGNUMBER,
+		a.PRODUCTNAME,
+		a.QUESTIONCATEGORY,
+		a.PROBLEMSOURCE,
+		a.PROJECTNAME,
+		a.CLIENTSNAME,
+		a.COMPLAINTCLASSIFICATION,
+		a.DEFECTDESCRIPTION,
+		a.OCCURRENCEDATE, 
+		a.PRODUCTIONBATCH,
+		a.FAILUREMODE,
+		a.UNQUALIFIEDQUANTITY,
+		a.WHETHERREPEAT,
+		a.INCOMINGRALATED,
+		a.SUPPLIERNAME,
+		a.REFERENCELESSONS,
+		a.FIRSTDEPARTMENT,
+		a.TYPE,
+		a.CREATETIME,
+		a.UPDATETIME,
+		a.TITLE,
+		a.DELETED,
+		a.QUESTIONLINK,
+		a.USERID,
+		a.PROCESSTATE,
+		a.FACTORYMOLD,
+		a.ISPLAN,
+		a.STATUS,
+		a.COMPLAINANT,
+		a.PRODUCTNUMBER,
+		a.CLIENTPROBLEMTRACKINGNUMBER,
+		b.CLOSED_TIME,
+		a.CLIENT_PROBLEM_COLLECTION_ID,
+		c.NAME
+		from
+		FT_CLIENT_PROBLEM_COLLECTION a
+		LEFT
+		JOIN ft_question_feedback b 
+		ON a.CLIENT_PROBLEM_COLLECTION_ID = b.CLIENT_PROBLEM_COLLECTION_ID
+		LEFT
+		JOIN SYS_USER c ON a.FIRSTDEPARTMENT = c.USER_ID
+		where 1=1
+		and a.DELETED=0
+		and (a.TYPE=1
+		or a.TYPE=2
+		or a.TYPE=3)
+		<if test="pd.CLIENTSNAME != null and pd.CLIENTSNAME != ''">
+			and a.CLIENTSNAME like CONCAT('%',#{pd.CLIENTSNAME},'%')
+		</if>
+		<if test="pd.FIRSTDEPARTMENT != null and pd.FIRSTDEPARTMENT!= ''">
+			and a.FIRSTDEPARTMENT like CONCAT('%',#{pd.FIRSTDEPARTMENT},'%')
+</if>
+<if test="pd.PROBLEMSOURCE != null and pd.PROBLEMSOURCE!= ''">
+			and a.PROBLEMSOURCE like CONCAT('%',#{pd.PROBLEMSOURCE},'%')
+		</if>
+			<if test="pd.USERNAME != null and pd.USERNAME!= ''">
+			and a.USERNAME like CONCAT('%',#{pd.USERNAME},'%')
+		</if>
+	
+		<if test="pd.CREATESTART!=null and pd.CREATESTART!=''"><!-- 创建时间检索 -->
+			and a.OCCURRENCEDATE &gt;= #{pd.CREATESTART}
+		</if>
+		<if test="pd.CREATEEND!=null and pd.CREATEEND!=''"><!-- 创建时间检索 -->
+			and a.OCCURRENCEDATE &lt;= #{pd.CREATEEND}
+		</if>
+		
+		order by a.CREATETIME DESC
+
+
+
+	</select>
+
+
+
+
+	
+
+
+<!--  所有问题来源-->
+	<select id="listAllSource" parameterType="pd" resultType="pd">
+		select
+		<!-- 	distinct USERNAME, -->
+		distinct PROBLEMSOURCE
+		from
+		FT_CLIENT_PROBLEM_COLLECTION 
+	</select>
+	
+	<!--  所有用戶-->
+	<select id="listAllUser" parameterType="pd" resultType="pd">
+		select
+			distinct USERNAME
+		
+		from
+		FT_CLIENT_PROBLEM_COLLECTION 
+	</select>
+
+
+
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+		a.COMPANY_ID,
+		a.USERNAME,
+		a.DOCUMENTDATE,
+		a.TRACKINGNUMBER,
+		a.PRODUCTNAME,
+		a.QUESTIONCATEGORY,
+		a.PROBLEMSOURCE,
+		a.PROJECTNAME,
+		a.CLIENTSNAME,
+		a.COMPLAINTCLASSIFICATION,
+		a.DEFECTDESCRIPTION,
+		a.OCCURRENCEDATE,
+		a.PRODUCTIONBATCH,
+		a.FAILUREMODE,
+		a.UNQUALIFIEDQUANTITY,
+		a.WHETHERREPEAT,
+		a.INCOMINGRALATED,
+		a.SUPPLIERNAME,
+		a.REFERENCELESSONS,
+		a.FIRSTDEPARTMENT,
+		a.TYPE,
+		a.CREATETIME,
+		a.UPDATETIME,
+		a.TITLE,
+		a.DELETED,
+		a.QUESTIONLINK,
+		a.USERID,
+		a.PROCESSTATE,
+		a.FACTORYMOLD,
+		a.STATUS,
+		a.COMPLAINANT,
+		a.PRODUCTNUMBER,
+		a.CLIENTPROBLEMTRACKINGNUMBER,
+		b.NAME,
+		a.CLIENT_PROBLEM_COLLECTION_ID
+		from
+		FT_CLIENT_PROBLEM_COLLECTION a
+		LEFT
+		JOIN SYS_USER b ON a.FIRSTDEPARTMENT = b.USER_ID
+		where 1=1
+		and a.DELETED=0
+	</select>
+	<!-- 批量删除 -->
+	<update id="deleteAll" parameterType="String">
+		update FT_CLIENT_PROBLEM_COLLECTION
+		set DELETED='1'
+		where
+		CLIENT_PROBLEM_COLLECTION_ID in
+		<foreach item="item" index="index" collection="array" open="("
+			separator="," close=")">#{item}</foreach>
+	</update>
+	<!-- 修改问题人员设置状态 -->
+	<update id="updatePlanStatus" parameterType="pd">
+		update
+		FT_CLIENT_PROBLEM_COLLECTION
+		set
+		ISPLAN = 1
+		where
+		CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</update>
+</mapper>

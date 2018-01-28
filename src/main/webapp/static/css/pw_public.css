@@ -1,0 +1,114 @@
+@charset "utf-8";
+*{margin: 0px;padding: 0px;}
+body,html,button,input{
+	font-family: "microsoft yahei";
+	color: #747474;
+	font-size: 14px;
+}
+ul,ol{list-style: none;}
+a{text-decoration: none;outline: none;color: #747474;}
+a:hover{text-decoration: none;}
+img{border: none\9;*border: none;_border: none;}/****\9:ie6-10样式;*:ie7样式;_:ie6****/
+.fl{float: left;}
+.fr{float: right;}
+.dis{display: none;}
+.clex{clear: both;}/***父元素可以overflow: hidden或auto;注意：透明边框可以清除子元素带给父元素的magrin***/
+.clexg{*zoom: 1;}
+.clexg:after{clear: both;content:".";display: block;width: 0;height: 0;visibility: hidden;}
+.usernone{
+	-moz-user-select: none;
+	/***火狐***/
+	-webkit-user-select: none;
+	/***webkit浏览器***/
+	-ms-user-select: none;
+	/***IE10***/
+	-khtml-user-select: none;
+	/***早期浏览器***/
+	user-select: none;
+}
+/***透明兼容ie***//* 只支持IE6、7、8 */
+@media \0screen\,screen\9 {
+  .baninfo{
+    background-color:black;
+    filter:Alpha(opacity=40);
+    position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+    *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+  }
+  .actitop{
+  	background-color:black;
+    filter:Alpha(opacity=50);
+    position:static; /* IE6、7、8只能设置position:static(默认属性) ，否则会导致子元素继承Alpha值 */
+    *zoom:1; /* 激活IE6、7的haslayout属性，让它读懂Alpha */
+  }
+  .baninfoa,.baninfob,.actitop>div{
+    position: relative;/* 设置子元素为相对定位，可让子元素不继承Alpha值 */
+  }
+}
+/***pc端1200px中间部分盒子***/
+.pageboxs{
+	width:100%;
+	background: white;
+}
+.pagebox{
+	width: 1200px;
+	margin: 0px auto;
+}
+/***面包屑导航***/
+.listnavbox{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	font-size: 14px;
+	color: #00458a;
+}
+.listnavbox>p{
+	float: left;
+}
+.listnav{
+	float: left;
+	margin-left: 5px;
+}
+.listnav>li{
+	float: left;
+}
+.listnav>li>a{
+	color: #00458a;
+}
+.listnav>li>span{
+	margin: 0px 5px;
+}
+/***有三角形标题***/
+.newlislep{
+	border-top: 3px solid #00458A;
+	height: 46px;
+	position: relative;
+	color: white;
+	line-height: 46px;
+	font-size: 18px;
+	overflow: hidden;
+	border-bottom: 1px solid #E4E4E4;
+	background: url(../img/pw/newbgbg.jpg);
+}
+.newlislep>p{
+	float: left;
+	background: #00458a;
+	padding: 0px 15px;
+}
+.newlislep>span{
+	display: block;
+	width: 0px;
+	height: 0px;
+	float: left;
+	border-bottom: 46px solid transparent;
+	border-left:1px solid #00458A;
+	border-top:66px solid #00458A;
+	border-right: 46px solid transparent;
+}
+.newlislep>a{
+	float: right;
+	font-size: 14px;
+	margin-right: 10px;
+}
+.newlislep>a:hover{
+	color: #ce2528;;
+}

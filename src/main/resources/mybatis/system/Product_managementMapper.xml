@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Product_managementMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_PRODUCT_MANAGEMENT(
+			PRODUCTNAME,	
+			CREATETIME,	
+			DELETED,	
+			UPDATETIME,	
+			COMPANY_ID,	
+			USERID,	
+			SORT,	
+			PRODUCT_MANAGEMENT_ID
+		) values (
+			#{PRODUCTNAME},	
+			now(),	
+			'0',	
+			#{UPDATETIME},	
+			#{COMPANY_ID},	
+			#{USERID},	
+			#{SORT},	
+			#{PRODUCT_MANAGEMENT_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_PRODUCT_MANAGEMENT
+		where 
+			PRODUCT_MANAGEMENT_ID = #{PRODUCT_MANAGEMENT_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_PRODUCT_MANAGEMENT
+			set 
+				PRODUCTNAME = #{PRODUCTNAME},
+				CREATETIME = #{CREATETIME},
+				DELETED = #{DELETED},
+				UPDATETIME = #{UPDATETIME},
+				COMPANY_ID = #{COMPANY_ID},
+				USERID = #{USERID},
+				SORT = #{SORT},
+			PRODUCT_MANAGEMENT_ID = PRODUCT_MANAGEMENT_ID
+			where 
+				PRODUCT_MANAGEMENT_ID = #{PRODUCT_MANAGEMENT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			PRODUCTNAME,	
+			CREATETIME,	
+			DELETED,	
+			UPDATETIME,	
+			COMPANY_ID,	
+			USERID,	
+			SORT,	
+			PRODUCT_MANAGEMENT_ID
+		from 
+			FT_PRODUCT_MANAGEMENT
+		where 
+			PRODUCT_MANAGEMENT_ID = #{PRODUCT_MANAGEMENT_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.PRODUCTNAME,	
+				a.CREATETIME,	
+				a.DELETED,	
+				a.UPDATETIME,	
+				a.COMPANY_ID,	
+				a.USERID,
+				a.SORT,		
+				a.PRODUCT_MANAGEMENT_ID
+		from 
+				FT_PRODUCT_MANAGEMENT a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.PRODUCTNAME,	
+				a.CREATETIME,	
+				a.DELETED,	
+				a.UPDATETIME,	
+				a.COMPANY_ID,	
+				a.USERID,	
+				a.SORT,	
+				a.PRODUCT_MANAGEMENT_ID
+		from 
+				FT_PRODUCT_MANAGEMENT a
+				where a.DELETED=0
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_PRODUCT_MANAGEMENT
+		where 
+			PRODUCT_MANAGEMENT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

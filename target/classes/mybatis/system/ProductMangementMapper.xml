@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProductMangementMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_PRODUCTMANGEMENT(
+			COMPANYS,	
+			MODLE,	
+			PRODUCTNAME,	
+			CODEK,	
+			CODEN,	
+			IMGURL,	
+			COMPANY_ID,	
+			SORT,	
+			DELETED,	
+			CREATETIME,	
+			UPDATETIME,	
+			CODEG,
+			PRODUCTMANGEMENT_ID
+		) values (
+			#{COMPANYS},	
+			#{MODLE},	
+			#{PRODUCTNAME},	
+			#{CODEK},	
+			#{CODEN},	
+			#{IMGURL},	
+			#{COMPANY_ID},	
+			#{SORT},	
+			'0',	
+			now(),	
+			now(),
+			#{CODEG},
+			#{PRODUCTMANGEMENT_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<update id="delete" parameterType="pd">
+		update FT_PRODUCTMANGEMENT
+		set DELETED=1
+		where 
+			PRODUCTMANGEMENT_ID = #{PRODUCTMANGEMENT_ID}
+	</update>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_PRODUCTMANGEMENT
+			set 
+				<if test="COMPANYS !=null and COMPANYS !=''">
+				COMPANYS = #{COMPANYS},
+				</if>
+				<if test="MODLE !=null and MODLE !=''">
+				MODLE = #{MODLE},
+				</if>
+				<if test="PRODUCTNAME !=null and PRODUCTNAME !=''">
+				PRODUCTNAME = #{PRODUCTNAME},
+				</if>
+				<if test="CODEK !=null and CODEK !=''">
+				CODEK = #{CODEK},
+				</if>
+				<if test="CODEN !=null and CODEN !=''">
+				CODEN = #{CODEN},
+				</if>
+				<if test="IMGURL !=null and IMGURL !=''">
+				IMGURL = #{IMGURL},
+				</if>
+				<if test="COMPANY_ID !=null and COMPANY_ID !=''">
+				COMPANY_ID = #{COMPANY_ID},
+				</if>
+				<if test="SORT !=null and SORT !=''">
+				SORT = #{SORT},
+				</if>
+				<if test="DELETED !=null and DELETED !=''">
+				DELETED = #{DELETED},
+				</if>
+				<if test="CODEG !=null and CODEG !=''">
+				CODEG = #{CODEG},
+				</if>
+				CREATETIME = CREATETIME,
+				UPDATETIME = now(),
+			PRODUCTMANGEMENT_ID = PRODUCTMANGEMENT_ID
+			where 
+				PRODUCTMANGEMENT_ID = #{PRODUCTMANGEMENT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			COMPANYS,	
+			MODLE,	
+			PRODUCTNAME,	
+			CODEK,	
+			CODEN,	
+			IMGURL,	
+			COMPANY_ID,	
+			SORT,	
+			DELETED,	
+			CREATETIME,	
+			UPDATETIME,	
+			CODEG,
+			PRODUCTMANGEMENT_ID
+		from 
+			FT_PRODUCTMANGEMENT
+		where 
+			PRODUCTMANGEMENT_ID = #{PRODUCTMANGEMENT_ID}
+	</select>
+	<!-- 通过编号获取数据 -->
+	<select id="findByCode" parameterType="pd" resultType="pd">
+		select 
+			COMPANYS,	
+			MODLE,	
+			PRODUCTNAME,	
+			CODEK,	
+			CODEN,	
+			IMGURL,	
+			COMPANY_ID,	
+			SORT,	
+			DELETED,	
+			CREATETIME,	
+			UPDATETIME,	
+			CODEG,
+			PRODUCTMANGEMENT_ID
+		from 
+			FT_PRODUCTMANGEMENT
+		where 
+			CODEN = #{CODEN}
+	</select>
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.COMPANYS,	
+				a.MODLE,	
+				a.PRODUCTNAME,	
+				a.CODEK,	
+				a.CODEN,	
+				a.IMGURL,	
+				a.COMPANY_ID,	
+				a.SORT,	
+				a.DELETED,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.CODEG,
+				a.PRODUCTMANGEMENT_ID
+		from 
+				FT_PRODUCTMANGEMENT a
+				where a.DELETED=0
+				order by a.CREATETIME DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.COMPANYS,	
+				a.MODLE,	
+				a.PRODUCTNAME,	
+				a.CODEK,	
+				a.CODEN,	
+				a.IMGURL,	
+				a.COMPANY_ID,	
+				a.SORT,	
+				a.DELETED,	
+				a.CREATETIME,	
+				a.UPDATETIME,
+				a.CODEG,	
+				a.PRODUCTMANGEMENT_ID
+		from 
+				FT_PRODUCTMANGEMENT a
+	</select>
+	<!-- 列表(全部) -->
+	<select id="listAllName" parameterType="pd" resultType="pd">
+		select
+				a.PRODUCTNAME,	
+				a.PRODUCTMANGEMENT_ID
+		from 
+				FT_PRODUCTMANGEMENT a
+				group by a.PRODUCTNAME
+				order by a.CREATETIME
+	</select>
+	<!-- 批量删除 -->
+	<update id="deleteAll" parameterType="String">
+		update  FT_PRODUCTMANGEMENT
+		set DELETED=1
+		where 
+			PRODUCTMANGEMENT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</update>
+	
+</mapper>

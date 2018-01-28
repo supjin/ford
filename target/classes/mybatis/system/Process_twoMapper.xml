@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Process_twoMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_PROCESS_TWO(
+			COMPANY_ID,	
+			PROBLEMSTATEMENT,
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			ATTACHMENTNURL,	
+			WHATS,	
+			WHYS,	
+			WHENS,	
+			WHOS,	
+			WHERES,	
+			HOWFOUNDS,	
+			HOWMANY,	
+			USERID,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PROBLEMMOLD,	
+			EXECUTIONDATE,	
+			UPDATETIME,	
+			VALIDITY,
+			 PROCESS_TWO_ID
+		) values (
+			#{COMPANY_ID},	
+			#{PROBLEMSTATEMENT},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{ATTACHMENTNURL},	
+			#{WHATS},	
+			#{WHYS},	
+			#{WHENS},	
+			#{WHOS},	
+			#{WHERES},	
+			#{HOWFOUNDS},	
+			#{HOWMANY},	
+			#{USERID},	
+			#{PRINCIPALNAME},	
+			#{EXECUTIVENAME},	
+			#{PROBLEMMOLD},	
+			#{EXECUTIONDATE},	
+			#{UPDATETIME},	
+			#{VALIDITY},
+			#{ PROCESS_TWO_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_PROCESS_TWO
+		where 
+			 PROCESS_TWO_ID = #{ PROCESS_TWO_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_PROCESS_TWO
+			set 
+				COMPANY_ID = #{COMPANY_ID},
+				CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+				PROBLEMSTATEMENT = #{PROBLEMSTATEMENT},	
+				ATTACHMENTNURL = #{ATTACHMENTNURL},
+				WHATS = #{WHATS},
+				WHYS = #{WHYS},
+				WHENS = #{WHENS},
+				WHOS = #{WHOS},
+				WHERES = #{WHERES},
+				HOWFOUNDS = #{HOWFOUNDS},
+				HOWMANY = #{HOWMANY},
+				USERID = #{USERID},
+				PRINCIPALNAME = #{PRINCIPALNAME},
+				EXECUTIVENAME = #{EXECUTIVENAME},
+				PROBLEMMOLD = #{PROBLEMMOLD},
+				EXECUTIONDATE = #{EXECUTIONDATE},
+				UPDATETIME = #{UPDATETIME},
+				VALIDITY = #{VALIDITY},
+			 PROCESS_TWO_ID =  PROCESS_TWO_ID
+			where 
+				 PROCESS_TWO_ID = #{ PROCESS_TWO_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			PROBLEMSTATEMENT,
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			ATTACHMENTNURL,	
+			WHATS,	
+			WHYS,	
+			WHENS,	
+			WHOS,	
+			WHERES,	
+			HOWFOUNDS,	
+			HOWMANY,	
+			USERID,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PROBLEMMOLD,	
+			EXECUTIONDATE,	
+			UPDATETIME,	
+			VALIDITY,
+			 PROCESS_TWO_ID
+		from 
+			FT_PROCESS_TWO
+		where 
+			 PROCESS_TWO_ID = #{ PROCESS_TWO_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.COMPANY_ID,
+				a.PROBLEMSTATEMENT,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.ATTACHMENTNURL,	
+				a.WHATS,	
+				a.WHYS,	
+				a.WHENS,	
+				a.WHOS,	
+				a.WHERES,	
+				a.HOWFOUNDS,	
+				a.HOWMANY,	
+				a.USERID,	
+				a.PRINCIPALNAME,	
+				a.EXECUTIVENAME,	
+				a.PROBLEMMOLD,	
+				a.EXECUTIONDATE,	
+				a.UPDATETIME,	
+				a.VALIDITY,
+				a. PROCESS_TWO_ID
+		from 
+				FT_PROCESS_TWO a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.COMPANY_ID,
+				a.PROBLEMSTATEMENT,
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.ATTACHMENTNURL,	
+				a.WHATS,	
+				a.WHYS,	
+				a.WHENS,	
+				a.WHOS,	
+				a.WHERES,	
+				a.HOWFOUNDS,	
+				a.HOWMANY,	
+				a.USERID,	
+				a.PRINCIPALNAME,	
+				a.EXECUTIVENAME,	
+				a.PROBLEMMOLD,	
+				a.EXECUTIONDATE,	
+				a.UPDATETIME,	
+				a.VALIDITY,
+				a. PROCESS_TWO_ID
+		from 
+				FT_PROCESS_TWO a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_PROCESS_TWO
+		where 
+			 PROCESS_TWO_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+	<!-- 通过问题ID查询数据 -->
+	<select id="findByClientId" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			ATTACHMENTNURL,	
+			PROBLEMSTATEMENT,
+			WHATS,	
+			WHYS,	
+			WHENS,	
+			WHOS,	
+			WHERES,	
+			HOWFOUNDS,	
+			HOWMANY,	
+			USERID,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PROBLEMMOLD,	
+			EXECUTIONDATE,	
+			UPDATETIME,	
+			VALIDITY,
+			PROCESS_TWO_ID
+		from 
+			FT_PROCESS_TWO
+		where 
+			 CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</select>
+	
+</mapper>

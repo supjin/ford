@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>排查表</title>
+    <link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/public_d08.css" />
+    <link rel="stylesheet" href="css/list.css" />
+    <link rel="stylesheet" href="css/d0.css" />
+    <link rel="stylesheet" href="css/a_table.css" />
+    <link rel="stylesheet" href="css/defect.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/pw_alert.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="js/bootstrap3.37.min.js" ></script>
+    <script type="text/javascript" src="js/pw_alert.js" ></script>
+    <style>
+    	.inputboxa{max-width: 100%;}
+    	.inputboxa>p>span{font-size: 12px;}
+    </style>
+</head>
+<body style="background-color:#edeff5;margin: 15px;">
+<div class="oiswen_box oiswen_boxavite">
+    <!---顶部--->
+    <div class="oiswen_titop">
+        <div class="oiswen_titople">
+            <div class="oiswen_titoplea">排查表</div>
+            <div class="oiswen_titopleb">
+                <a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span><a href="javascript:;">0公里问题</a><span>/</span><a href="javascript:;">排查表</a>
+            </div>
+        </div>
+    </div>
+    <!----排查---->
+	<div class="wenti_box">
+		<div class="container">
+		   <div class="row">
+		      <div class="col-sm-6 col-md-3 col-lg-3">
+		      	  <div class="inputboxa">
+		      	  	 <p>围堵措施实施日期<span>Implemention date of Containment Action</span></p>
+		      	  	 <input type="date"/>
+		      	  </div>
+		      </div>
+		      <div class="col-sm-6 col-md-3 col-lg-3">
+		      	  <div class="inputboxa">
+		      	  	 <p>零件截至日期<span>Part Cut off date</span></p>
+		      	     <input type="date" class=""/>
+		      	  </div>
+		      </div>      
+		      <div class="col-sm-6 col-md-3 col-lg-3">
+		      	  <div class="inputboxa">
+		      	  	 <p>受影响零件总数量<span>Part Quantity affected：</span></p>
+		      	     <input type="text" class=""/>
+		      	  </div>
+		      </div>
+		      <div class="col-sm-6 col-md-3 col-lg-3">
+		      	  <div class="inputboxa">
+		      	  	 <p>围堵措施截至车号<span>Vehicle Cut off No.of Containment Action</span></p>
+		      	     <input type="text"/>
+		      	  </div>
+		      </div>
+		      <div class="col-sm-6 col-md-3 col-lg-3">
+		      	  <div class="inputboxa">
+		      	  	 <p>零件截至号<span>part cut off No.</span></p>
+		      	  	 <input type="text"/>
+		      	  </div>
+		      </div> 
+	   	      
+		   </div>
+		</div>
+	</div>
+	<!--ta--->
+	<div class="scr_tabox">
+		<table cellpadding="0" cellspacing="0" class="scr_table">
+			<thead>
+				<tr>
+					<td>检查地点<span>Inspection place</span></td>
+					<td style="width: 14%;">日期<span>Date</span></td>
+					<td style="width: 14%;">班次<span>shift</span></td>
+					<td style="width: 14%;">检查人员<span>Inspector</span></td>
+					<td style="width: 14%;">检查数量<span>Checked No.</span></td>
+					<td style="width: 14%;">缺陷件数量<span>Defect No.</span></td>
+					<td style="width: 130px;"></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td colspan="6">OEM厂内/In OEM</td>
+					<td><a class="addzengbtn" href="javascript:;">新增录入+</a></td>
+				</tr>
+				<tr>
+					<td rowspan="1000"><input type="text" class="scr_input scr_input2" value=""/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><a href="javascript:;" class="scr_scbtn">删除</a></td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td colspan="6">OEM RDC库存/OEM RDC Warhouse</td>
+					<td><a class="addzengbtn" href="javascript:;">新增录入+</a></td>
+				</tr>
+				<tr>
+					<td rowspan="1000"><input type="text" class="scr_input scr_input2" value=""/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><a href="javascript:;" class="scr_scbtn">删除</a></td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td colspan="6">客户处库存  Warehouse（including parts on the way包括所有在途零件）</td>
+					<td><a class="addzengbtn" href="javascript:;">新增录入+</a></td>
+				</tr>
+				<tr>
+					<td rowspan="1000"><input type="text" class="scr_input scr_input2" value=""/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><a href="javascript:;" class="scr_scbtn">删除</a></td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td colspan="6">整车排查 Vehicle Inspection </td>
+					<td><a class="addzengbtn" href="javascript:;">新增录入+</a></td>
+				</tr>
+				<tr>
+					<td rowspan="1000"><input type="text" class="scr_input scr_input2" value=""/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><input type="text" class="scr_input"/></td>
+					<td><a href="javascript:;" class="scr_scbtn">删除</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<button type="button" class="scr_tijiaobtn">提交</button>
+    
+</div>
+<script>
+    $(function(){
+    	//删除事件
+    	var da;
+    	var xiao;
+	    $(document).on("click",".scr_scbtn",function(){
+	    	da=$(this).parents("tr").index();
+	    	xiao=$(this).parents("tbody").index();//body
+	    	alert3("确定删除？");
+	    	console.log(da+"+"+xiao);
+	    })
+	    $(document).on("click",".quebtn3",function(){
+	    	//判断为1的时候，大框的html追加到后面一个
+	    	if(da==1){
+	    		var stzhi=$(".scr_table tbody").eq(xiao-1).find(".scr_input2").val();//得到大input值
+	    		var str='<td rowspan="1000"><input type="text" class="scr_input scr_input2" value="'+stzhi+'"/></td>';
+	    		$(".scr_table tbody").eq(xiao-1).children("tr").eq(da).next("tr").prepend(str);
+	    		$(".scr_table tbody").eq(xiao-1).children("tr").eq(da).remove();//删除
+	    		alertbg_g();
+	    		$(this).parents(".alert_1").remove();//删除弹窗
+	    	}else{
+	    		$(".scr_table tbody").eq(xiao-1).children("tr").eq(da).remove();//删除
+	    		alertbg_g();
+	    		$(this).parents(".alert_1").remove();//删除弹窗
+	    	}
+	    })
+	    //新增事件
+	    $(document).on("click",".addzengbtn",function(){
+	    	var a=$(this).parents("tbody").children("tr").length;
+	    	//字符串拼接
+	    	var str="";
+	    	str+='<tr>';
+	    	//判断为1的时候，新增包含大框的html结构，
+	    	if(a==1){
+	    		str+='<td rowspan="1000"><input type="text" class="scr_input scr_input2" value=""/></td>';
+	    	}
+	    	str+='<td><input type="text" class="scr_input"/></td>';
+	    	str+='<td><input type="text" class="scr_input"/></td>';
+	    	str+='<td><input type="text" class="scr_input"/></td>';
+	    	str+='<td><input type="text" class="scr_input"/></td>';
+	    	str+='<td><input type="text" class="scr_input"/></td>';
+	    	str+='<td><a href="javascript:;" class="scr_scbtn">删除</a></td>';
+	    	str+='</tr>';
+	    	$(this).parents("tbody").append(str);
+	    	str="";
+	    })
+    })
+</script>
+</body>
+</html>

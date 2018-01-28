@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>投诉记录表</title>
+    <link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/public_d08.css" />
+    <link rel="stylesheet" href="css/list.css" />
+    <link rel="stylesheet" href="css/d0.css" />
+    <link rel="stylesheet" href="css/a_table.css" />
+    <link rel="stylesheet" href="css/defect.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="js/bootstrap3.37.min.js" ></script>
+    <style>
+    	.inputboxa{
+    		max-width: 100%;
+    	}
+    	.gunbitit{
+    		font-size: 14px;
+    		color: #666666;
+    		float: left;
+    		margin-left: 20px;
+    		margin-right: 10px;
+    		height: 34px;
+    		line-height: 34px;
+    	}
+    	.gundate{
+    		padding: 5px 0px;
+    		font-size: 14px;
+    		color: #666666;
+    		border-radius: 5px;
+    		border: 1px solid #dedede;
+    		width: 200px;
+    		box-sizing: border-box;
+    	}
+    </style>
+</head>
+<body style="background-color:#edeff5;margin: 15px;">
+<div class="oiswen_box oiswen_boxavite">
+    <!---顶部--->
+    <div class="oiswen_titop">
+        <div class="oiswen_titople">
+            <div class="oiswen_titoplea">投诉记录表</div>
+            <div class="oiswen_titopleb">
+                <a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span><a href="javascript:;">现场问题</a><span>/</span><a href="javascript:;">缺陷录入</a>
+            </div>
+        </div>
+    </div>
+    <!----问题采集---->
+	<div class="wenti_box">
+		<div class="container">
+		   <div class="row">
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>跟踪号</p>
+		      	  	 <input type="text"/>
+		      	  </div>
+		      </div>
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>发生时间</p>
+		      	     <input type="date" class=""/>
+		      	  </div>
+		      </div>      
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>确认时间</p>
+		      	     <input type="date" class=""/>
+		      	  </div>
+		      </div>
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>客户名称</p>
+		      	     <input type="text"/>
+		      	  </div>
+		      </div>
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>客户部门</p>
+		      	  	 <input type="text"/>
+		      	  </div>
+		      </div> 
+		     <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>投诉人</p>
+		      	  	 <input type="text"/>
+		      	  </div>
+		      </div> 
+		      
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>接收者</p>
+		      	     <input type="text"/>
+		      	  </div>
+		      </div> 
+		      
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>责任职能工程师</p>
+		      	     <input type="text"/>
+		      	  </div>
+		      </div> 
+	   	      
+		   </div>
+		</div>
+		
+	</div>
+	<div class="wenti_box pw_edit" style="padding: 35px;">
+		<div class="jinji_div">
+			<div class="neibka_bor">
+				<form action="">
+					<div class="jinjiul">
+						<div class="container" style="width: 100%;">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="jinjiulb" style="max-width: 300px;">
+										<p class="jinjiultit">第一次回复时间</p>
+										<div class="jinjiuze">
+											<input type="date" class="form-control" >
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="jinjiulb" style="max-width: 300px;">
+										<p class="jinjiultit">所剩时间：<span class="c_tcolor">16H</span></p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="jinjiuld jinjiulb">
+										<p class="jinjiultit">回复方案</p>
+										<div class="jinjiuze">
+											<textarea style="height: 95px;" value="aaaaaaa"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="jinjiuld jinjiulb">
+										<p class="jinjiultit">客户回复</p>
+										<div class="jinjiuze">
+											<textarea style="height: 95px;"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="jinjiule jinjiulb">
+										<div class="jinjiultit2">上传附件<input type="file"/></div>
+										<div class="jinjiuze">
+											<div class="jinjiddi">
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1时间的客户刷都结束了文档1">时间的客户刷都结束了文档1时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="jinjiule jinjiulb">
+										<div class="jinjiultit2">上传附件<input type="file"/></div>
+										<div class="jinjiuze">
+											<div class="jinjiddi">
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1时间的客户刷都结束了文档1">时间的客户刷都结束了文档1时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!---按钮组--->
+					<div class="jinji_divtitbot">
+						<button class="pull-right jiushibtnxiu" type="button">保存</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<div class="jinji_div">
+			<div class="neibka_bor">
+				<form action="">
+					<div class="jinjiul">
+						<div class="container" style="width: 100%;">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="jinjiulb" style="max-width: 300px;">
+										<p class="jinjiultit">第二次回复时间</p>
+										<div class="jinjiuze">
+											<input type="date" class="form-control" >
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="jinjiulb" style="max-width: 300px;">
+										<p class="jinjiultit">所剩时间：<span class="c_tcolor">16H</span></p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="jinjiuld jinjiulb">
+										<p class="jinjiultit">回复方案</p>
+										<div class="jinjiuze">
+											<textarea style="height: 95px;" value="aaaaaaa"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="jinjiuld jinjiulb">
+										<p class="jinjiultit">客户回复</p>
+										<div class="jinjiuze">
+											<textarea style="height: 95px;"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="jinjiule jinjiulb">
+										<div class="jinjiultit2">上传附件<input type="file"/></div>
+										<div class="jinjiuze">
+											<div class="jinjiddi">
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1时间的客户刷都结束了文档1">时间的客户刷都结束了文档1时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="jinjiule jinjiulb">
+										<div class="jinjiultit2">上传附件<input type="file"/></div>
+										<div class="jinjiuze">
+											<div class="jinjiddi">
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1时间的客户刷都结束了文档1">时间的客户刷都结束了文档1时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+												<div class="jinjiuddd">
+													<em class="jinjiudddeml"><img src="img/wenjian.png"/></em>
+													<div class="jinjiudtits">
+														<a href="javascript:;" title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a>
+													</div>
+													<em class="jinjiudddemr"><img src="img/guanbi.png"/></em>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!---按钮组--->
+					<div class="jinji_divtitbot">
+						<button class="pull-right zjbtn" type="button">新增+</button>
+						<button class="pull-right jiushibtnxiu" type="button">保存</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!----关闭时间---->
+    <div class="wenti_box" style="margin-bottom: 20px;">
+        <p class="gunbitit">关闭时间</p><input class="gundate" type="date"/><button class="scr_tijiaobtnss" type="button">保存</button>
+    </div>
+</div>
+<script>
+    $(function(){
+    	//失效输入框赋值
+		/*$(document).on("click",".dropdown-menu>li",function(){
+			var a=$(this).children("a").html();
+			$(this).parents(".input-group").find("input").val(a);
+		})*/
+		//获取今天时间
+		/*var currentdate;
+		getNowFormatDate();*/
+		//获取当前时间，格式YYYY-MM-DD
+		/*function getNowFormatDate() {
+			var date = new Date();
+			var seperator1 = "-";
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			var strDate = date.getDate();
+			if (month >= 1 && month <= 9) {
+				month = "0" + month;
+			}
+			if (strDate >= 0 && strDate <= 9) {
+				strDate = "0" + strDate;
+			}
+			currentdate = year + seperator1 + month + seperator1 + strDate;
+			$(".jihuatame").val(currentdate)
+			return currentdate;
+		}*/
+		//点击删除文件
+		$(document).on("click", ".jinjiudddemr", function() {
+			var s = $(this).parent().index();
+			$(this).parent().remove();
+		})
+		//点击新增(含删除按钮)
+		var N = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];//该数组对应下标0-9
+		$(document).on("click",".zjbtn",function(){
+			var lens=$(this).parents(".jinji_div").parent(".wenti_box").children(".jinji_div").length+1;//2
+			var ais=conversi(lens);
+			var str='<div class="jinji_div"><div class="neibka_bor"><form action=""><div class="jinjiul"><div class="container"style="width: 100%;"><div class="row"><div class="col-md-6"><div class="jinjiulb"style="max-width: 300px;"><p class="jinjiultit">第'+ais+'次回复时间</p><div class="jinjiuze"><input type="date"class="form-control"></div></div></div><div class="col-md-6"><div class="jinjiulb"style="max-width: 300px;"><p class="jinjiultit">所剩时间：<span class="c_tcolor">16H</span></p></div></div></div><div class="row"><div class="col-md-6"><div class="jinjiuld jinjiulb"><p class="jinjiultit">回复方案</p><div class="jinjiuze"><textarea style="height: 95px;"value="aaaaaaa"></textarea></div></div></div><div class="col-md-6"><div class="jinjiuld jinjiulb"><p class="jinjiultit">客户回复</p><div class="jinjiuze"><textarea style="height: 95px;"></textarea></div></div></div><div class="col-md-6"><div class="jinjiule jinjiulb"><div class="jinjiultit2">上传附件<input type="file"/></div><div class="jinjiuze"><div class="jinjiddi"><div class="jinjiuddd"><em class="jinjiudddeml"><img src="img/wenjian.png"/></em><div class="jinjiudtits"><a href="javascript:;"title="时间的客户刷都结束了文档1时间的客户刷都结束了文档1">时间的客户刷都结束了文档1时间的客户刷都结束了文档1.doc</a></div><em class="jinjiudddemr"><img src="img/guanbi.png"/></em></div><div class="jinjiuddd"><em class="jinjiudddeml"><img src="img/wenjian.png"/></em><div class="jinjiudtits"><a href="javascript:;"title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a></div><em class="jinjiudddemr"><img src="img/guanbi.png"/></em></div><div class="jinjiuddd"><em class="jinjiudddeml"><img src="img/wenjian.png"/></em><div class="jinjiudtits"><a href="javascript:;"title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a></div><em class="jinjiudddemr"><img src="img/guanbi.png"/></em></div><div class="jinjiuddd"><em class="jinjiudddeml"><img src="img/wenjian.png"/></em><div class="jinjiudtits"><a href="javascript:;"title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a></div><em class="jinjiudddemr"><img src="img/guanbi.png"/></em></div></div></div></div></div><div class="col-md-6"><div class="jinjiule jinjiulb"><div class="jinjiultit2">上传附件<input type="file"/></div><div class="jinjiuze"><div class="jinjiddi"><div class="jinjiuddd"><em class="jinjiudddeml"><img src="img/wenjian.png"/></em><div class="jinjiudtits"><a href="javascript:;"title="时间的客户刷都结束了文档1时间的客户刷都结束了文档1">时间的客户刷都结束了文档1时间的客户刷都结束了文档1.doc</a></div><em class="jinjiudddemr"><img src="img/guanbi.png"/></em></div><div class="jinjiuddd"><em class="jinjiudddeml"><img src="img/wenjian.png"/></em><div class="jinjiudtits"><a href="javascript:;"title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a></div><em class="jinjiudddemr"><img src="img/guanbi.png"/></em></div><div class="jinjiuddd"><em class="jinjiudddeml"><img src="img/wenjian.png"/></em><div class="jinjiudtits"><a href="javascript:;"title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a></div><em class="jinjiudddemr"><img src="img/guanbi.png"/></em></div><div class="jinjiuddd"><em class="jinjiudddeml"><img src="img/wenjian.png"/></em><div class="jinjiudtits"><a href="javascript:;"title="时间的客户刷都结束了文档1">时间的客户刷都结束了文档1.doc</a></div><em class="jinjiudddemr"><img src="img/guanbi.png"/></em></div></div></div></div></div></div></div></div><!---按钮组---><div class="jinji_divtitbot"><button class="pull-right zjbtn"type="button">新增+</button><button class="pull-right jinjiscbtn"type="button">删除</button><button class="pull-right jiushibtnxiu"type="button">保存</button></div></form></div></div>';
+			$(this).parents(".wenti_box").append(str);
+		})
+		//转为数字
+		function conversi(num){
+			var str=num.toString();//转换为字符串格式
+			var len=num.toString().length;//获取字符串长度
+			var C_Num=[];
+			for(var i=0;i<len;i++){
+				C_Num.push(N[str.charAt(i)]);
+			}
+			return C_Num.join('');
+		}
+		//删除事件
+		$(document).on("click",".jinjiscbtn",function(){
+			var a=$(this).parents(".jinji_div").parent(".wenti_box").children(".jinji_div").length-1;//2(序号一二三)
+			$(this).parents(".jinji_div").remove();
+			for(var i=1;i<=a;i++){
+				var ss=conversi(i);
+				console.log(ss);
+				$(".pw_edit .jinji_div").eq(i-1).find(".jinjiultit").html('第'+ss+'次回复时间')
+			}
+			
+		})
+		
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>访问日志</title>
+    <link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/public_d08.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/list.css" />
+    <link rel="stylesheet" href="css/pagination.css" />
+    <link rel="stylesheet" href="css/experience.css" />
+    <link rel="stylesheet" href="css/system_tools.css" />
+    <link rel="stylesheet" href="css/pw_alert.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="js/pw_alert.js" ></script>
+    <script type="text/javascript" src="js/bootstrap3.37.min.js" ></script>
+    <script type="text/javascript" src="js/jquery.pagination.js" ></script>
+</head>
+<body style="background-color:#edeff5;margin: 15px;">
+<div class="oiswen_box oiswen_boxavite">
+    <!---顶部--->
+    <div class="oiswen_titop">
+        <div class="oiswen_titople">
+            <div class="oiswen_titoplea">访问日志</div>
+            <div class="oiswen_titopleb">
+                <a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span><a href="javascript:;">系统工具</a><span>/</span><a href="javascript:;">访问日志</a>
+            </div>
+        </div>
+    </div>
+	<!--主体--->
+	<div class="content">
+		<!--导出-->
+		<div class="list_divs clearfix" style="float:left;padding-top: 22px;width: 100%;">
+        	<div class="list_divin"><span>操作时间：</span><input type="date" /></div>
+        	<div class="list_divin"><span>至　</span><input type="date" /></div>
+        	<div class="list_divin"><span>用户名：</span><select><option></option></select></div>
+        	<div class="list_divin"><span>访问对象：</span><select><option></option></select></div>
+        	<div class="dao_box clearfix" style="float: left;padding-top: 0px;">
+				<a href="javascript:;" style="margin-top: -2px;">导出</a>
+			</div>
+        </div>
+		
+		<!--表--->
+	    <table cellpadding="0" cellspacing="0" class="lins_table">
+	    	<thead>
+	    		<tr>
+	    			<td style="width: 24px;"><input class="chebox pull-right" type="checkbox"/></td>
+	    			<td style="width: 60px;">序号</td>
+	    			<td style="width: 100px;">用户名</td>
+	    			<td style="width: 180px;">操作对象</td>
+	    			<td style="width: 180px;">操作</td>
+	    			<td style="width: 65px;">操作时间</td>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr>
+	    			<td><input class="pull-right" type="checkbox"/></td>
+	    			<td>1</td>
+	    			<td>空压机</td>
+	    			<td>CRB/AL-EQ-001 </td>
+	    			<td>CRB/AL-EQ-001 </td>
+	    			<td>CRB/AL-EQ-001 </td>
+	    		</tr>
+	    		
+	    	</tbody>
+	    </table>
+        <!-----分页--->
+    	<div class="pages">
+	        <div id="Pagination"></div>
+	        <div class="searchPage">
+	          <span class="page-sum">共<strong class="allPage">15</strong>页</span>
+	          <span class="page-go">跳转<input type="text">页</span>
+	          <a href="javascript:;" class="page-btn">GO</a>
+	        </div>
+	    </div>		
+		
+	</div>
+</div>
+<script>
+    //分页
+	$(document).ready(function() {
+	    $("#Pagination").pagination("15");
+    });
+	
+</script>
+<script>
+	$(function(){
+		//判断大全选
+		$(document).on("change",".chebox",function(){
+			if($(this).is(':checked')){
+				$(".lins_table>tbody input[type='checkbox']").each(function(){
+					$(this).prop("checked","checked");
+				})
+			}else{
+				$(".lins_table>tbody input[type='checkbox']").each(function(){
+					$(this).removeAttr("checked");
+				})
+			}
+		})
+		//判断小全选
+		var i=0;
+		var len=$(".lins_table>tbody input[type='checkbox']").length;
+		$(document).on("change",".lins_table>tbody input[type='checkbox']",function(){
+			i=0;
+			//遍历input;
+			$(".lins_table>tbody input[type='checkbox']").each(function(){
+			    if($(this).is(":checked")){
+			    	i++;
+			    }
+		    })
+			//判断i
+			if(i==len){
+				$(".chebox").prop("checked","checked");
+				
+			}else{
+				$(".chebox").removeAttr("checked");
+			}
+			
+		})
+		xuhao();
+		//循环序号1-10
+		function xuhao(){
+			var xuhao=$(".lins_table tbody tr").length;
+			for(var a=1;a<=xuhao;a++){
+				$(".lins_table>tbody>tr").eq(a-1).children("td").eq(1).html(a);
+			}
+		}
+	
+		
+	})
+</script>
+</body>
+
+</html>

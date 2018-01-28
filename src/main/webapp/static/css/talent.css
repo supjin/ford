@@ -1,0 +1,73 @@
+.pwborderbox{
+	width: 100%;
+	border-bottom:1px solid #E4E4E4;
+	border-left:1px solid #E4E4E4;
+	border-right:1px solid #E4E4E4;
+	box-sizing: border-box;
+}
+.pwbordercon{
+	padding: 17px 17px 0px 17px;
+	box-sizing: border-box;
+	text-indent: 28px;
+	line-height: 25px;
+	height: 272px;
+	overflow: hidden;
+}
+.pwbordercon>a{
+	display: block;
+	width: 126px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #0f4780;
+	color: #0f4780;
+	box-sizing: border-box;
+	text-align: center;
+	float: left;
+	text-indent: 0px;
+	margin-bottom: 12px;
+}
+.pwbordercon>a:first-child
+,.pwbordercon>a:first-child+a+a
+,.pwbordercon>a:first-child+a+a+a+a
+,.pwbordercon>a:first-child+a+a+a+a+a+a{
+	margin-right: 12px;
+}
+.pwbordercon>a:hover{
+	background: #1095d0;
+	border-color: #1095d0;
+	color: white;
+}
+.pwborderul>li{
+	line-height: 30px;
+	width: 100%;
+	height: 30px;
+	max-height: 65px;
+	text-indent: 0px;
+	margin-bottom: 10px;
+	margin-bottom: 12px\9;
+}
+.pwborderul>li>p:first-child{
+	float: left;
+	width: 30px;
+	margin-right: 5px;
+}
+.pwss{
+	width: 222px;
+	line-height: 25px;
+	line-height: 20px\9;
+}
+.pwss span{
+	display: inline-block;
+	vertical-align: top;
+	width: 158px;
+	height: 50px;
+	overflow: hidden;
+}
+.pwer img{
+	float: left;
+	margin-top: 4px\9;
+}
+.pwborderul>li>p:last-child{
+	float: left;
+	color: #0f4780;
+}

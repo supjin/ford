@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SupplierInventoryMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_SUPPLIERINVENTORY(
+			YEAR,	
+			CODE,	
+			NAME,	
+			LINKPHONET,	
+			LINKMAN,	
+			LINKEMAIL,	
+			LINKPHONE,	
+			LINKMANT,	
+			MODELCODE,	
+			CREATETIME,	
+			UPDATETIME,	
+			COMPANY_ID,
+			LINKEMAILT,
+			STORYZJ,
+			COMPANYS,
+			DELETED,
+			SUPPLIERINVENTORY_ID
+		) values (
+			#{YEAR},	
+			#{CODE},	
+			#{NAME},	
+			#{LINKPHONET},	
+			#{LINKMAN},	
+			#{LINKEMAIL},	
+			#{LINKPHONE},	
+			#{LINKMANT},	
+			#{MODELCODE},	
+			now(),	
+			#{UPDATETIME},
+			#{COMPANY_ID},	
+			#{LINKEMAILT},
+			#{STORYZJ},
+			#{COMPANYS},
+			'0',
+			#{SUPPLIERINVENTORY_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<update id="delete" parameterType="pd">
+		update  FT_SUPPLIERINVENTORY
+		set DELETED=1
+		where 
+			SUPPLIERINVENTORY_ID = #{SUPPLIERINVENTORY_ID}
+	</update>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_SUPPLIERINVENTORY
+			set 
+			<if test="YEAR !=null and YEAR!=''">
+			  YEAR = #{YEAR},
+			</if>
+			<if test="CODE !=null and CODE!=''">
+			  CODE = #{CODE},
+			</if>
+			<if test="NAME !=null and NAME!=''">
+			  NAME = #{NAME},
+			</if>
+			<if test="LINKPHONET !=null and LINKPHONET!=''">
+			  LINKPHONET = #{LINKPHONET},
+			</if>
+			<if test="LINKMAN !=null and LINKMAN!=''">
+			  LINKMAN = #{LINKMAN},
+			</if>
+			<if test="LINKEMAIL !=null and LINKEMAIL!=''">
+			  LINKEMAIL = #{LINKEMAIL},
+			</if>
+			<if test="LINKEMAILT !=null and LINKEMAILT!=''">
+			  LINKEMAILT = #{LINKEMAILT},
+			</if>
+			<if test="LINKPHONE !=null and LINKPHONE!=''">
+			  LINKPHONE = #{LINKPHONE},
+			</if>
+			<if test="LINKMANT !=null and LINKMANT!=''">
+			  LINKMANT = #{LINKMANT},
+			</if>
+			<if test="MODELCODE !=null and MODELCODE!=''">
+			  MODELCODE = #{MODELCODE},
+			</if>
+			<if test="COMPANY_ID !=null and COMPANY_ID!=''">
+			  COMPANY_ID = #{COMPANY_ID},
+			</if>
+				CREATETIME = CREATETIME,
+				UPDATETIME = now(),
+				<if test="DELETED !=null and DELETED!=''">
+			  DELETED = #{DELETED},
+			</if>
+			SUPPLIERINVENTORY_ID = SUPPLIERINVENTORY_ID
+			where 
+				SUPPLIERINVENTORY_ID = #{SUPPLIERINVENTORY_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			YEAR,	
+			CODE,	
+			NAME,	
+			LINKPHONET,	
+			LINKMAN,	
+			LINKEMAIL,	
+			LINKPHONE,	
+			LINKMANT,	
+			MODELCODE,	
+			CREATETIME,	
+			UPDATETIME,	
+			COMPANY_ID,
+			LINKEMAILT,	
+			DELETED,
+			SUPPLIERINVENTORY_ID
+		from 
+			FT_SUPPLIERINVENTORY
+		where 
+			SUPPLIERINVENTORY_ID = #{SUPPLIERINVENTORY_ID}
+	</select>
+	<!-- 通过供应商编码获取数据 -->
+	<select id="findByStokeCode" parameterType="pd" resultType="pd">
+		select 
+			YEAR,	
+			CODE,	
+			NAME,	
+			LINKPHONET,	
+			LINKMAN,	
+			LINKEMAIL,	
+			LINKEMAILT,	
+			LINKPHONE,	
+			LINKMANT,	
+			MODELCODE,	
+			CREATETIME,	
+			UPDATETIME,	
+			COMPANY_ID,
+			DELETED,
+			SUPPLIERINVENTORY_ID
+		from 
+			FT_SUPPLIERINVENTORY
+		where 
+			NAME = #{NAME}
+			limit 1
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.YEAR,	
+				a.CODE,	
+				a.NAME,	
+				a.LINKPHONET,	
+				a.LINKMAN,	
+				a.LINKEMAIL,	
+				a.LINKPHONE,	
+				a.LINKMANT,	
+				a.MODELCODE,	
+				a.CREATETIME,	
+				a.UPDATETIME,
+				a.COMPANY_ID,	
+				a.DELETED,
+				a.SUPPLIERINVENTORY_ID
+		from 
+				FT_SUPPLIERINVENTORY a
+				where a.DELETED=0
+				order by a.CREATETIME DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.YEAR,	
+				a.CODE,	
+				a.NAME,	
+				a.LINKPHONET,	
+				a.LINKMAN,	
+				a.LINKEMAIL,	
+				a.LINKPHONE,	
+				a.LINKMANT,	
+				a.MODELCODE,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.COMPANY_ID,
+				a.DELETED,
+				b.PARTCODING,
+				b.PARTNAME,
+				a.SUPPLIERINVENTORY_ID
+		from 
+				FT_SUPPLIERINVENTORY a
+				LEFT JOIN FT_MATERIAL_NAMAGEMENT b ON a.CODE = b.PARTCODING
+				where a.DELETED=0
+				order by a.CREATETIME DESC
+				
+	</select>
+	
+	<!-- 批量删除 -->
+	<update id="deleteAll" parameterType="String">
+		update  FT_SUPPLIERINVENTORY
+		set DELETED=1
+		where 
+			SUPPLIERINVENTORY_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</update>
+	
+</mapper>

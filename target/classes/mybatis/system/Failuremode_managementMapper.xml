@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Failuremode_managementMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_FAILUREMODE_MANAGEMENT(
+			FAILURENAME,	
+			CREATETIME,	
+			UPADATETIME,	
+			DELETED,	
+			COMPANY_ID,	
+			USERID,	
+			SORT,	
+			FAILURECODE,
+			FAILUREMODEL,
+			FAILUREMODE_MANAGEMENT_ID
+		) values (
+			#{FAILURENAME},	
+			now(),	
+			now(),
+			'0',	
+			#{COMPANY_ID},	
+			#{USERID},
+			#{SORT},	
+			#{FAILURECODE},
+			#{FAILUREMODEL},	
+			#{FAILUREMODE_MANAGEMENT_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<update id="delete" parameterType="pd">
+		update  FT_FAILUREMODE_MANAGEMENT
+		set DELETED =1
+		where 
+			FAILUREMODE_MANAGEMENT_ID = #{FAILUREMODE_MANAGEMENT_ID}
+	</update>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_FAILUREMODE_MANAGEMENT
+			set 
+				FAILURENAME = #{FAILURENAME},
+				CREATETIME = CREATETIME,
+				UPADATETIME = now(),
+				DELETED = #{DELETED},
+				COMPANY_ID = #{COMPANY_ID},
+				USERID = #{USERID},
+				SORT = #{SORT},
+				FAILURECODE = #{FAILURECODE},
+				FAILUREMODEL = #{FAILUREMODEL},
+			FAILUREMODE_MANAGEMENT_ID = FAILUREMODE_MANAGEMENT_ID
+			where 
+				FAILUREMODE_MANAGEMENT_ID = #{FAILUREMODE_MANAGEMENT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			FAILURENAME,	
+			CREATETIME,	
+			UPADATETIME,	
+			DELETED,	
+			COMPANY_ID,	
+			USERID,	
+			SORT,
+			FAILURECODE,
+			FAILUREMODEL,
+			FAILUREMODE_MANAGEMENT_ID
+		from 
+			FT_FAILUREMODE_MANAGEMENT
+		where 
+			FAILUREMODE_MANAGEMENT_ID = #{FAILUREMODE_MANAGEMENT_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.FAILURENAME,	
+				a.CREATETIME,	
+				a.UPADATETIME,	
+				a.DELETED,	
+				a.COMPANY_ID,	
+				a.USERID,	
+				a.SORT,	
+				a.FAILURECODE,
+				a.FAILUREMODEL,
+				a.FAILUREMODE_MANAGEMENT_ID
+		from 
+				FT_FAILUREMODE_MANAGEMENT a
+				where 1=1 
+				and a.DELETED=0
+				order by a.CREATETIME  DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.FAILURENAME,	
+				a.CREATETIME,	
+				a.UPADATETIME,	
+				a.DELETED,	
+				a.COMPANY_ID,	
+				a.USERID,	
+				a.SORT,	
+				a.FAILURECODE,
+				a.FAILUREMODEL,
+				a.FAILUREMODE_MANAGEMENT_ID
+		from 
+				FT_FAILUREMODE_MANAGEMENT a
+				where a.DELETED =0
+				order by a.CREATETIME  DESC
+	</select>
+		<!-- 列表(全部) -->
+	<select id="listAllYuan" parameterType="pd" resultType="pd">
+		select
+				FAILURECODE
+		from 
+				FT_FAILUREMODE_MANAGEMENT 
+				group by FAILURECODE
+				
+	</select>
+		<!-- 列表(全部) -->
+	<select id="listAllName" parameterType="pd" resultType="pd">
+		select
+				FAILURENAME
+		from 
+				FT_FAILUREMODE_MANAGEMENT 
+				where 1=1
+				<if test="FAILURENAME != null and FAILURENAME != ''">
+				and FAILURENAME LIKE CONCAT(CONCAT('%', #{FAILURENAME}),'%')
+				</if>
+				
+	</select>
+	<!-- 批量删除 -->
+	<update id="deleteAll" parameterType="String">
+		update  FT_FAILUREMODE_MANAGEMENT
+		set DELETED =1
+		where 
+			FAILUREMODE_MANAGEMENT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</update>
+	
+</mapper>

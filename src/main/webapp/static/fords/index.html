@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+        <meta name="renderer" content="webkit"><!----页面默认谷歌内核----->
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>首页</title>
+		<link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/pw_alert.css" />
+		<script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+		<script type="text/javascript" src="js/bootstrap3.37.min.js" ></script>
+		<script type="text/javascript" src="js/index.js" ></script>
+		<script type="text/javascript" src="js/pw_alert.js" ></script>
+		<script type="text/javascript" src="layer/layer.js" ></script>
+	</head>
+	<body>
+		<!--------右部分--------->
+		<div class="index_box">
+			<!---这是头部---->
+			<div class="index_top">
+				<!---展开菜单--->
+				<span class="index_topcai pull-left"><img src="img/cai.png" alt="菜单"/></span>
+				<!---下拉菜单--->
+				<div class="dropdown pull-right">
+				    <div class="index_xiala dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">
+				    	<!--<img class="index_xiauserimg pull-left" src="img/chustox_d.jpg" alt="头像"/>
+				    	<div class="index_xiatit pull-left">Welcome，admin</div>-->
+				    	<img class="index_xiatui pull-left" src="img/tui.png" alt="退出"/>
+				    </div>
+				    <!--<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				        <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">Java</a>
+				        </li>
+				        <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">数据挖掘</a>
+				        </li>
+				        <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">数据通信/网络</a>
+				        </li>
+				        <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">分离的链接</a>
+				        </li>
+				    </ul>-->
+				</div>
+				<!---3个信息提示--->
+				<ul class="index_topxin pull-right">
+					<li class="icon-envelope-alt icon-large"><span class="index_xinbga">1</span></li>
+					<!--<li class="icon-warning-sign icon-large"><span class="index_xinbgb">10</span></li>-->
+					<li class="icon-tasks icon-large"><span class="index_xinbgc">33</span></li>
+				</ul>
+			</div>
+			<!---这是内容部分---->
+			<div class="index_main">
+				<iframe src="personage_space.html" style="border: none;height: 100%;width: 100%;"></iframe>
+			</div>
+		</div>
+		<!--------左部分导航-------->
+		<div class="index_navbox">
+			<div class="index_navtit"><img src="img/rebodqos.png" alt="图片"/></div>
+			<!----新增div包裹头像和导航---->
+			<div class="img_ulbox">
+			<div class="img_ulboxios">
+			<div class="index_navuser">
+				<img src="img/chustox_d.jpg" alt="头像"/>
+				<a class="index_name" href="javascript:;">王君祥</a>
+				<a class="index_zhis" href="javascript:;">质量管理部部长</a>
+			</div>
+			<ul class="index_navlebox">
+			    <li class="index_navactive">
+			        <a class="index_navlia" href="javascript:;" data-dizhi="personage_space.html">
+			        	<em class="index_sohi"><img src="img/nava1.png"/><img src="img/nava2.png"/></em>
+			        	<span class="index_navatit">个人空间</span>
+			        </a>
+			    </li>
+			    <li>
+			        <a class="index_navlia" href="javascript:;">
+			        	<em class="index_sohi"><img src="img/nava3.png"/><img src="img/nava4.png"/></em>
+			        	<span class="index_navatit">客户问题</span>
+			        	<em class="index_you icon-angle-left pull-right"></em>
+			        </a>
+			        <ul class="index_namune">
+			            <li><a data-dizhi="list.html" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">0公里问题</span></a></li>
+			            <li><a data-dizhi="" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">投产问题</span></a></li>
+			            <li><a data-dizhi="" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">售后问题</span></a></li>
+			            <li><a data-dizhi="questlist.html" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">问题反馈</span></a></li>
+			        </ul>
+			   </li>
+			   <li>
+			        <a class="index_navlia" href="javascript:;">
+			        	<em class="index_sohi"><img src="img/nava7.png"/><img src="img/nava8.png"/></em>
+			        	<span class="index_navatit">现场问题</span>
+			        	<em class="index_you icon-angle-left pull-right"></em>
+			        </a>
+			        <ul class="index_namune">
+			            <li><a data-dizhi="defect.html" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">缺陷录入</span></a></li>
+			            <li><a data-dizhi="analysis.html" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">每日分析</span></a></li>
+			            <li><a data-dizhi="quality_problem.html" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">质量问题</span></a></li>
+			        </ul>
+			   </li>
+			    <li>
+			        <a class="index_navlia" href="javascript:;" data-dizhi="IQC.html">
+			        	<em class="index_sohi"><img src="img/nava5.png"/><img src="img/nava6.png"/></em>
+			        	<span class="index_navatit">供应商问题</span>
+			        </a>
+			   </li>
+			   <li>
+			        <a class="index_navlia" href="javascript:;" data-dizhi="">
+			        	<em class="index_sohi"><img src="img/nava9.png"/><img src="img/nava10.png"/></em>
+			        	<span class="index_navatit">审核体系</span>
+			        </a>
+			   </li>
+			   <li>
+			        <a class="index_navlia" href="javascript:;" data-dizhi="experience.html">
+			        	<em class="index_sohi"><img src="img/nava11.png"/><img src="img/nava12.png"/></em>
+			        	<span class="index_navatit">经验管理</span>
+			        </a>
+			   </li>
+			   <li>
+			        <a class="index_navlia" href="javascript:;" data-dizhi="">
+			        	<em class="index_sohi"><img src="img/nava13.png"/><img src="img/nava14.png"/></em>
+			        	<span class="index_navatit">统计分析</span>
+			        </a>
+			   </li>
+			   <li>
+			        <a class="index_navlia" href="javascript:;">
+			        	<em class="index_sohi"><img src="img/nava15.png"/><img src="img/nava16.png"/></em>
+			        	<span class="index_navatit">系统工具</span>
+			        	<em class="index_you icon-angle-left pull-right"></em>
+			        </a>
+			        <ul class="index_namune">
+			            <li><a data-dizhi="" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">成员管理</span></a></li>
+			            <li><a data-dizhi="" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">角色管理</span></a></li>
+			            <li><a data-dizhi="client_mana.html" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">客户管理</span></a></li>
+			            <li><a data-dizhi="supler_mana.html" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">供应商管理</span></a></li>
+			            <li><a data-dizhi="equipment_mana.html" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">设备管理</span></a></li>
+			            <li><a data-dizhi="process_mana.html" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">工序管理</span></a></li>
+			            <li><a data-dizhi="product_mana.html" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">产品管理</span></a></li>
+			            <li><a data-dizhi="" href="javascript:;"><em class="index_naims icon-double-angle-right"></em><span class="index_nastit">访问日志</span></a></li>
+			        </ul>
+			   </li>
+			</ul>
+			<div class="left_imgullisbox">
+				<img src="img/wuyou.png" alt="logo"/>
+			</div>
+			</div>
+			</div>
+		</div>
+		
+		
+	</body>
+	<script>
+		$(function(){
+			//全局样式
+	        layer.config({
+	            skin: 'demo-class'//自定义样式demo-class
+	        })
+			/*$(".index_namune").click(function(){
+				parent.layer.open({
+		        	type:1,//类型
+					title:"",//标题
+					content:'<div class="pwalerttit">你确定删除该问题？</div>',
+					area:['500px','230px'],//宽高
+					closeBtn: 0,//不显示右上角关闭按钮
+					shadeClose:false,//是否点击遮罩关闭
+					scrollbar: false,//是否允许浏览器出现滚动条
+					btn:['确定','取消'],
+					btnAlign: 'c',//按钮居中
+					yes:function(index,layero){
+						parent.layer.close(index);//关闭弹
+					},
+					btn2:function(index){
+						parent.layer.close(index);//关闭弹
+					}
+		        })
+			})*/
+		})
+	</script>
+</html>

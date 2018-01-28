@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>缺陷管理</title>
+    <link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/public_d08.css" />
+    <link rel="stylesheet" href="css/list.css" />
+    <link rel="stylesheet" href="css/a_table.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/pw_alert.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="js/bootstrap3.37.min.js" ></script>
+    <script type="text/javascript" src="laydate/laydate.js" ></script>
+    <script type="text/javascript" src="js/pw_alert.jsw" ></script>
+</head>
+<body style="background-color:#edeff5;margin: 15px;">
+<div class="oiswen_box oiswen_boxavite">
+    <!---顶部--->
+    <div class="oiswen_titop">
+        <div class="oiswen_titople">
+            <div class="oiswen_titoplea">缺陷管理</div>
+            <div class="oiswen_titopleb">
+                <a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span><a href="javascript:;">系统管理</a><span>/</span><a href="javascript:;">缺陷管理</a>
+            </div>
+        </div>
+    </div>
+        <form action="" method="post" name="coreForm" id="coreForm">
+    <!----问题采集---->
+	<div class="wenti_box">
+		<div class="container">
+		   <div class="row">
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>失效模式</p>
+		      	  	 <input type="text" />
+		      	  </div>
+		      </div>
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>失效编码</p>
+		      	  	 <input type="text" />
+		      	  </div>
+		      </div>      
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>原因分类</p>
+		      	     <input class="laydate-icon" id="demo1" value="">
+		      	  </div>
+		      </div>
+		   </div>
+		</div>
+		<div class="acq_boxtx">
+			<button type="button" class="jxbutton">关闭</button>
+			<button type="button" class="tibutton">提交</button>
+			<button type="button" class="jxbutton">继续添加</button>
+		</div>
+		
+	</div>
+    <form action="" method="post" name="coreForm" id="coreForm">
+</div>
+<script>
+	!function(){
+	    laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+	    laydate({elem: '#demo1'});//绑定元素
+	    laydate({elem: '#demo2'});//绑定元素
+	}();
+    $(function(){
+    	
+    })
+</script>
+</body>
+</html>

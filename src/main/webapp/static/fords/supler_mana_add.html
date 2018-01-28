@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>供应商管理</title>
+    <link rel="stylesheet" href="css/bootstrap3.37.min.css" />
+    <link rel="stylesheet" href="css/public.css" />
+    <link rel="stylesheet" href="css/public_d08.css" />
+    <link rel="stylesheet" href="css/list.css" />
+    <link rel="stylesheet" href="css/a_table.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+    <script type="text/javascript" src="js/bootstrap3.37.min.js" ></script>
+</head>
+<body style="background-color:#edeff5;margin: 15px;">
+<div class="oiswen_box oiswen_boxavite">
+    <!---顶部--->
+    <div class="oiswen_titop">
+        <div class="oiswen_titople">
+            <div class="oiswen_titoplea">供应商管理</div>
+            <div class="oiswen_titopleb">
+                <a href="javascript:;"><span class="daohangbefor glyphicon glyphicon-home"></span>HOME</a><span>/</span><a href="javascript:;">系统管理</a><span>/</span><a href="javascript:;">供应商管理</a>
+            </div>
+        </div>
+    </div>
+    <!----问题采集---->
+	<div class="wenti_box">
+		<div class="container">
+		   <div class="row">
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>供应商编码</p>
+		      	  	 <input type="text" />
+		      	  </div>
+		      </div>
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>供应商名称</p>
+		      	  	 <input type="text" />
+		      	  </div>
+		      </div>      
+		      <div class="col-sm-6 col-md-4 col-lg-4">
+		      	  <div class="inputboxa">
+		      	  	 <p>供应商分类</p>
+		      	     <input type="text"/>
+		      	  </div>
+		      </div>
+		   </div>
+		</div>
+		<div style="padding: 0px 15px;">
+		<table cellpadding="0" cellspacing="0" class="sup_mantab">
+		    <thead>
+		    	<tr>
+		    		<td>联系人</td>
+		    		<td>邮箱</td>
+		    		<td>电话</td>
+		    		<td style="width: 80px;">操作</td>
+		    	</tr>
+		    </thead>
+		    <tbody>
+		    	<tr>
+		    		<td><input type="text"/></td>
+		    		<td><input type="text"/></td>
+		    		<td><input type="text"/></td>
+		    		<td><button type="button" class="supzeng_btn">新增</button></td>
+		    	</tr>
+		    	<!--<tr>
+		    		<td><input type="text"/></td>
+		    		<td><input type="text"/></td>
+		    		<td><input type="text"/></td>
+		    		<td><button type="button" class="supsc_btn">删除</button></td>
+		    	</tr>
+		    	<tr>
+		    		<td><input type="text"/></td>
+		    		<td><input type="text"/></td>
+		    		<td><input type="text"/></td>
+		    		<td><button type="button" class="supsc_btn">删除</button></td>
+		    	</tr>-->
+		    </tbody>
+		</table>
+		</div>
+		<div class="acq_boxtx">
+			<button type="button" class="jxbutton">关闭</button>
+			<button type="button" class="tibutton">提交</button>
+			<button type="button" class="jxbutton">继续添加</button>
+		</div>
+		
+	</div>
+
+</div>
+<script>
+    $(function(){
+    	//删除事件
+    	$(document).on("click",".supsc_btn",function(){
+    		$(this).parents("tr").remove();
+    	})
+    	//增加事件
+    	$(document).on("click",".supzeng_btn",function(){
+    		var a=$(".sup_mantab tbody tr").length;//3
+    		//大于等于5的时候提示最多只能添加5个
+    		if(a>=5){
+    			parent.layer.open({
+		        	type:1,//类型
+					title:"",//标题
+					content:'<div class="pwalerttit">最多只能添加5个联系人？</div>',
+					area:['500px','230px'],//宽高
+					closeBtn: 0,//不显示右上角关闭按钮
+					shadeClose:false,//是否点击遮罩关闭
+					scrollbar: false,//是否允许浏览器出现滚动条
+					btn:['确定'],
+					btnAlign: 'c',//按钮居中
+					yes:function(index,layero){
+						parent.layer.close(index);//关闭弹
+					}
+		        })
+    		}else{
+    			$(".sup_mantab tbody").append('<tr><td><input type="text"/></td><td><input type="text"/></td><td><input type="text"/></td><td><button type="button"class="supsc_btn">删除</button></td></tr>');
+    		}
+    	})
+    })
+</script>
+</body>
+</html>

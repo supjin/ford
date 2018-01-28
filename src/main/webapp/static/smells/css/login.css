@@ -1,0 +1,109 @@
+.loginboxs{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+.loginboxs>img{
+	width: 100%;
+	height: 100%;
+}
+.login{
+	width: 600px;
+	height: 400px;
+	background: rgba(255,255,255,0.4);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -300px;
+	margin-top: -200px;
+	padding-top: 30px;
+	box-sizing: border-box;
+	color: white;
+	font-size: 16px;
+	border-radius: 5px;
+	box-shadow: 20px 17px 40px #003680,-20px -17px 40px #003680;
+}
+.logintit{
+	width: 100%;
+	height: 50px;
+}
+.logintit>p{
+	float: left;
+	height: 50px;
+}
+.logintita{
+	font-size: 24px;
+	line-height: 70px;
+	padding-left: 94px;
+	text-shadow: 3px 3px 5px #016cde;
+}
+.logintitb{
+	font-size: 18px;
+	line-height: 80px;
+	padding-left: 10px;
+	text-shadow: 3px 3px 3px #016cde;
+}
+.lo{
+	width: 100%;
+	height: 35px;
+	margin: 30px 0px;
+}
+.lona{
+	float: left;
+	width: 190px;
+	height: 35px;
+	line-height: 35px;
+	text-align: right;
+}
+.loin{
+	float: left;
+	width: 270px;
+	height: 35px;
+	color: white;
+	border: 1px solid white;
+	box-sizing: border-box;
+	line-height: 35px;
+	text-indent: 5px;
+	background: none;
+	font-size: 16px;
+	outline: none;
+	border-radius: 3px;
+}
+.lobtn{
+	float: left;
+	display: block;
+	color: white;
+	background: #0082e8;
+	width: 270px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	border: none;
+	border-radius: 3px;
+	/*box-shadow: 3px 3px 5px #014da4;*/
+	font-size: 16px;
+}
+.tit{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	color: white;
+	font-size: 32px;
+	text-align: center;
+	border-bottom: 1px solid #00367f;
+	padding-bottom: 20px;
+	text-shadow: 3px 3px 5px #004fab;
+}
+.indexa{
+	display: block;
+	float: right;
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 14px;
+	color: white;
+	margin-right: 95px;
+}
+.indexa:hover{
+	color:#0082e8;
+}

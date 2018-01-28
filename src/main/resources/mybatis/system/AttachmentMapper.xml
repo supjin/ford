@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="AttachmentMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_ATTACHMENT(
+			COMPANY_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			ATTACHMENT_NAME,	
+			ATTACHMENT_URL,	
+			CREATETIME,	
+			PROCESSID,
+			ATTACHMENT_ID
+		) values (
+			#{COMPANY_ID},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{ATTACHMENT_NAME},	
+			#{ATTACHMENT_URL},	
+			now(),	
+			#{PROCESSID},
+			#{ATTACHMENT_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_ATTACHMENT
+		where 
+			ATTACHMENT_ID = #{ATTACHMENT_ID}
+	</delete>
+	<!-- 删除-->
+	<delete id="deleteProcess" parameterType="pd">
+		delete from FT_ATTACHMENT
+		where 
+			PROCESSID = #{PROCESSID}
+	</delete>
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_ATTACHMENT
+			set 
+				COMPANY_ID = #{COMPANY_ID},
+				CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+				ATTACHMENT_NAME = #{ATTACHMENT_NAME},
+				ATTACHMENT_URL = #{ATTACHMENT_URL},
+				CREATETIME = #{CREATETIME},
+				PROCESSID = #{PROCESSID},
+				ATTACHMENT_ID = ATTACHMENT_ID
+			where 
+				ATTACHMENT_ID = #{ATTACHMENT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			ATTACHMENT_NAME,	
+			ATTACHMENT_URL,	
+			CREATETIME,	
+			PROCESSID,
+			ATTACHMENT_ID
+		from 
+			FT_ATTACHMENT
+		where 
+			ATTACHMENT_ID = #{ATTACHMENT_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.ATTACHMENT_NAME,	
+				a.ATTACHMENT_URL,	
+				a.CREATETIME,
+				a.PROCESSID,	
+				a.ATTACHMENT_ID
+		from 
+				FT_ATTACHMENT a
+	</select>
+	
+	<!-- 列表(全部) 根据问题id 根据步骤id查询附件 -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.ATTACHMENT_NAME,	
+				a.ATTACHMENT_URL,	
+				a.CREATETIME,
+				a.PROCESSID,	
+				a.ATTACHMENT_ID
+		from 
+				FT_ATTACHMENT a
+				where 
+				1 = 1 
+				<if test="PROCESSID !=null and PROCESSID !=''">
+					and a.PROCESSID=#{PROCESSID}
+				</if>
+				<if test="CLIENT_PROBLEM_COLLECTION_ID !=null and CLIENT_PROBLEM_COLLECTION_ID !=''">
+					and a.CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+				</if>
+				order by a.CREATETIME DESC
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_ATTACHMENT
+		where 
+			ATTACHMENT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

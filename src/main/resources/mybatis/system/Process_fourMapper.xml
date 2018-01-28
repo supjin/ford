@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Process_fourMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_PROCESS_FOUR(
+		creation_time,
+			COMPANY_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PRINCIPALD_FIVESNAME,	
+			VALIDITY,	
+			CAUSERESON,	
+			ESCAPTRESON,	
+			VERIFICATION,	
+			SYSTEMRESON,	
+			CONTREBUTION,	
+			REMARKK,	
+			RECODE,	
+			DECODE,	
+			EXECUTIONDATE,	
+			VALIDATIONURE,
+			VALIDATIONERU,
+			PROCESS_FOUR_ID
+		) values (
+		    now(),
+			#{COMPANY_ID},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{PRINCIPALNAME},	
+			#{EXECUTIVENAME},	
+			#{PRINCIPALD_FIVESNAME},	
+			#{VALIDITY},	
+			#{CAUSERESON},	
+			#{ESCAPTRESON},	
+			#{VERIFICATION},	
+			#{SYSTEMRESON},	
+			#{CONTREBUTION},	
+			#{REMARKK},	
+			#{RECODE},	
+			#{DECODE},	
+			#{EXECUTIONDATE},
+			#{VALIDATIONURE},
+			#{VALIDATIONERU},	
+			#{PROCESS_FOUR_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_PROCESS_FOUR
+		where 
+			PROCESS_FOUR_ID = #{PROCESS_FOUR_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_PROCESS_FOUR
+			set 
+			
+			  <if test=" COMPANY_ID !=null and COMPANY_ID !=''">
+			      COMPANY_ID = #{COMPANY_ID},
+			  </if>
+			  <if test=" CLIENT_PROBLEM_COLLECTION_ID !=null and CLIENT_PROBLEM_COLLECTION_ID !=''">
+			     CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+			  </if>
+			  <if test=" PRINCIPALNAME !=null and PRINCIPALNAME !=''">
+			     PRINCIPALNAME = #{PRINCIPALNAME},
+			  </if>
+			  <if test=" EXECUTIVENAME !=null and EXECUTIVENAME !=''">
+			      EXECUTIVENAME = #{EXECUTIVENAME},
+			  </if>
+			  <if test=" PRINCIPALD_FIVESNAME !=null and PRINCIPALD_FIVESNAME !=''">
+			      PRINCIPALD_FIVESNAME = #{PRINCIPALD_FIVESNAME},
+			  </if>
+			  <if test=" VALIDITY !=null and VALIDITY !=''">
+			     VALIDITY = #{VALIDITY},
+			  </if>
+			  <if test=" CAUSERESON !=null and CAUSERESON !=''">
+			     CAUSERESON = #{CAUSERESON},
+			  </if>
+			  <if test=" ESCAPTRESON !=null and ESCAPTRESON !=''">
+			     ESCAPTRESON = #{ESCAPTRESON},
+			  </if>
+			  <if test=" VERIFICATION !=null and VERIFICATION !=''">
+			      VERIFICATION = #{VERIFICATION},
+			  </if>
+			  
+			  <if test=" SYSTEMRESON !=null and SYSTEMRESON !=''">
+			      	SYSTEMRESON = #{SYSTEMRESON},
+			  </if>
+			   <if test=" CONTREBUTION !=null and CONTREBUTION !=''">
+			       CONTREBUTION = #{CONTREBUTION},
+			  </if>
+			   <if test=" REMARKK !=null and REMARKK !=''">
+			       REMARKK = #{REMARKK},
+			  </if>
+			   <if test=" RECODE !=null and RECODE !=''">
+			      RECODE = #{RECODE},
+			  </if>
+			  <if test=" DECODE !=null and DECODE !=''">
+			      DECODE = #{DECODE},
+			  </if>
+			  <if test=" EXECUTIONDATE !=null and EXECUTIONDATE !=''">
+			      EXECUTIONDATE = #{EXECUTIONDATE},
+			  </if>
+			  <if test=" VALIDATIONURE !=null and VALIDATIONURE !=''">
+			      VALIDATIONURE = #{VALIDATIONURE},
+			  </if>
+			  <if test=" VALIDATIONERU !=null and VALIDATIONERU !=''">
+			      VALIDATIONERU = #{VALIDATIONERU},
+			  </if>
+			   update_time=now(),
+			   PROCESS_FOUR_ID = PROCESS_FOUR_ID
+			where 
+				PROCESS_FOUR_ID = #{PROCESS_FOUR_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PRINCIPALD_FIVESNAME,	
+			VALIDITY,	
+			CAUSERESON,	
+			ESCAPTRESON,	
+			VERIFICATION,	
+			SYSTEMRESON,	
+			CONTREBUTION,	
+			REMARKK,	
+			RECODE,	
+			DECODE,	
+			EXECUTIONDATE,	
+			VALIDATIONURE,
+			VALIDATIONERU,
+			PROCESS_FOUR_ID
+		from 
+			FT_PROCESS_FOUR
+		where 
+			PROCESS_FOUR_ID = #{PROCESS_FOUR_ID}
+	</select>
+	
+	<!-- 通过 公司ID 和事件id获取数据 -->
+	<select id="findByD4Id" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PRINCIPALD_FIVESNAME,	
+			VALIDITY,	
+			CAUSERESON,	
+			ESCAPTRESON,	
+			VERIFICATION,	
+			SYSTEMRESON,	
+			CONTREBUTION,	
+			REMARKK,	
+			RECODE,	
+			DECODE,	
+			EXECUTIONDATE,	
+			VALIDATIONURE,
+			VALIDATIONERU,
+			PROCESS_FOUR_ID
+		from 
+			FT_PROCESS_FOUR
+		where 
+		CLIENT_PROBLEM_COLLECTION_ID=#{CLIENT_PROBLEM_COLLECTION_ID}	
+		and 
+		COMPANY_ID=${COMPANY_ID};
+		
+			
+	</select>
+	
+	
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.PRINCIPALNAME,	
+				a.EXECUTIVENAME,	
+				a.PRINCIPALD_FIVESNAME,	
+				a.VALIDITY,	
+				a.CAUSERESON,	
+				a.ESCAPTRESON,	
+				a.VERIFICATION,	
+				a.SYSTEMRESON,	
+				a.CONTREBUTION,	
+				a.REMARKK,	
+				a.RECODE,	
+				a.DECODE,	
+				a.EXECUTIONDATE,
+				a.VALIDATIONURE,
+				a.VALIDATIONERU,	
+				a.PROCESS_FOUR_ID
+		from 
+				FT_PROCESS_FOUR a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.PRINCIPALNAME,	
+				a.EXECUTIVENAME,	
+				a.PRINCIPALD_FIVESNAME,	
+				a.VALIDITY,	
+				a.CAUSERESON,	
+				a.ESCAPTRESON,	
+				a.VERIFICATION,	
+				a.SYSTEMRESON,	
+				a.CONTREBUTION,	
+				a.REMARKK,	
+				a.RECODE,	
+				a.DECODE,	
+				a.EXECUTIONDATE,
+				a.VALIDATIONURE,
+				a.VALIDATIONERU,		
+				a.PROCESS_FOUR_ID
+		from 
+				FT_PROCESS_FOUR a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_PROCESS_FOUR
+		where 
+			PROCESS_FOUR_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

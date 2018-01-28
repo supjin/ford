@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="EquipmentDetailMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_EQUIPMENTDETAIL(
+		    ADDRESS,
+			NAME,	
+			NUMBER,	
+			PROJECT,	
+			MODEL,	
+			POWER,	
+			BRAND,	
+			CATEGORY,	
+			AMOUNT,	
+			MANUFACTOR,	
+			FACTORYDATE,	
+			CONTACTS,
+			PHONE,	
+			REMARKS,	
+			CREATETIME,	
+			UPDATETIME,	
+			COMPANY_ID,
+			LINKPHONE,
+			DELETED,
+			
+			EQUIPMENTDETAIL_ID
+		) values (
+		    #{ADDRESS},
+			#{NAME},	
+			#{NUMBER},	
+			#{PROJECT},	
+			#{MODEL},	
+			#{POWER},	
+			#{BRAND},	
+			#{CATEGORY},	
+			#{AMOUNT},	
+			#{MANUFACTOR},	
+			#{FACTORYDATE},	
+			#{CONTACTS},
+			#{PHONE},	
+			#{REMARKS},	
+			now(),	
+			now(),
+			#{COMPANY_ID},	
+			#{LINKPHONE},
+			'0',
+			#{EQUIPMENTDETAIL_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<update id="delete" parameterType="pd">
+		update  FT_EQUIPMENTDETAIL
+		set  DELETED=1
+		where 
+			EQUIPMENTDETAIL_ID = #{EQUIPMENTDETAIL_ID}
+	</update>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_EQUIPMENTDETAIL
+			set 
+			
+			<if test="ADDRESS !=null and ADDRESS!=''">
+			   ADDRESS=#{ADDRESS},
+			</if>
+			<if test="NAME !=null and NAME!=''">
+			   NAME = #{NAME},
+			</if>
+			<if test="NUMBER !=null and NUMBER!=''">
+			  NUMBER = #{NUMBER},
+			</if>
+			<if test="PROJECT !=null and PROJECT!=''">
+			  PROJECT = #{PROJECT},
+			</if>
+			<if test="MODEL !=null and MODEL!=''">
+			  MODEL = #{MODEL},
+			</if>
+			<if test="POWER !=null and POWER!=''">
+			  POWER = #{POWER},
+			</if>
+			<if test="BRAND !=null and BRAND!=''">
+			   BRAND = #{BRAND},
+			</if>
+			<if test="CATEGORY !=null and CATEGORY!=''">
+			   CATEGORY = #{CATEGORY},
+			</if>
+			<if test="AMOUNT !=null and AMOUNT!=''">
+			   AMOUNT = #{AMOUNT},
+			</if>
+			<if test="MANUFACTOR !=null and MANUFACTOR!=''">
+			   MANUFACTOR = #{MANUFACTOR},
+			</if>
+			<if test="FACTORYDATE !=null and FACTORYDATE!=''">
+			  FACTORYDATE = #{FACTORYDATE},
+			</if>
+			<if test="CONTACTS !=null and CONTACTS!=''">
+			   CONTACTS = #{CONTACTS},
+			</if>
+			<if test="PHONE !=null and PHONE!=''">
+			   PHONE = #{PHONE},
+			</if>
+			<if test="REMARKS !=null and REMARKS!=''">
+			   REMARKS = #{REMARKS},
+			</if>
+			<if test="COMPANY_ID !=null and COMPANY_ID!=''">
+			   COMPANY_ID = #{COMPANY_ID},
+			</if>
+			<if test="ADDRESS !=null and ADDRESS!=''">
+			   LINKPHONE = #{LINKPHONE},
+			</if>
+			<if test="DELETED !=null and DELETED!=''">
+			  DELETED = #{DELETED},
+			</if>
+			UPDATETIME = now(),
+			EQUIPMENTDETAIL_ID = EQUIPMENTDETAIL_ID
+			where 
+				EQUIPMENTDETAIL_ID = #{EQUIPMENTDETAIL_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+		ADDRESS,
+		PHONE,
+			NAME,	
+			NUMBER,	
+			PROJECT,	
+			MODEL,	
+			POWER,	
+			BRAND,	
+			CATEGORY,	
+			AMOUNT,	
+			MANUFACTOR,	
+			FACTORYDATE,	
+			CONTACTS,	
+			REMARKS,	
+			CREATETIME,	
+			UPDATETIME,	
+			COMPANY_ID,
+			LINKPHONE,
+			DELETED,
+			EQUIPMENTDETAIL_ID
+		from 
+			FT_EQUIPMENTDETAIL
+		where 
+			EQUIPMENTDETAIL_ID = #{EQUIPMENTDETAIL_ID}
+	</select>
+		<!-- 通过ID获取数据 -->
+	<select id="findByNumber" parameterType="pd" resultType="pd">
+		select 
+		
+			NAME,	
+			NUMBER,	
+			PROJECT,	
+			MODEL,	
+			POWER,	
+			BRAND,	
+			CATEGORY,	
+			AMOUNT,	
+			MANUFACTOR,	
+			FACTORYDATE,	
+			CONTACTS,	
+			REMARKS,	
+			PHONE,
+			CREATETIME,	
+			UPDATETIME,	
+			COMPANY_ID,
+			LINKPHONE,
+			DELETED,
+			EQUIPMENTDETAIL_ID
+		from 
+			FT_EQUIPMENTDETAIL
+		where 
+			NUMBER = #{NUMBER}
+	</select>
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+		        a.PHONE,
+				a.NAME,	
+				a.NUMBER,	
+				a.PROJECT,	
+				a.MODEL,	
+				a.POWER,	
+				a.BRAND,	
+				a.CATEGORY,	
+				a.AMOUNT,	
+				a.MANUFACTOR,	
+				a.FACTORYDATE,	
+				a.CONTACTS,	
+				a.REMARKS,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				a.COMPANY_ID,
+				a.LINKPHONE,
+				a.DELETED,
+				a.EQUIPMENTDETAIL_ID
+		from 
+				FT_EQUIPMENTDETAIL a
+				where a.DELETED=0
+				order by  a.CREATETIME DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+		        a.PHONE,
+		        a.ADDRESS,
+				a.NAME,	
+				a.NUMBER,	
+				a.PROJECT,	
+				a.MODEL,	
+				a.POWER,	
+				a.BRAND,	
+				a.CATEGORY,	
+				a.AMOUNT,	
+				a.MANUFACTOR,	
+				a.FACTORYDATE,	
+				a.CONTACTS,	
+				a.REMARKS,	
+				a.CREATETIME,	
+				a.UPDATETIME,
+				a.COMPANY_ID,	
+				a.LINKPHONE,
+				a.DELETED,
+				a.EQUIPMENTDETAIL_ID
+		from 
+				FT_EQUIPMENTDETAIL a
+	</select>
+	
+	<!-- 批量删除 -->
+	<update id="deleteAll" parameterType="String">
+		update  FT_EQUIPMENTDETAIL
+		set DELETED=1
+		where 
+			EQUIPMENTDETAIL_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</update>
+	
+</mapper>

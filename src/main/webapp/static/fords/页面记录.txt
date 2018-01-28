@@ -1,0 +1,44 @@
+personage_space.html  个人空间》》
+
+list.html             问题列表
+browse.html           浏览页
+d0-d8.html            d0-d8页
+questlist.html        问题反馈
+acquisition_able.html 问题采集表
+
+IQC.html              IQC问题（供应商问题清单）
+IQC_chu.html          IQC问题（供应商问题待办）
+IQC_1.html            IQC步骤1（发送IQC问题通知）
+IQC_2.html            IQC步骤2(供应商反馈8D报告)第一种
+IQC_22.html            IQC步骤2(供应商反馈8D报告)第二种
+IQC_3.html            IQC步骤3
+IQCeyes.html          IQC浏览页（供应商管理浏览）
+iqcadd.html           IQC录入表
+
+defect.html           缺陷录入
+defect_table.html     缺陷录入表
+analysis.html         每日分析
+quality_problem.html  质量问题
+
+experience.html       经验管理》》
+
+complaint_table.html  投诉记录表
+screening_table.html  排查表
+5why.html             5why表
+is_not.html           Is&Is Not 
+is_not2.html          Is&Is Not2
+
+equipment_mana.html   设备管理  
+equipment_mana_add.html   设备管理添加          
+process_mana.html     工序管理
+process_mana_add.html     工序管理添加
+product_mana.html     产品管理
+product_mana_add.html     产品管理添加
+client_mana.html      客户管理
+client_mana_add.html      客户管理添加
+supler_mana.html      供应商管理
+supler_mana_add.html      供应商管理添加
+defect_mana.html      缺陷管理
+defect_mana_edit.html 	     缺陷管理添加
+material_mana.html    物料管理
+material_mana_add         物料管理添加

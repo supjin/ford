@@ -1,0 +1,156 @@
+.renkebox{
+    background-color: #ffffff;
+    margin-top: 15px;
+    border: 1px solid transparent;
+}
+.renke_leb{
+    line-height: 80px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: #4d4d57;
+}
+.neri_reny{
+    font-size: 16px;
+    color: #666666;
+    margin: 0 35px;
+}
+.zond_eyd{
+    margin-top: 15px;
+}
+.gemiegle{
+    margin-bottom: 10px;
+}
+.baogaor{
+    width: 89%;
+    height: 37px;
+    line-height: 37px;
+    padding: 6px 2px;
+    border: 1px solid #e3e3e3;
+}
+.renkesip{
+    width: 100%;
+    height: 170px;
+    resize: none;
+    padding: 2px;
+    border: 1px solid #e3e3e3;
+}
+@media (max-width: 1200px){
+    .baogaor{
+        width: 100%;
+    }
+    .bqianul{
+        width: 100%;
+    }
+}
+.jianyku{
+    margin: 25px 35px;
+    border: 1px solid #dedede;
+    padding: 20px 10px;
+    min-height: 200px;
+}
+.biaoqbt{
+    display: inline-block;
+    width: 110px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #24bedf;
+    color: #ffffff;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.biaoqbt .glyphicon{
+    vertical-align: middle;
+    margin-left: 10px;
+}
+.bqianul{
+    display: inline;
+    width: 80%;
+    vertical-align: top;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0;
+}
+.zhegeshi{
+    width: 88%;
+    display: inline-block;
+}
+@media (max-width: 1600px){
+    .zhegeshi{
+        width: 100%;
+    }
+}
+.bqianul li{
+    display: inline-block;
+    border-radius: 10px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 25px;
+    background-color: #faad62;
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
+.now_boaqi{
+    display: inline-block;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fa6262;
+    margin: 0 20px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.shaxbuxg{
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 55px;
+}
+.shaxbuxg a{
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    background-color: #24cbb2;
+    margin: 0 22px;
+}
+.d8_cons{
+    width: 100%;
+    background-color: #fdfdfd;
+    border: 1px solid #dedede;
+    padding: 10px 0px 0px 10px;
+}
+.d8_cons .jinjiula{
+	float: left;
+	margin-right: 5%;
+	margin-bottom: 10px;
+}
+.d8_cons .jinjiulb{
+	float: left;
+	margin-right: 5%;
+	margin-bottom: 10px;
+}
+.d8_cons .jinjiultit{
+	height: 34px;
+	line-height: 34px;
+	margin: 0px;
+	width: 60px;
+}
+.d8_cons .jinjiuze{
+	width: 200px;
+}
+.d8_cons .form-control,.d8_cons button{
+	border-color: #dedede;
+}
+.d8_cons .form-control{
+	padding:6px 0px;
+}

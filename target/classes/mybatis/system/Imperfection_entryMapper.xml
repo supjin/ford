@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Imperfection_entryMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_IMPERFECTION_ENTRY(
+			IMPERFECTION_NUMBERING,	
+			PRODUCTS_NUMBERING,	
+			PRODUCTS_NAME,	
+			IMPERFECTION_CODE,	
+			IMPERFECTION_NAME,	
+			NONCONFORMITY,	
+			EQUIPMENT,	
+			EQUIPMENT_NAME,	
+			REASONS_TYPE,	
+			DISPOSAL,	
+			PROCESS_CODE,	
+			PROCESS_NAME,	
+			REMARK,	
+			CREATION_TIME,	
+			UPDATE_TIME,
+			LURUUSER,
+			DANJUDATE,
+			CHECKNUM,
+			CHECKDATE,
+			BATCH,
+			DOUSER,
+			CHEJIAN,
+			PROCODEY,
+			IMPERFECTION_ENTRY_ID
+		) values (
+			#{IMPERFECTION_NUMBERING},	
+			#{PRODUCTS_NUMBERING},	
+			#{PRODUCTS_NAME},	
+			#{IMPERFECTION_CODE},	
+			#{IMPERFECTION_NAME},	
+			#{NONCONFORMITY},	
+			#{EQUIPMENT},	
+			#{EQUIPMENT_NAME},	
+			#{REASONS_TYPE},	
+			#{DISPOSAL},	
+			#{PROCESS_CODE},	
+			#{PROCESS_NAME},	
+			#{REMARK},	
+			now(),	
+			now(),	
+			#{LURUUSER},
+			#{DANJUDATE},
+			#{CHECKNUM},	
+			#{CHECKDATE},	
+			#{BATCH},	
+			#{DOUSER},	
+			#{CHEJIAN},
+			#{PROCODEY},
+			#{IMPERFECTION_ENTRY_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_IMPERFECTION_ENTRY
+		where 
+			IMPERFECTION_ENTRY_ID = #{IMPERFECTION_ENTRY_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_IMPERFECTION_ENTRY
+			set 
+				<if test="IMPERFECTION_NUMBERING !=null and IMPERFECTION_NUMBERING !=''">
+				IMPERFECTION_NUMBERING = #{IMPERFECTION_NUMBERING},
+				</if>
+				<if test="PRODUCTS_NUMBERING !=null and PRODUCTS_NUMBERING !=''">
+				PRODUCTS_NUMBERING = #{PRODUCTS_NUMBERING},
+				</if>
+				<if test="PRODUCTS_NAME !=null and PRODUCTS_NAME !=''">
+				PRODUCTS_NAME = #{PRODUCTS_NAME},
+				</if>
+				<if test="IMPERFECTION_CODE !=null and IMPERFECTION_CODE !=''">
+				IMPERFECTION_CODE = #{IMPERFECTION_CODE},
+				</if>
+				<if test="IMPERFECTION_NAME !=null and IMPERFECTION_NAME !=''">
+				IMPERFECTION_NAME = #{IMPERFECTION_NAME},
+				</if>
+				<if test="NONCONFORMITY !=null and NONCONFORMITY !=''">
+				NONCONFORMITY = #{NONCONFORMITY},
+				</if>
+				<if test="EQUIPMENT !=null and EQUIPMENT !=''">
+				EQUIPMENT = #{EQUIPMENT},
+				</if>
+				<if test="EQUIPMENT_NAME !=null and EQUIPMENT_NAME !=''">
+				EQUIPMENT_NAME = #{EQUIPMENT_NAME},
+				</if>
+				<if test="REASONS_TYPE !=null and REASONS_TYPE !=''">
+				REASONS_TYPE = #{REASONS_TYPE},
+				</if>
+				<if test="DISPOSAL !=null and DISPOSAL !=''">
+				DISPOSAL = #{DISPOSAL},
+				</if>
+				<if test="PROCESS_CODE !=null and PROCESS_CODE !=''">
+				PROCESS_CODE = #{PROCESS_CODE},
+				</if>
+				<if test="PROCESS_NAME !=null and PROCESS_NAME !=''">
+				PROCESS_NAME = #{PROCESS_NAME},
+				</if>
+				<if test="REMARK !=null and REMARK !=''">
+				REMARK = #{REMARK},
+				</if>
+				<if test="REMARK !=null and REMARK !=''">
+				REMARK = #{REMARK},
+				</if>
+				CREATION_TIME = CREATION_TIME,
+				UPDATE_TIME = now(),
+				<if test="CHECKNUM !=null and CHECKNUM !=''">
+				CHECKNUM = #{CHECKNUM},
+				</if>
+				<if test="CHECKDATE !=null and CHECKDATE !=''">
+				CHECKDATE = #{CHECKDATE},
+				</if>
+				<if test="BATCH !=null and BATCH !=''">
+				BATCH = #{BATCH},
+				</if>
+				<if test="DOUSER !=null and DOUSER !=''">
+				DOUSER = #{DOUSER},
+				</if>
+				<if test="CHEJIAN !=null and CHEJIAN !=''">
+				CHEJIAN = #{CHEJIAN},
+				</if>
+				<if test="PROCODEY !=null and PROCODEY !=''">
+				PROCODEY = #{PROCODEY},
+				</if>
+				<if test="LURUUSER !=null and LURUUSER !=''">
+				LURUUSER = #{LURUUSER},
+				</if>
+				<if test="DANJUDATE !=null and DANJUDATE !=''">
+				DANJUDATE = #{DANJUDATE},
+				</if>
+			IMPERFECTION_ENTRY_ID = IMPERFECTION_ENTRY_ID
+			where 
+				IMPERFECTION_ENTRY_ID = #{IMPERFECTION_ENTRY_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.IMPERFECTION_NUMBERING,	
+				a.PRODUCTS_NUMBERING,	
+				a.PRODUCTS_NAME,	
+				a.IMPERFECTION_CODE,	
+				a.IMPERFECTION_NAME,	
+				a.NONCONFORMITY,	
+				a.EQUIPMENT,	
+				a.EQUIPMENT_NAME,	
+				a.REASONS_TYPE,	
+				a.DISPOSAL,	
+				a.PROCESS_CODE,	
+				a.PROCESS_NAME,	
+				a.REMARK,	
+				a.CREATION_TIME,	
+				a.UPDATE_TIME,	
+				a.IMPERFECTION_ENTRY_ID,
+				a.CHECKNUM,
+				a.CHECKDATE,
+				a.BATCH,
+				a.CHEJIAN,
+				a.PROCODEY,
+				a.LURUUSER,
+				a.DANJUDATE,
+				a.DOUSER
+		from 
+			FT_IMPERFECTION_ENTRY a
+			
+		where 
+			IMPERFECTION_ENTRY_ID = #{IMPERFECTION_ENTRY_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.IMPERFECTION_NUMBERING,	
+				a.PRODUCTS_NUMBERING,	
+				a.PRODUCTS_NAME,	
+				a.IMPERFECTION_CODE,	
+				a.IMPERFECTION_NAME,	
+				a.NONCONFORMITY,	
+				a.EQUIPMENT,	
+				a.EQUIPMENT_NAME,	
+				a.REASONS_TYPE,	
+				a.DISPOSAL,	
+				a.PROCESS_CODE,	
+				a.PROCESS_NAME,	
+				a.REMARK,	
+				a.CREATION_TIME,	
+				a.UPDATE_TIME,	
+				a.IMPERFECTION_ENTRY_ID,
+				a.CHECKNUM,
+				a.CHECKDATE,
+				a.BATCH,
+				a.DOUSER,
+				a.CHEJIAN,
+				a.PROCODEY,
+				a.LURUUSER,
+				a.DANJUDATE,
+				c.LABEL
+		from 
+				FT_IMPERFECTION_ENTRY a
+				LEFT JOIN ft_dict c
+				ON a.REASONS_TYPE = c.VALUE
+				where 1=1
+				AND c.TYPE = 'resonanceType'
+				<if test="pd.PRODUCTNAME != null and pd.PRODUCTNAME != ''">
+					and a.PRODUCTS_NAME like CONCAT('%',#{pd.PRODUCTNAME},'%')
+				</if>
+				<if test="pd.IMPERFECTION_NAME != null and pd.IMPERFECTION_NAME != ''">
+					and a.IMPERFECTION_NAME like CONCAT('%',#{pd.IMPERFECTION_NAME},'%')
+				</if>
+				<if test="pd.CREATESTART!=null and pd.CREATESTART!=''"><!-- 发生时间检索 -->
+					and a.CHECKDATE &gt;= #{pd.CREATESTART}
+				</if>
+				<if test="pd.CREATEEND!=null and pd.CREATEEND!=''"><!-- 发生时间检索 -->
+					and a.CHECKDATE &lt;= #{pd.CREATEEND}
+				</if>
+				order by a.IMPERFECTION_NUMBERING ASC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.IMPERFECTION_NUMBERING,	
+				a.PRODUCTS_NUMBERING,	
+				a.PRODUCTS_NAME,	
+				a.IMPERFECTION_CODE,	
+				a.IMPERFECTION_NAME,	
+				a.NONCONFORMITY,	
+				a.EQUIPMENT,	
+				a.EQUIPMENT_NAME,	
+				a.REASONS_TYPE,	
+				a.DISPOSAL,	
+				a.PROCESS_CODE,	
+				a.PROCESS_NAME,	
+				a.REMARK,	
+				a.CREATION_TIME,	
+				a.UPDATE_TIME,	
+				a.CHECKNUM,
+				a.CHECKDATE,
+				a.BATCH,
+				a.DOUSER,
+				a.CHEJIAN,
+				a.PROCODEY,
+				a.LURUUSER,
+				a.DANJUDATE,
+				a.IMPERFECTION_ENTRY_ID
+		from 
+				FT_IMPERFECTION_ENTRY a
+	</select>
+		<!-- 列表(全部)TOP10 总数 根据缺陷名称分组  计算前10的不合格总数 PPM-->
+	<select id="listMostNomber" parameterType="pd" resultType="pd">
+				SELECT
+					SUM(NONCONFORMITY) AS NONMBER,
+					IMPERFECTION_CODE,
+					CREATION_TIME,
+					IMPERFECTION_NAME
+				FROM
+					FT_IMPERFECTION_ENTRY a
+					where 1=1
+					<if test="CREATESTART!=null and CREATESTART!=''"><!-- 发生时间检索 -->
+						and a.CREATION_TIME &gt;= #{CREATESTART}
+					</if>
+					<if test="CREATEEND!=null and CREATEEND!=''"><!-- 发生时间检索 -->
+						and a.CREATION_TIME &lt;= #{CREATEEND}
+					</if>
+				GROUP BY
+					IMPERFECTION_NAME
+				ORDER BY NONMBER DESC
+				LIMIT 10
+	</select>
+	<!-- 列表(全部)TOP10 总数 根据缺陷名称分组  计算前10的不良率    失效模式-->
+	<select id="listMostNonlve" parameterType="pd" resultType="pd">
+				SELECT
+					SUM(NONCONFORMITY) AS NONMBER,
+					  convert((SUM(NONCONFORMITY)/SUM(CHECKNUM))*1000000,decimal) AS NONLVE,
+					IMPERFECTION_NAME
+				FROM
+					FT_IMPERFECTION_ENTRY a
+					where 1=1
+					<if test="CREATESTART!=null and CREATESTART!=''"><!-- 发生时间检索 -->
+						and a.CREATION_TIME &gt;= #{CREATESTART}
+					</if>
+					<if test="CREATEEND!=null and CREATEEND!=''"><!-- 发生时间检索 -->
+						and a.CREATION_TIME &lt;= #{CREATEEND}
+					</if>
+				GROUP BY
+					IMPERFECTION_NAME
+				ORDER BY NONLVE DESC
+				LIMIT 10
+	</select>
+	<!-- 列表(全部)TOP10 总数 根据产品名称分组  计算前10的不良率   产品-->
+	<select id="listMostProducber" parameterType="pd" resultType="pd">
+				SELECT
+					SUM(NONCONFORMITY) AS NONMBER,
+					  convert((SUM(NONCONFORMITY)/SUM(CHECKNUM))*1000000,decimal) AS NONLVE,
+					PRODUCTS_NUMBERING
+				FROM
+					FT_IMPERFECTION_ENTRY a
+					where 1=1
+					<if test="CREATESTART!=null and CREATESTART!=''"><!-- 发生时间检索 -->
+						and a.CREATION_TIME &gt;= #{CREATESTART}
+					</if>
+					<if test="CREATEEND!=null and CREATEEND!=''"><!-- 发生时间检索 -->
+						and a.CREATION_TIME &lt;= #{CREATEEND}
+					</if>
+				GROUP BY
+					PRODUCTS_NUMBERING
+				ORDER BY NONLVE DESC
+				LIMIT 10
+	</select>
+	<!-- 列表(全部)TOP10 总数 根据产品名称分组  计算前10的不良率   设备-->
+	<select id="listMostequiber" parameterType="pd" resultType="pd">
+				SELECT
+					SUM(NONCONFORMITY) AS NONMBER,
+					  convert((SUM(NONCONFORMITY)/SUM(CHECKNUM))*1000000,decimal) AS NONLVE,
+					EQUIPMENT_NAME
+				FROM
+					FT_IMPERFECTION_ENTRY a
+					where 1=1
+					<if test="CREATESTART!=null and CREATESTART!=''"><!-- 发生时间检索 -->
+						and a.CREATION_TIME &gt;= #{CREATESTART}
+					</if>
+					<if test="CREATEEND!=null and CREATEEND!=''"><!-- 发生时间检索 -->
+						and a.CREATION_TIME &lt;= #{CREATEEND}
+					</if>
+				GROUP BY
+					EQUIPMENT_NAME
+				ORDER BY NONLVE DESC
+				LIMIT 10
+	</select>
+	
+	<!-- 列表(全部)TOP10 总数 根据工序名称分组  计算前10的不良率   工序-->
+	<select id="listMosteprocber" parameterType="pd" resultType="pd">
+				SELECT
+					SUM(NONCONFORMITY) AS NONMBER,
+					  convert((SUM(NONCONFORMITY)/SUM(CHECKNUM))*1000000,decimal) AS NONLVE,
+					PROCESS_NAME
+				FROM
+					FT_IMPERFECTION_ENTRY a
+					where 1=1
+					<if test="CREATESTART!=null and CREATESTART!=''"><!-- 发生时间检索 -->
+						and a.CREATION_TIME &gt;= #{CREATESTART}
+					</if>
+					<if test="CREATEEND!=null and CREATEEND!=''"><!-- 发生时间检索 -->
+						and a.CREATION_TIME &lt;= #{CREATEEND}
+					</if>
+				GROUP BY
+					PROCESS_NAME
+				ORDER BY NONLVE DESC
+				LIMIT 10
+	</select>
+	
+	
+	
+	<!-- 列表(全部)TOP10 总数 根据缺陷名称分组（待需要修改为缺陷代码）-->
+	<select id="listMost" parameterType="pd" resultType="pd">
+				SELECT
+					IMPERFECTION_CODE,
+					count(*) AS counts,
+					IMPERFECTION_NAME
+				FROM
+					FT_IMPERFECTION_ENTRY a
+				GROUP BY
+					IMPERFECTION_NAME
+				ORDER BY counts DESC
+				LIMIT 10
+	</select>
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_IMPERFECTION_ENTRY
+		where 
+			IMPERFECTION_ENTRY_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

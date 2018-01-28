@@ -1,0 +1,189 @@
+/***平板768px***/
+@media (min-width: 768px) and (max-width:1200px){ 
+    body .login_tit1{
+    	margin-top: 50px;
+    	height: 50px;
+	    line-height: 50px;
+    	font-size: 20px;
+    	width: 230px;
+    }
+    body .login_tit1 em{
+		height: 50px;
+		margin-right: 5px;
+	}
+	body .login_tit2{
+		height: 50px;
+		line-height: 50px;
+		font-size: 24px;
+	}
+    body .login_div{
+    	width: 420px;
+	    height: 350px;
+	    padding:15px 85px 0px 60px;
+    }
+    body .login_ado{
+		height: 35px;
+		line-height: 35px;
+		font-size: 16px;
+		margin-top: 30px;
+	}
+	body .login_adoos{
+		height: 35px;
+		line-height: 35px;
+		font-size: 16px;
+		margin-top: 30px;
+	}
+	body .login_ado input{
+		height: 35px;
+	}
+	body .login_btn{
+		height: 35px;
+		line-height: 35px;
+		margin-top: 25px;
+	}
+}
+/***电脑1200px***/
+@media (min-width:1200px){ 
+    body .login_tit1{
+    	margin-top: 50px;
+    	height: 50px;
+	    line-height: 50px;
+    	font-size: 22px;
+    	width: 240px;
+    }
+    body .login_tit1 em{
+		height: 50px;
+		margin-right: 5px;
+	}
+	body .login_tit2{
+		height: 50px;
+		line-height: 50px;
+		font-size: 28px;
+	}
+    body .login_div{
+    	width: 500px;
+	    height: 400px;
+	    padding:15px 85px 0px 60px;
+    }
+    body .login_ado{
+		height: 40px;
+		line-height: 40px;
+		margin-top: 40px;
+	}
+	body .login_ado input{
+		height: 40px;
+		width: 273px;
+	}
+	body .login_btn{
+		height: 40px;
+		line-height: 40px;
+		width: 273px;
+		margin-top: 35px;
+	}
+	body .login_sty{
+		width: 273px;
+	}
+}
+.login_box{
+	position: absolute;
+	width: 100%;
+	height: 55%;
+	top: 0;
+	left: 0;
+	background-image: url(../img/loginimg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+}
+.login_tit1{
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	width: 190px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+.login_tit1 em{
+	float: left;
+	display: block;
+	height: 40px;
+	margin-right: 5px;
+}
+.login_tit1 em img{
+	display: block;
+	height: 100%;
+}
+.login_tit2{
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	text-align: center;
+}
+.login_div{
+	width: 310px;
+	height: 270px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    box-shadow: 5px 5px 50px gray;
+    border-radius: 5px;
+    padding:10px 20px 0px 15px;
+    box-sizing: border-box;
+}
+.login_ado{
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	margin: 20px 0px;
+}
+.login_ado p{
+	width: 80px;
+	text-align: center;
+	float: left;
+}
+.login_ado input{
+	float: left;
+	width: 193px;
+	height: 30px;
+	border-color: #e7e7e7;
+	border: 1px solid #e7e7e7;
+	text-indent: 5px;
+}
+.login_btn{
+	width: 193px;
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	background-color: #0DC6AA;
+	color: white;
+	font-size: 16px;
+	float: right;
+	margin-top: 20px;
+}
+.login_btn:active{
+	background-color: #15dec0;
+}
+.login_sty{
+	height: 30px;
+	line-height: 30px;
+	width: 193px;
+	float: right;
+}
+.login_style{
+	float: left;
+}
+.login_style input,.login_styri input{
+	float: left;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-top: 6px;
+	margin-right: 3px;
+}
+.login_styri{
+	float: right;
+}

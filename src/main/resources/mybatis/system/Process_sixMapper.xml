@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Process_sixMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_PROCESS_SIX(
+			COMPANY_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PRINCIPALD_FIVESNAME,	
+			VALIDITY,	
+			EXECUTIONDATE,	
+			CUOSHIID,	
+			MEASUREIMPL,	
+			COMGIRMED,	
+			UPDATETIME,	
+			VERIFICATION,	
+			PROCESS_SIX_ID
+		) values (
+			#{COMPANY_ID},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{PRINCIPALNAME},	
+			#{EXECUTIVENAME},	
+			#{PRINCIPALD_FIVESNAME},	
+			#{VALIDITY},	
+			now(),	
+			#{CUOSHIID},	
+			#{MEASUREIMPL},	
+			#{COMGIRMED},	
+			#{UPDATETIME},	
+			#{VERIFICATION},	
+			#{PROCESS_SIX_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_PROCESS_SIX
+		where 
+			PROCESS_SIX_ID = #{PROCESS_SIX_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_PROCESS_SIX
+			set 
+				<if test="COMPANY_ID !=null and COMPANY_ID !=''">
+					COMPANY_ID = #{COMPANY_ID},
+				</if>
+				<if test="CLIENT_PROBLEM_COLLECTION_ID !=null and CLIENT_PROBLEM_COLLECTION_ID !=''">
+					CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+				</if>
+				<if test="PRINCIPALNAME !=null and PRINCIPALNAME !=''">
+					PRINCIPALNAME = #{PRINCIPALNAME},
+				</if>
+				<if test="EXECUTIVENAME !=null and EXECUTIVENAME !=''">
+					EXECUTIVENAME = #{EXECUTIVENAME},
+				</if>
+				<if test="PRINCIPALD_FIVESNAME !=null and PRINCIPALD_FIVESNAME !=''">
+					PRINCIPALD_FIVESNAME = #{PRINCIPALD_FIVESNAME},
+				</if>
+				<if test="VALIDITY !=null and VALIDITY !=''">
+					VALIDITY = #{VALIDITY},
+				</if>
+					EXECUTIONDATE = EXECUTIONDATE,
+				<if test="CUOSHIID !=null and CUOSHIID !=''">
+					CUOSHIID = #{CUOSHIID},
+				</if>
+				<if test="MEASUREIMPL !=null and MEASUREIMPL !=''">
+					MEASUREIMPL = #{MEASUREIMPL},
+				</if>
+				<if test="COMGIRMED !=null and COMGIRMED !=''">
+					COMGIRMED = #{COMGIRMED},
+				</if>
+				<if test="VERIFICATION !=null and VERIFICATION !=''">
+					VERIFICATION = #{VERIFICATION},
+				</if>
+				UPDATETIME = now(),
+			PROCESS_SIX_ID = PROCESS_SIX_ID
+			where 
+				PROCESS_SIX_ID = #{PROCESS_SIX_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PRINCIPALD_FIVESNAME,	
+			VALIDITY,	
+			EXECUTIONDATE,	
+			CUOSHIID,	
+			MEASUREIMPL,	
+			COMGIRMED,	
+			UPDATETIME,	
+			VERIFICATION,	
+			PROCESS_SIX_ID
+		from 
+			FT_PROCESS_SIX
+		where 
+			PROCESS_SIX_ID = #{PROCESS_SIX_ID}
+	</select>
+		<!-- 通过ID获取数据 -->
+	<select id="findByPromId" parameterType="pd" resultType="pd">
+		select 
+			COMPANY_ID,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			PRINCIPALNAME,	
+			EXECUTIVENAME,	
+			PRINCIPALD_FIVESNAME,	
+			VALIDITY,	
+			EXECUTIONDATE,	
+			CUOSHIID,	
+			MEASUREIMPL,	
+			COMGIRMED,	
+			UPDATETIME,	
+			VERIFICATION,	
+			PROCESS_SIX_ID
+		from 
+			FT_PROCESS_SIX
+		where 
+			CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</select>
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.PRINCIPALNAME,	
+				a.EXECUTIVENAME,	
+				a.PRINCIPALD_FIVESNAME,	
+				a.VALIDITY,	
+				a.EXECUTIONDATE,	
+				a.CUOSHIID,	
+				a.MEASUREIMPL,	
+				a.COMGIRMED,	
+				a.UPDATETIME,	
+				a.VERIFICATION,	
+				a.PROCESS_SIX_ID
+		from 
+				FT_PROCESS_SIX a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.COMPANY_ID,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.PRINCIPALNAME,	
+				a.EXECUTIVENAME,	
+				a.PRINCIPALD_FIVESNAME,	
+				a.VALIDITY,	
+				a.EXECUTIONDATE,	
+				a.CUOSHIID,	
+				a.MEASUREIMPL,	
+				a.COMGIRMED,	
+				a.UPDATETIME,	
+				a.VERIFICATION,	
+				a.PROCESS_SIX_ID
+		from 
+				FT_PROCESS_SIX a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_PROCESS_SIX
+		where 
+			PROCESS_SIX_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

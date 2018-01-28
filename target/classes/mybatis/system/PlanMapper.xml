@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="PlanMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_PLAN(
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			STEP,	
+			USERID,	
+			PLANTIME,	
+			FINISHTIME,	
+			ADDTIME,	
+			ADDUSERID,	
+			ISFINISH
+		) values (
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			#{STEP},	
+			#{USERID},	
+			#{PLANTIME},	
+			#{FINISHTIME},	
+			#{ADDTIME},	
+			#{ADDUSERID},	
+			#{ISFINISH}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_PLAN
+		where 
+			PLAN_ID = #{PLAN_ID}
+	</delete>
+	<!-- 删除事件负责人-->
+	<delete id="deleteBysj" parameterType="pd">
+		delete from FT_PLAN
+		where 
+			CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_PLAN
+			set 
+			
+			 <if test=" CLIENT_PROBLEM_COLLECTION_ID !=null and  CLIENT_PROBLEM_COLLECTION_ID !=''">
+			   CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+			 </if>
+			  <if test=" STEP !=null and  STEP !=''">
+			   STEP = #{STEP},
+			 </if>
+			  <if test=" USERID !=null and  USERID !=''">
+			   USERID = #{USERID},
+			 </if>
+			  <if test=" PLANTIME !=null and  PLANTIME !=''">
+			   PLANTIME = #{PLANTIME},
+			 </if>
+			  <if test=" FINISHTIME !=null and  FINISHTIME !=''">
+			   FINISHTIME = #{FINISHTIME},
+			 </if>
+			  <if test=" ADDTIME !=null and  ADDTIME !=''">
+			   ADDTIME = #{ADDTIME},
+			 </if> 
+			 <if test=" ADDUSERID !=null and  ADDUSERID !=''">
+			  ADDUSERID = #{ADDUSERID},
+			 </if>
+			  <if test=" ISFINISH !=null and  ISFINISH !=''">
+			   ISFINISH = #{ISFINISH},
+			 </if>
+			PLAN_ID = PLAN_ID
+			where 
+				PLAN_ID = #{PLAN_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			STEP,	
+			USERID,	
+			PLANTIME,	
+			FINISHTIME,	
+			ADDTIME,	
+			ADDUSERID,	
+			ISFINISH,	
+			PLAN_ID
+		from 
+			FT_PLAN
+		where 
+			PLAN_ID = #{PLAN_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.STEP,	
+				a.USERID,	
+				a.PLANTIME,	
+				a.FINISHTIME,	
+				a.ADDTIME,	
+				a.ADDUSERID,	
+				a.ISFINISH,	
+				a.PLAN_ID
+		from 
+				FT_PLAN a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.STEP,	
+				a.USERID,	
+				a.PLANTIME,	
+				a.FINISHTIME,	
+				a.ADDTIME,	
+				a.ADDUSERID,	
+				a.ISFINISH,	
+				a.PLAN_ID
+		from 
+				FT_PLAN a
+	</select>
+	<!-- 列表(全部)问题全部 -->
+	<select id="listAllByClientS" parameterType="pd" resultType="pd">
+		select
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.STEP,	
+				a.USERID,	
+				a.PLANTIME,	
+				a.FINISHTIME,	
+				a.ADDTIME,	
+				a.ADDUSERID,	
+				a.ISFINISH,	
+				b.DEPARTMENT_ID,
+				b.PHONE,
+				b.NAME,
+				b.ROLE_ID,
+				b.position,
+				b.EMAIL,
+				c.ROLE_NAME,
+				a.PLAN_ID
+		from 
+				FT_PLAN a
+				LEFT JOIN SYS_USER b ON a.USERID = b.USER_ID
+				LEFT JOIN SYS_ROLE c ON c.ROLE_ID = b.ROLE_ID
+				where 1=1
+				<if test="CLIENT_PROBLEM_COLLECTION_ID !=null and CLIENT_PROBLEM_COLLECTION_ID !=''">
+				and a.CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+				</if>
+				<if test="STEP !=null and STEP !=''">
+				and a.STEP = #{STEP}
+				</if>
+				ORDER BY  a.STEP ASC
+	</select>
+	
+	<!-- 列表(根据USERID) -->
+	<select id="listAllIsUser" parameterType="pd" resultType="pd">
+		select
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.STEP,	
+				a.USERID,	
+				a.PLANTIME,	
+				a.FINISHTIME,	
+				a.ADDTIME,	
+				a.ADDUSERID,	
+				a.ISFINISH,	
+				a.PLAN_ID
+		from 
+				FT_PLAN a
+				where a.USERID=#{USERID}
+				and a.CLIENT_PROBLEM_COLLECTION_ID=#{CLIENT_PROBLEM_COLLECTION_ID}
+	</select>
+	<!-- 列表(根据问题id) -->
+	<select id="listAllIsEvent" parameterType="pd" resultType="pd">
+		select
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.STEP,	
+				a.USERID,	
+				a.PLANTIME,	
+				a.FINISHTIME,	
+				a.ADDTIME,	
+				a.ADDUSERID,	
+				a.ISFINISH,	
+				b.DEPARTMENT_ID,
+				b.PHONE,
+				b.NAME,
+				b.ROLE_ID,
+				b.position,
+				c.ROLE_NAME,
+				d.DEPARTMENT_NAME,
+				a.PLAN_ID
+		from 
+				FT_PLAN a
+				LEFT JOIN SYS_USER b ON a.USERID = b.USER_ID
+				LEFT JOIN SYS_ROLE c ON c.ROLE_ID = b.ROLE_ID
+				LEFT JOIN FT_DEPARTMENT d ON d.DEPARTMENT_ID = b.DEPARTMENT_ID
+				where a.CLIENT_PROBLEM_COLLECTION_ID=#{CLIENT_PROBLEM_COLLECTION_ID}
+				ORDER BY  a.STEP ASC
+	</select>
+	
+	
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_PLAN
+		where 
+			PLAN_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	<!-- 通过问题ID和步骤获取数据 -->
+	<select id="queryAllByClientIdAndStep" parameterType="pd" resultType="pd">
+		select 
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			STEP,	
+			USERID,	
+			PLANTIME,	
+			FINISHTIME,	
+			ADDTIME,	
+			ADDUSERID,	
+			ISFINISH,	
+			PLAN_ID
+		from 
+			FT_PLAN
+		where 
+			CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID} and STEP = #{STEP}  
+	</select>
+</mapper>

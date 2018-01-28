@@ -1,0 +1,399 @@
+.d0_jinbox{
+	margin-top: 17px;
+	overflow: hidden;
+	background-color: white;
+	padding: 10px 30px;
+	box-sizing: border-box;
+}
+.d0_jintit{
+	font-size: 20px;
+	color: #4d4d57;
+	text-align: center;
+	font-weight: normal;
+	height: 40px;
+	line-height: 40px;
+}
+.d0_shuru{
+	position: relative;
+}
+.d0_shurut{
+	/*margin-left: 88px;*/
+}
+.d0_shurut>textarea{
+	resize: none;
+	width: 100%;
+	height: 190px;
+	font-size: 16px;
+	border-color: #dedede;
+	border: 1px solid #dedede;
+}
+.d0_shurutit{
+	/* position: absolute; */
+	/* left: 0px; */
+	/* top: 3px; */
+	font-size: 16px;
+	color: #666666;
+	margin-bottom: 13px;
+}
+.d0_shurutit span{
+	color: #c82727;
+	margin-right: 3px;
+}
+.d0_btn{
+	color: white;
+	background-color: #24cbb2;
+	width: 77px;
+	height: 28px;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	display: block;
+	margin: 30px auto 0px auto;
+}
+.d0_btn:active{
+	background-color: #01b99d;
+}
+.jinji_box{
+	background-color: white;
+	margin-top: 16px;
+	padding: 30px;
+	box-sizing: border-box;
+}
+.jinji_titbtn{
+	text-align: center;
+}
+.fay_tled{
+	font-size: 20px;
+	color: #666666;
+	margin-top: 10px;
+}
+.npaicbxz{
+	margin: 30px 0px 0px 0px;
+	overflow: hidden;
+}
+.npaicbxz>button{
+	width: 78px;
+	height: 31px;
+	outline: none;
+	color: white;
+	border: none;
+	background-color: #24cbb2;
+	font-size: 16px;
+	cursor: default;
+	margin: 0px 50px;
+}
+.npaicbxz>a{
+	display: block;
+	line-height: 31px;
+	width: 78px;
+	height: 31px;
+	outline: none;
+	float: right;
+	color: white;
+	border: none;
+	background-color: #24cbb2;
+	font-size: 16px;
+	cursor: default;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+.npaicbxz>a:active{
+	background-color: #01d0b1;
+}
+.npaicbxz .jinjipai{
+	background-color: #22c0ef;
+}
+.npaicbxz .jinjipai:active{
+	background-color: #21bbe8;
+}
+
+.jinji_div{
+	/*background-color: #fcfcfc;*/
+	/*border: 1px solid #dedede;*/
+	margin-bottom: 30px;
+	/*color: #666666;*/
+	/*overflow: hidden;*/
+	/*position: relative;*/
+}
+.neibka_bor{
+	background-color: #fdfdfd;
+	border: 1px solid #EEEEEE;
+	/*margin-top: 30px;*/
+	color: #666666;
+	overflow: hidden;
+	position: relative;
+}
+.xuhao_bocn{
+	color: #666;
+	margin-bottom: 5px;
+	font-size: 14px;
+}
+/*.jinji_divtit{*/
+	/*float: left;*/
+	/*width: 12%;*/
+	/*min-width: 80px;*/
+	/*max-width: 240px;*/
+	/*height: 100%;*/
+	/*box-sizing: border-box;*/
+	/*font-size: 16px;*/
+	/*position: absolute;*/
+	/*top: 0px;*/
+	/*left: 0px;*/
+	/*text-align: center;*/
+	/*border-right: 1px solid #dedede;*/
+/*}*/
+/*.jinjixuh{*/
+	/*border-bottom: 1px solid #dedede;*/
+	/*height: 76px;*/
+	/*line-height: 76px;*/
+/*}*/
+/*.jinjixuh2{*/
+	/*height: 50px;*/
+	/*line-height:20px;*/
+	/*padding: 20px 0px;*/
+/*}*/
+/*.jinjixuh2>span{*/
+	/*word-wrap:break-word;*/
+/*}*/
+.jinji_divtitbot{
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+.jinji_divtitbot button{
+	width: 75px;
+	height: 30px;
+	line-height: 30px;
+	color: white;
+	background-color: #24cbb2;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	margin: 8px 40px 0px 0px;
+}
+.jinji_divtitbot .jinjiscbtn{
+	background-color: #fa6262;
+}
+.jinjiul{
+	padding-left: 0px;
+	margin-bottom: 0px;
+	list-style: none;
+	box-sizing: border-box;
+	overflow: hidden;
+	margin-right: 0px;
+	padding: 10px 5px 20px 5px;
+}
+.jinjiul .form-control{
+	padding: 6px 0px;
+	border: 1px solid #dedede;
+}
+.jinjiul button{
+	border-color:#dedede;
+}
+@media (min-width: 1200px){
+	.jinjiul .col-lg-2 {
+	}
+}
+@media (max-width: 1200px){
+	.jinjiulb{
+	}
+}
+
+.jinjiula{
+	
+}
+.jinjiulb{
+	
+}
+.jinjiulb input{
+	padding-right: 12px;
+	border: 1px solid #E3E3E3;
+}
+.jinjiulc{
+	
+}
+.jinjiulc select{
+	height: 34px;
+	border: 1px solid #e3e3e3;
+	width: 100%;
+	box-sizing: border-box;
+}
+.jinjiuld{
+	
+}
+.jinjiuld textarea{
+	width: 100%;
+	resize: none;
+	border: 1px solid #e3e3e3;
+	height: 110px;
+	border-radius: 5px;
+}
+.jinjiule{
+	
+}
+.jinjiddi{
+	border: 1px solid #e3e3e3;
+	height: 95px;
+	background-color: white;
+	padding: 4px 7px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+.jinjiddi::-webkit-scrollbar {
+	width: 5px;
+	background-color: #F5F5F5;
+}
+/**定义滚动条轨道 内阴影+圆角**/
+.jinjiddi::-webkit-scrollbar-track {
+	border-radius: 1px;
+	background-color: #F5F5F5;
+}
+/**定义滑块 内阴影+圆角**/
+.jinjiddi::-webkit-scrollbar-thumb {
+	background-color: #dedede;
+}
+
+.jinjiuddd{
+	line-height: 28px;
+	overflow: hidden;
+	position: relative;
+}
+.jinjiudtits{
+	margin-left: 20px;
+	margin-right: 24px;
+}
+.jinjiudtits a{
+	display: block;
+	color: #4d4d57;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.jinjiudtits a:hover{
+	text-decoration:underline;
+	color: #1788c9;
+}
+.jinjiudddeml{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.jinjiudddemr{
+    position: absolute;
+    top: 0px;
+    right: 0px;	
+}
+.jinjiudddeml,.jinjiudddemr{
+	display: inline-block;
+	vertical-align: middle;
+}
+.jinjiultit{
+	font-size: 14px;
+	/* line-height: 35px; */
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.jinjiultit2{
+	width: 100px;
+	/* height: 35px; */
+	/* line-height: 30px; */
+	background-image: url(../img/wenjiancolo.png);
+	background-repeat: no-repeat;
+	background-position: 60px 0px;
+	font-size: 14px;
+	cursor: pointer;
+	position: relative;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.jinjiultit2 input{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	top: 0px;
+	left: 0px;
+}
+.jinjiuze{
+	position: relative;
+	font-size: 14px;
+}
+.jinjiuze>select{
+	border-radius: 4px;
+}
+.jinjiuze>input{
+	padding: 6px 0px;
+    border-radius: 4px;
+    border: 1px solid #dedede;
+    width: 100%;
+}
+.jinjiids{
+	color: #c8c8c8;
+}
+.oisbtns{
+	display: block;
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	background-color: #24cbb2;
+	margin: 40px auto 70px auto;
+}
+.oisbtns:hover,.oisbtns:active,.oisbtns:focus,.oisbtns:visited{
+	color: white;
+}
+.jinji_divtitbot .zjbtn{
+	margin-left: 40px;
+}
+.jinji_divtitbot .zjbtna{
+	margin-left: 40px;
+}
+.jinji_divtitbot .zjbtnb{
+	margin-left: 40px;
+}
+.jinji_divtitbot .zjbtnc{
+	margin-left: 40px;
+}
+.jinjiuze label:first-child{
+	margin-left: 0px;
+}
+.xiayibus {
+    width: 340px;
+    height: 40px;
+    margin: 40px auto 70px auto;
+}
+.xiayibus a {
+    display: block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    background-color: #24cbb2;
+}
+.d0_8btnbc{
+	margin: 20px auto 20px auto;
+	display: block;
+	width: 75px;
+	height: 30px;
+	border: none;
+	border-radius: 10px;
+	background-color: #24cbb2;
+	color: white;
+	outline: none;
+}
+/****d6.css****/
+.jinjiuzediv{
+	height: 34px;
+	line-height: 34px;
+}
+.jinjiuzetext{
+	color: #888888;
+	line-height: 30px;
+}

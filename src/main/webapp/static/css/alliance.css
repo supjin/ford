@@ -1,0 +1,192 @@
+.jitbox{
+    width: 100%;
+    min-width: 1200px;
+    height: 406px;
+    position: relative;
+}
+.bannctn{
+    width: 100%;
+    min-width: 1200px;
+    height: 100%;
+    overflow: hidden;
+}
+.dbnnul{
+    width: 50000px;
+    height: 100%;
+}
+.dbnnul li{
+    float: left;
+    width: 1920px;
+    height: 100%;
+    max-width: 1920px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.dbnnul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.banbhct{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -37px;
+    overflow: hidden;
+    z-index: 8;
+}
+.banbhct li{
+    width: 13px;
+    height: 13px;
+    border: 1px solid #003366;
+    background: #ffffff;
+    float: left;
+    margin: 0 5px;
+    cursor: pointer;
+    /*behavior: url(css/pie.htc);*/
+    border-radius: 50%;
+}
+.banbhct .dnow_li{
+    background: #003366;
+}
+
+.banctn{
+    overflow: hidden;
+    padding-bottom: 32px
+}
+
+.gylxia{
+    margin: 0 20px;
+    overflow: hidden;
+    margin-top: 32px;
+}
+.gylmt{
+    float: left;
+    width: 477px;
+    height: 322px;
+    border: 8px solid #efefef;
+}
+.gylmt img{
+    width: 100%;
+    height: 100%;
+}
+.riglemd{
+    float: left;
+    width: 630px;
+    height: 338px;
+    overflow: hidden;
+    margin-left: 32px;
+    font-size: 14px;
+    line-height: 2em;
+    color: #666666;
+}
+.riglemd p{
+    margin-top: 26px;
+    text-indent: 2em;
+}
+.riglemd p:first-child{
+    margin-top: 0;
+}
+.xistup{
+    overflow: hidden;
+    text-align: center;
+    margin-top: 32px;
+}
+.xistup img{
+    width: auto;
+    height: auto;
+}
+
+.lmcyul{
+    width: 1220px;
+    margin-top: 32px;
+    overflow: hidden;
+}
+.lmcyul li{
+    float: left;
+    width: 223px;
+    color: #494949;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.lmcyul li:hover img{
+    border: 1px solid #328cd6;
+}
+
+.lmcyul li a{
+    color: #494949;
+}
+.lmcyul li img{
+    width: 223px;
+    height: 84px;
+    border: 1px solid #bcbcbc;
+}
+.icxte{
+    height: 37px;
+    padding: 0px 2px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.zhancx{
+    border: 1px solid #e4e4e4;
+    border-top: none;
+    /*padding-top: 16px;*/
+    overflow: hidden;
+    /*height: 884px;*/
+}
+.gudiat{
+    overflow: auto;
+    font-size: 16px;
+    line-height: 3em;
+    color: #464646;
+    padding: 0 28px;
+    padding-bottom: 100px;
+    /*margin-bottom: 40px;*/
+    height: 627px;
+}
+.gudiat div{
+    text-align: center;
+    margin: 50px 0 10px 0;
+    margin-top: 32px;
+}
+.gudiat div:first-child{
+    margin-top: 50px;
+}
+.gudiat p{
+
+}
+
+.zhanksq{
+    display: block;
+    width: 166px;
+    height: 46px;
+    line-height: 44px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    background: #c5c5c5;
+    behavior: url(css/pie.htc);
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+.zhanksq span{
+    margin: 0 8px;
+    vertical-align: middle;
+}
+.zhanksq img{
+    vertical-align: middle;
+    width: 22px;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,121 @@
+.shanmbf{
+    overflow: hidden;
+    border: 1px solid #ededed;
+    background: #eeeeee;
+    /*min-height: 270px;*/
+}
+.shblef{
+    float: left;
+    width: 806px;
+    padding: 15px 15px;
+    padding-bottom: 35px;
+    position: relative;
+    background: #FFFFFF;
+    min-height: 218px;
+}
+.sangjiao{
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #FFFFFF;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+}
+.gedtle{
+    font-size: 20px;
+    color: #373737;
+}
+.tonyle{
+    color: #00458a;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.tonyle p , .tonyle span{
+    color: #737373;
+}
+.tonyle p{
+    line-height: 1.8em;
+}
+
+.shbfrig{
+    float: left;
+    width: 302px;
+    padding: 20px 30px;
+    background: #eeeeee;
+}
+.rigosle{
+    font-size: 16px;
+    color: #696767;
+}
+.zhuyaod{
+    font-size: 14px;
+}
+.jijdxt{
+    color: #00458a;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.jijdxt a{
+    color: #787878;
+}
+.jijdxt a:first-child{
+    margin-right: 1em;
+}
+.jijdxt .newad{
+    color: #00458a;
+}
+.xianxd{
+    margin-top: 20px;
+    line-height: 1.8em;
+    text-indent: 2em;
+    display: none;
+}
+
+
+/****详情和联系我们****/
+.xiamdc{
+    overflow: hidden;
+    margin-top: 27px;
+}
+.liyige{
+    border-top: 3px solid #00458A;
+    height: 46px;
+    position: relative;
+    color: white;
+    line-height: 46px;
+    font-size: 18px;
+    overflow: hidden;
+    border-bottom: 1px solid #E4E4E4;
+    background: url(../img/newbgbg.jpg);
+}
+.liyige .nowzc {
+    background: #00458a;
+    color: white;
+}
+.liyige>a {
+    float: left;
+    padding: 0px 20px;
+    color: #00458A;
+}
+.liyige>a:hover{
+    background: #00458a;
+    color: white;
+}
+.baoznr{
+    padding: 30px 40px;
+    min-height: 300px;
+}
+.xihlxw{
+    display: none;
+}
+.show{
+    display: block;
+}
+.lxdph p{
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #727272;
+}
+

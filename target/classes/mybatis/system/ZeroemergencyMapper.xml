@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ZeroemergencyMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_ZEROEMERGENCY(
+			EMERGENCYRESPONSE,	
+			EFFCIENT,	
+			VERIFICATION,	
+			PLANTIME,	
+			CLIENT_PROBLEM_COLLECTION_ID,	
+			CRETETIME,
+			ATTACHMENTNAME,
+			ATTACHMENTNURL,
+			EXECUTIONDATE,
+			RESPONSIBLE,
+			SELECTSTATE,
+			ZEROEMERGENCY_ID
+		) values (
+			#{EMERGENCYRESPONSE},	
+			#{EFFCIENT},	
+			#{VERIFICATION},	
+			#{PLANTIME},	
+			#{CLIENT_PROBLEM_COLLECTION_ID},	
+			now(),
+			#{ATTACHMENTNAME},
+			#{ATTACHMENTNURL},
+			#{EXECUTIONDATE},
+			#{RESPONSIBLE},
+			'0',
+			#{ZEROEMERGENCY_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_ZEROEMERGENCY
+		where 
+			ZEROEMERGENCY_ID = #{ZEROEMERGENCY_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_ZEROEMERGENCY
+			set 
+				<if test="CLIENT_PROBLEM_COLLECTION_ID !=null and CLIENT_PROBLEM_COLLECTION_ID !=''">
+					CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID},
+				</if>
+				<if test="EMERGENCYRESPONSE !=null and EMERGENCYRESPONSE !=''">
+					EMERGENCYRESPONSE = #{EMERGENCYRESPONSE},
+				</if>
+				<if test="EFFCIENT !=null and EFFCIENT !=''">
+					EFFCIENT = #{EFFCIENT},
+				</if>
+				<if test="VERIFICATION !=null and VERIFICATION !=''">
+					VERIFICATION = #{VERIFICATION},
+				</if>
+				<if test="PLANTIME !=null and PLANTIME !=''">
+					PLANTIME = #{PLANTIME},
+				</if>
+				CRETETIME = CRETETIME,
+				<if test="ATTACHMENTNAME !=null and ATTACHMENTNAME !=''">
+					ATTACHMENTNAME = #{ATTACHMENTNAME},
+				</if>
+				<if test="ATTACHMENTNURL !=null">
+					ATTACHMENTNURL = #{ATTACHMENTNURL},
+				</if>
+				<if test="EXECUTIONDATE !=null and EXECUTIONDATE !=''">
+					EXECUTIONDATE = #{EXECUTIONDATE},
+				</if>
+				<if test="RESPONSIBLE !=null and RESPONSIBLE !=''">
+					RESPONSIBLE = #{RESPONSIBLE},
+				</if>
+				<if test="SELECTSTATE !=null and SELECTSTATE !=''">
+					SELECTSTATE = #{SELECTSTATE},
+				</if>
+			ZEROEMERGENCY_ID = ZEROEMERGENCY_ID
+			where 
+				ZEROEMERGENCY_ID = #{ZEROEMERGENCY_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			a.EMERGENCYRESPONSE,	
+			a.EFFCIENT,	
+			a.VERIFICATION,	
+			a.PLANTIME,	
+			a.CLIENT_PROBLEM_COLLECTION_ID,	
+			a.CRETETIME,
+			a.ATTACHMENTNAME,
+			a.ATTACHMENTNURL,
+			a.EXECUTIONDATE,
+			a.RESPONSIBLE,
+			a.SELECTSTATE,
+			b.NAME,
+			a.ZEROEMERGENCY_ID
+		from 
+			FT_ZEROEMERGENCY a
+			LEFT JOIN SYS_USER b ON a.RESPONSIBLE = b.USER_ID
+		where 
+			ZEROEMERGENCY_ID = #{ZEROEMERGENCY_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.EMERGENCYRESPONSE,	
+				a.EFFCIENT,	
+				a.VERIFICATION,	
+				a.PLANTIME,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.CRETETIME,
+				a.ATTACHMENTNAME,
+				a.ATTACHMENTNURL,
+				a.EXECUTIONDATE,
+				a.RESPONSIBLE,
+				a.SELECTSTATE,
+				a.ZEROEMERGENCY_ID
+		from 
+				FT_ZEROEMERGENCY a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.EMERGENCYRESPONSE,	
+				a.EFFCIENT,	
+				a.VERIFICATION,	
+				a.PLANTIME,	
+				a.CLIENT_PROBLEM_COLLECTION_ID,	
+				a.CRETETIME,
+				a.ATTACHMENTNAME,
+				a.ATTACHMENTNURL,
+				a.EXECUTIONDATE,
+				a.RESPONSIBLE,
+				a.SELECTSTATE,
+				b.NAME,
+				a.ZEROEMERGENCY_ID
+		from 
+				FT_ZEROEMERGENCY a
+				LEFT JOIN SYS_USER b ON a.RESPONSIBLE = b.USER_ID
+				where 1=1
+				<if test="CLIENT_PROBLEM_COLLECTION_ID !=null and CLIENT_PROBLEM_COLLECTION_ID !=''">
+				and a.CLIENT_PROBLEM_COLLECTION_ID = #{CLIENT_PROBLEM_COLLECTION_ID}
+				</if>
+				<if test="SELECTSTATE !=null and SELECTSTATE !=''">
+				and a.SELECTSTATE = #{SELECTSTATE}
+				</if>
+				order by a.CRETETIME ASC
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_ZEROEMERGENCY
+		where 
+			ZEROEMERGENCY_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

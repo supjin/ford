@@ -1,0 +1,93 @@
+.relborderbox{
+	width: 100%;
+	border-bottom: 1px solid #E4E4E4;
+	border-left: 1px solid #E4E4E4;
+	border-right: 1px solid #E4E4E4;
+	box-sizing: border-box;
+}
+.relbordertop{
+	width: 100%;
+	height: 46px;
+	line-height: 46px;
+	border-top: 3px solid #00458A;
+	text-align: center;
+	background: url(../img/pw/newbgbg.jpg);
+	color: #00458A;
+	font-size: 16px;
+}
+.relborul{
+	width: 100%;
+	padding: 60px 0px 66px 0px;
+	box-sizing: border-box;
+}
+.relborli{
+	width: 100%;
+}
+.relborlia{
+	float: left;
+	margin-right: 5px;
+	width: 220px;
+	height: 45px;
+	text-align: right;
+	font-size: 16px;
+	line-height: 45px;
+	color: #00458A;
+}
+.relborlib{
+	float: left;
+	width: 702px;
+}
+.relborlib>input{
+	width: 700px;
+    height: 45px;
+    border: 1px solid #E4E4E4;
+    font-size: 14px;
+    font-family: "microsoft yahei";
+    line-height: 45px;
+    text-indent: 10px;
+    color: #464646;
+}
+.relborlic{
+	float: left;
+	margin-left: 5px;
+	height: 45px;
+	line-height: 45px;
+	color: red;
+}
+.relbortext{
+	font-size: 14px;
+	font-family: "microsoft yahei";
+	resize: none;
+	color: #464646;
+	width: 702px;
+	height: 332px;
+	padding: 5px;
+	box-sizing: border-box;
+	line-height: 25px;
+	border: 1px solid #E4E4E4;
+}
+.relsele{
+	float: left;
+	width: 234px;
+	height: 45px;
+	font-size: 14px;
+	border: 1px solid #E4E4E4;
+	padding: 10px 0px\9;
+	box-sizing: border-box\9;
+}
+.h45{
+	height: 45px;
+}
+.relbtn{
+	display: block;
+	width: 140px;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	margin: 53px auto 0px auto;
+	background-color: #1a76bf;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+}

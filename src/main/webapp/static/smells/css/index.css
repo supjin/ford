@@ -1,0 +1,286 @@
+.contentbox{
+	width: 100%;
+	overflow: hidden;
+}
+.hovexx2{
+	width: auto !important;
+	float: right !important;
+	margin-right: 20px !important;
+	overflow: hidden !important;
+	padding-left: 0px !important;
+	margin-right: 75px !important;
+}
+.hovexx2 .hovexxii{
+	width: 15px !important;
+	margin-top:7px !important;
+}
+.hovexx2 .hovetit{
+	margin-top: 0px;
+}
+.contentbox>.contli:first-child{
+	margin-left: 0px !important;
+}
+.contentbox>.contli:first-child+.contli+.contli+.contli+.contli{
+	margin-left: 0px !important;
+}
+.contentbox>.contli:first-child+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli{
+	margin-left: 0px !important;
+}
+.contentbox>.contli:first-child+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli{
+	margin-left: 0px !important;
+}
+.contentbox>.contli:first-child+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli{
+	margin-left: 0px !important;
+}
+.contentbox>.contli:first-child+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli+.contli{
+	margin-left: 0px !important;
+}
+.contentbox>.contli:nth-child(4n+1){
+	margin-left: 0px !important;
+}
+.contli{
+	float: left;
+	width: 302px;
+	margin-left: 64px;
+	border: 1px solid #e4e4e4;
+	box-sizing: border-box;
+	padding-bottom: 5px;
+	margin-bottom: 40px;
+}
+.contlia img{
+	width: 100%;
+	height: 160px;
+}
+.contlib{
+	text-align: center;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+}
+.contlic{
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+.lecontli{
+	float: left;
+	margin-left: 20px;
+}
+.ricontli{
+	float: right;
+	margin-right: 65px;
+}
+.lecontli>img{
+	width: 20px;
+	margin-right: 6px;
+}
+.ripingimg{
+	float: left;
+	margin-right: 5px;
+}
+.ripingimg>img{
+	float: left;
+	width: 15px;
+	margin-top: 2px;
+	margin-top: 7px;
+}
+.lepingtext{
+	float: left;
+}
+.footer{
+	height: ;
+	margin: 0px;
+}
+.chabtn{
+	margin: 20px auto 70px auto;
+	width: 400px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	box-sizing: border-box;
+	border: 1px solid #e4e4e4;
+	cursor: pointer;
+	color: #898686;
+}
+.chabtn:hover{
+	background-color: #169bd5;
+	color: white;
+}
+/******气味散发中css******/
+.sfbg{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background:rgba(0,0,0,0.9);
+}
+@keyframes boxss{
+	from{box-shadow: 2px 2px 25px white;}
+	100%{box-shadow: 2px 2px 225px white;}
+}
+.bao{
+	position: absolute;
+	width: 1000px;
+	height: 600px;
+	top:50%;
+	left:50%;
+	z-index: 7;
+	margin-left: -500px;
+	margin-top: -300px;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 2px 2px 25px white;
+	animation: boxss 1s linear 0s infinite alternate;
+}
+.sfbgbox{
+	width: 800px;
+	height: 600px;
+	float: left;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 2px 2px 25px white;
+	overflow: hidden;
+	border-radius: 5px 0px 0px 5px;
+}
+.sftop{
+	width: 100%;
+	height: 427px;
+	overflow: hidden;
+}
+.sftop>img{
+	width: 100%;
+	height: 100%;
+}
+.sfcon{
+	width: 100%;
+	height: 50px;
+	font-size: 20px;
+	text-align: center;
+	line-height: 66px;
+}
+.sfconb{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 40px;
+	color:#4d4343;
+	letter-spacing: 2px;
+}
+@keyframes boddd{
+	from{transform: translateY(0px);}
+	to{transform: translateY(-5px);}
+}
+.sfconb>span{
+	display: inline-block;
+	padding: 0px 3px;
+}
+.sfconb>span:first-child{
+	animation: boddd 0.5s ease 0s infinite alternate;
+}
+.sfconb>span:first-child+span{
+	animation: boddd 0.5s ease 0.15s infinite alternate;
+}
+.sfconb>span:first-child+span+span{
+	animation: boddd 0.5s ease 0.3s infinite alternate;
+}
+.hovetext{
+	width: 100px;
+	height: 80px;
+	position: absolute;
+	bottom: 82px;
+	right: -9px;
+}
+.hovetext>a{
+	display: block;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: white;
+	background-color: #169bd5;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+.hovelis{
+	float: left;
+	width: 200px;
+	height: 600px;
+	background-color: #f3f3f3;
+    box-shadow: 2px 2px 25px white;
+    border-radius: 5px;
+}
+.hovelisa{
+	width: 100%;
+	height: 427px;
+	overflow: hidden;
+	border-bottom: 1px solid #e4e4e4;
+}
+.hovelisa>p{
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+}
+.hovelisa>p:first-child{
+	height: 40px;
+	line-height: 50px;
+}
+.hovelisa>p:last-child{
+	height: 378px;
+	line-height: 22px;
+	overflow: hidden;
+	text-indent: 28px;
+}
+.hovelisb{
+	width: 100%;
+	height: 172px;
+	overflow: hidden;
+}
+.hovexx{
+	width: 100%;
+	height: 25px;
+	padding-left: 26px;
+	box-sizing: border-box;
+	margin-top: 0px;
+}
+.hovexximg{
+	float: left;
+	margin-right: 15px;
+}
+.hovexxii{
+	float: left;
+	width: 22px;
+	height: 22px;
+	position: relative;
+}
+.hovexximg img{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+.hovetit{
+	float: left;
+	margin-top: 2px;
+}
+.hovep{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	box-sizing: border-box;
+	margin-top: 10px;
+}
+.sfbgboxbtn{
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background-color: #f4ad01;
+	color: white;
+	margin: 17px auto 0px auto;
+	cursor: pointer;
+	border-radius: 5px;
+	position: relative;
+	z-index: 5;
+}

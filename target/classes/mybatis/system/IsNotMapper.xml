@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="IsNotMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_ISNOT(
+			PROBLEM_ID,	
+			DESCRIPTION,	
+			WHAT_COLUMN,	
+			WHERE_COLUMN,	
+			WHEN_COLUMN,	
+			WHO_COLUMN,	
+			HOWBIG_COLUMN,	
+			DETECTION,	
+			CREATION_TIME,	
+			UPDATE_TIME,	
+			ISNOT_ID
+		) values (
+			#{PROBLEM_ID},	
+			#{DESCRIPTION},	
+			#{WHAT_COLUMN},	
+			#{WHERE_COLUMN},	
+			#{WHEN_COLUMN},	
+			#{WHO_COLUMN},	
+			#{HOWBIG_COLUMN},	
+			#{DETECTION},	
+			now(),	
+			now(),	
+			#{ISNOT_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<delete id="delete" parameterType="pd">
+		delete from FT_ISNOT
+		where 
+			ISNOT_ID = #{ISNOT_ID}
+	</delete>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_ISNOT
+			set 
+			
+			<if test="PROBLEM_ID!=null and PROBLEM_ID!=''">
+			   PROBLEM_ID = #{PROBLEM_ID},
+			</if>
+			<if test="DESCRIPTION!=null and DESCRIPTION!=''">
+			   DESCRIPTION = #{DESCRIPTION},
+			</if>
+			<if test="WHAT_COLUMN!=null and WHAT_COLUMN!=''">
+			   WHAT_COLUMN = #{WHAT_COLUMN},
+			</if>
+			<if test="WHERE_COLUMN!=null and WHERE_COLUMN!=''">
+			   WHERE_COLUMN = #{WHERE_COLUMN},
+			</if>
+			<if test="WHEN_COLUMN!=null and WHEN_COLUMN!=''">
+			  WHEN_COLUMN = #{WHEN_COLUMN},
+			</if>
+			<if test="WHO_COLUMN!=null and WHO_COLUMN!=''">
+			   WHO_COLUMN = #{WHO_COLUMN},
+			</if>
+			<if test="HOWBIG_COLUMN!=null and HOWBIG_COLUMN!=''">
+			   HOWBIG_COLUMN = #{HOWBIG_COLUMN},
+			</if>
+			<if test="DETECTION!=null and DETECTION!=''">
+			   DETECTION = #{DETECTION},
+			</if>
+			<if test="CREATION_TIME!=null and CREATION_TIME!=''">
+			   CREATION_TIME = #{CREATION_TIME},
+			</if>
+			<if test="UPDATE_TIME!=null and UPDATE_TIME!=''">
+			   UPDATE_TIME = #{UPDATE_TIME},
+			</if>
+		
+			ISNOT_ID = ISNOT_ID
+			where 
+				ISNOT_ID = #{ISNOT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			PROBLEM_ID,	
+			DESCRIPTION,	
+			WHAT_COLUMN,	
+			WHERE_COLUMN,	
+			WHEN_COLUMN,	
+			WHO_COLUMN,	
+			HOWBIG_COLUMN,	
+			DETECTION,	
+			CREATION_TIME,	
+			UPDATE_TIME,	
+			ISNOT_ID
+		from 
+			FT_ISNOT
+		where 
+			ISNOT_ID = #{ISNOT_ID}
+	</select>
+	
+	<!-- 通过事件id获取数据 -->
+	<select id="findByProblemId" parameterType="pd" resultType="pd">
+		select 
+			PROBLEM_ID,	
+			DESCRIPTION,	
+			WHAT_COLUMN,	
+			WHERE_COLUMN,	
+			WHEN_COLUMN,	
+			WHO_COLUMN,	
+			HOWBIG_COLUMN,	
+			DETECTION,	
+			CREATION_TIME,	
+			UPDATE_TIME,	
+			ISNOT_ID
+		from 
+			FT_ISNOT
+		where 
+			PROBLEM_ID = #{PROBLEM_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.PROBLEM_ID,	
+				a.DESCRIPTION,	
+				a.WHAT_COLUMN,	
+				a.WHERE_COLUMN,	
+				a.WHEN_COLUMN,	
+				a.WHO_COLUMN,	
+				a.HOWBIG_COLUMN,	
+				a.DETECTION,	
+				a.CREATION_TIME,	
+				a.UPDATE_TIME,	
+				a.ISNOT_ID
+		from 
+				FT_ISNOT a
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.PROBLEM_ID,	
+				a.DESCRIPTION,	
+				a.WHAT_COLUMN,	
+				a.WHERE_COLUMN,	
+				a.WHEN_COLUMN,	
+				a.WHO_COLUMN,	
+				a.HOWBIG_COLUMN,	
+				a.DETECTION,	
+				a.CREATION_TIME,	
+				a.UPDATE_TIME,	
+				a.ISNOT_ID
+		from 
+				FT_ISNOT a
+	</select>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteAll" parameterType="String">
+		delete from FT_ISNOT
+		where 
+			ISNOT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</delete>
+	
+</mapper>

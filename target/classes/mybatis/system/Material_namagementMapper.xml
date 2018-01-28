@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Material_namagementMapper">
+	
+	
+	<!-- 新增-->
+	<insert id="save" parameterType="pd">
+		insert into FT_MATERIAL_NAMAGEMENT(
+			PARTNAME,	
+			PARTCODING,	
+			CODE,	
+			DELETED,	
+			CREATETIME,	
+			UPDATETIME,	
+			MATERIAL_NAMAGEMENT_ID
+		) values (
+			#{PARTNAME},	
+			#{PARTCODING},	
+			#{CODE},	
+			'0',	
+			now(),	
+			#{UPDATETIME},	
+			#{MATERIAL_NAMAGEMENT_ID}
+		)
+	</insert>
+	
+	
+	<!-- 删除-->
+	<update id="delete" parameterType="pd">
+		update  FT_MATERIAL_NAMAGEMENT
+		set DELETED=1
+		where 
+			MATERIAL_NAMAGEMENT_ID = #{MATERIAL_NAMAGEMENT_ID}
+	</update>
+	
+	
+	<!-- 修改 -->
+	<update id="edit" parameterType="pd">
+		update  FT_MATERIAL_NAMAGEMENT
+			set 
+				<if test="PARTNAME !=null and PARTNAME !=''">
+				PARTNAME = #{PARTNAME},
+				</if>
+				<if test="PARTCODING !=null and PARTCODING !=''">
+				PARTCODING = #{PARTCODING},
+				</if>
+				<if test="CODE !=null and CODE !=''">
+				CODE = #{CODE},
+				</if>
+				<if test="DELETED !=null and DELETED !=''">
+				DELETED = #{DELETED},
+				</if>
+				CREATETIME = CREATETIME,
+				UPDATETIME = now(),
+			MATERIAL_NAMAGEMENT_ID = MATERIAL_NAMAGEMENT_ID
+			where 
+				MATERIAL_NAMAGEMENT_ID = #{MATERIAL_NAMAGEMENT_ID}
+	</update>
+	
+	
+	<!-- 通过ID获取数据 -->
+	<select id="findById" parameterType="pd" resultType="pd">
+		select 
+			PARTNAME,	
+			PARTCODING,	
+			CODE,	
+			DELETED,	
+			CREATETIME,	
+			UPDATETIME,	
+			MATERIAL_NAMAGEMENT_ID
+		from 
+			FT_MATERIAL_NAMAGEMENT
+		where 
+			MATERIAL_NAMAGEMENT_ID = #{MATERIAL_NAMAGEMENT_ID}
+	</select>
+	
+	
+	<!-- 列表 -->
+	<select id="datalistPage" parameterType="page" resultType="pd">
+		select
+				a.PARTNAME,	
+				a.PARTCODING,	
+				a.CODE,	
+				a.DELETED,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				b.NAME,
+				b.CODE AS CODESUP,
+				a.MATERIAL_NAMAGEMENT_ID
+		from 
+				FT_MATERIAL_NAMAGEMENT a
+				left join FT_SUPPLIERINVENTORY b
+				on a.CODE=b.CODE
+				where 1=1 
+				and a.DELETED=0
+				ORDER BY a.CREATETIME DESC
+	</select>
+	
+	<!-- 列表(全部) -->
+	<select id="listAll" parameterType="pd" resultType="pd">
+		select
+				a.PARTNAME,	
+				a.PARTCODING,	
+				a.CODE,	
+				a.DELETED,	
+				a.CREATETIME,	
+				a.UPDATETIME,	
+				b.NAME,
+				a.MATERIAL_NAMAGEMENT_ID
+		from 
+				FT_MATERIAL_NAMAGEMENT a
+				LEFT JOIN FT_SUPPLIERINVENTORY b ON a.CODE = b.CODE
+				where a.DELETED=0
+				order by a.CREATETIME DESC
+	</select>
+
+	
+	<!-- 批量删除 -->
+	<update id="deleteAll" parameterType="String">
+		update  FT_MATERIAL_NAMAGEMENT
+		set
+		DELETED=1
+		where 
+			MATERIAL_NAMAGEMENT_ID in
+		<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+                 #{item}
+		</foreach>
+	</update>
+	
+</mapper>

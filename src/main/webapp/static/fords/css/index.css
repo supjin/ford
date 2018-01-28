@@ -1,0 +1,341 @@
+body{
+	overflow-y: hidden;
+	background-color: #eeeff4;
+}
+a:hover,a:active,a:visited,a:link,a:focus{
+	text-decoration: none;
+	outline: none;
+}
+.index_box{
+	margin-left: 204px;
+	transition: 0.5s;
+}
+.index_top{
+	height: 50px;
+	background-color: #24cbb2;
+	color: white;
+	padding: 0px 17px;
+	box-sizing: border-box;
+}
+.index_topcai{
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	cursor: pointer;
+}
+.index_topxin{
+	list-style: none;
+	padding-left: 0px;
+	margin-bottom: 0px;
+	margin-right: 20px;
+}
+.index_topxin>li{
+	float: left;
+	margin: 20px 25px 10px 20px;
+	position: relative;
+	cursor: pointer;
+}
+.index_topxin>li>span{
+	position: absolute;
+	top: -12px;
+	right: -18px;
+	font-size: 12px;
+	display: block;
+	border-radius: 50%;
+	padding: 2px 5px;
+}
+.index_xinbga{
+	background-color: #5cb85c;
+}
+.index_xinbgb{
+	background-color: #F0AD4E;
+}
+.index_xinbgc{
+	background-color: #D9534F;
+}
+.index_xiala{
+	overflow: hidden;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+.index_xiauserimg{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 10px;
+	border: 1px solid gainsboro;
+}
+.index_xiatit{
+	font-size: 14px;
+	margin-right: 10px;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+.index_xiatui{
+	margin-top: 12px;
+    margin-right: 7px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+/***左边导航**/
+.index_navbox{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 204px;
+	height: 100%;
+	transition: 0.5s;
+}
+.index_navbox:before{
+    content: "";
+    display: block;
+    width: 204px;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+    background-color: white;
+}
+.img_ulbox{
+	padding-top: 50px;
+    height: 100%;
+    width: 100%;
+}
+.img_ulboxios{
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+.img_ulboxios::-webkit-scrollbar {
+	width: 10px;
+	background-color: #f5f5f5;
+} /* 这是针对缺省样式 (必须的) */
+.img_ulboxios::-webkit-scrollbar-track {
+	/*-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,.3);*/
+    border-radius: 10px;
+    background-color: #f9f9f9;
+} /* 滚动条的滑轨背景颜色 */
+.img_ulboxios::-webkit-scrollbar-thumb {
+	height: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 3px rgba(255,255,255,.5);
+    background-color: rgba(36,203,178,0.9); 
+} /* 滑块颜色 */
+.img_ulboxios::-webkit-scrollbar-button {
+	background-color: white;
+	width: 0px;
+	height: 0px;
+} /* 滑轨两头的监听按钮颜色 */
+.img_ulboxios::-webkit-scrollbar-corner {
+	background-color: black;
+} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+.index_navtit{
+	height: 50px;
+	line-height: 50px;
+	background-color: #01b99d;
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	width: 100%;
+	position: absolute;
+}
+.left_imgullisbox{
+	margin: 30px 0px 20px 0px;
+}
+.left_imgullisbox>img{
+	width: 100%;
+}
+.index_navuser{
+	text-align: center;
+	height: 205px;
+	margin: 0px 10px 10px 10px;
+	border-bottom: 1px solid #dedede;
+}
+.index_navuser>img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 2px solid #dddddd;
+	margin-top: 38px;
+}
+.index_name{
+	display:block;
+	color: #727272;
+	height: 28px;
+	line-height: 28px;
+	font-size: 12px;
+	margin-top: 5px;
+}
+.index_zhis{
+	display:block;
+	color: #727272;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+}
+.index_navlebox{
+	padding-left: 0px;
+	margin-bottom: 0px;
+}
+.index_navlebox>li{
+	line-height: 50px;
+	padding: 0 15px;
+	box-sizing: border-box;
+	border-left: 5px solid transparent;
+}
+.index_navlebox>li:hover{
+	border-left: 5px solid #01b99d;
+}
+.index_navlebox>li:hover .index_navlia .index_sohi,.index_navlebox>li:hover .index_navlia .index_navayy,.index_navlebox>li:hover .index_navlia .index_navatit{
+	color: #01b99d;
+	border-color: #01b99d;
+}
+/*.index_navlebox>.index_navactive .index_namune{
+	display: block;
+}*/
+.index_navlebox>.index_navactive{
+	border-color:#01b99d;
+	background-color: #f9f9f9;
+}
+.index_navlebox>.index_navactive .index_navayy,.index_navlebox>.index_navactive .index_sohi{
+	border-color: #01b99d;
+	color: #01b99d;
+}
+.index_navlebox>.index_navactive .index_navatit{
+	color: #01b99d;
+}
+/*.index_navlebox>.index_navactive .index_navlia .index_you:before{
+	content: "\f107";
+}*/
+.index_namune>.index_navactive a .index_naims,.index_namune>.index_navactive a .index_nastit{
+	color: #01b99d;
+}
+.index_namune>li:hover a .index_naims,.index_namune>li:hover a .index_nastit{
+	color: #01b99d;
+}
+.index_navlebox>li>a{
+	display: block;
+	width: 100%;
+	height: 50px;
+	font-size: 16px;
+	color: #5c5c5c;
+}
+.index_navayy{
+	display: inline-block;
+	font-style: normal;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 2px solid #5c5c5c;
+	box-sizing: border-box;
+	vertical-align: middle;
+	margin-right: 18px;
+}
+.index_navatit{
+	vertical-align: middle;
+}
+.index_you{
+	font-size: 20px;
+	margin-top: 16px;
+}
+.index_sohi{
+	width: 14px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 15px;
+}
+.index_sohi>img{
+	display: none;
+	vertical-align: middle;
+}
+.index_sohi>img:first-child{
+	display: block;
+}
+.index_navlebox>.index_navactive .index_navlia .index_sohi>img:first-child{
+	display: none;
+}
+.index_navlebox>.index_navactive .index_navlia .index_sohi>img:first-child+img{
+	display: block;
+}
+.index_navlebox>li:hover .index_navlia .index_sohi>img:first-child{
+	display: none;
+}
+.index_navlebox>li:hover .index_navlia .index_sohi>img:first-child+img{
+	display: block;
+}
+.index_namune{
+	list-style: none;
+	padding-left: 0px;
+	margin-bottom: 0px;
+	font-size: 14px;
+	display: none;
+}
+.index_namune>li{
+	height: 35px;
+	line-height: 35px;
+}
+.index_namune>li>a{
+	color: #5c5c5c;
+	display: block;
+}
+.index_naims{
+	margin-left: 4px;
+	margin-right: 20px;
+	font-size: 16px;
+}
+.index_naims:before,.index_nastit{
+	vertical-align: middle;
+}
+.index_main{
+	overflow: hidden;
+}
+/*****重写弹窗样式***/
+body .demo-class .layui-layer-btn .layui-layer-btn0 {
+    border-color: #24cbb2;
+    background-color: #24cbb2;
+    color: #fff;
+}
+body .demo-class .layui-layer-btn a {
+    height: 35px;
+    line-height: 35px;
+    margin: 5px 70px 0;
+    padding: 0 30px;
+    border: 1px solid #fa6262;
+    background-color: #fa6262;
+    color: white;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+}
+body .layui-layer-btn{
+	padding: 0px 15px 30px 15px;
+}
+body .pwalerttit{
+	padding: 50px 10px 0px 10px;
+	text-align: center;
+    font-size: 18px;
+    color: #8b8b8b;
+    height: 85px;
+    line-height: 25px;
+    overflow: hidden;
+}
+body .layui-layer-btn a{
+	padding: 0px 63px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #fa6262;
+	border-color: #fa6262;
+	color: white;
+}
+body .layui-layer-btn .layui-layer-btn0{
+	background-color: #24cbb2;
+	border-color: #24cbb2;
+}

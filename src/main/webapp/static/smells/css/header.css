@@ -1,0 +1,129 @@
+﻿.headerboxs{
+	width: 100%;
+	background: #59d6ed;
+	color: #115460;
+}
+.headerbox{
+	width: 1400px;
+	height: 130px;
+	margin: 0px auto;
+}
+.logoimg{
+	float: left;
+	width: 100px;
+	margin-top: 15px;
+}
+.logoimg img{
+	width: 100%;
+}
+.logotext{
+	height: 40px;
+	line-height: 40px;
+	font-size: 22px;
+	float: left;
+	margin-top: 42px;
+}
+.logotab{
+	overflow: hidden;
+	float: left;
+	margin-top: 40px;
+	margin-left: 150px;
+}
+.logotab>li{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+}
+.top_active{
+	border-bottom: 3px solid #115460;
+}
+.top_active>a{
+	color: #169bd5;
+}
+.logotab>li>a{
+	display: block;
+	font-size: 18px;
+	padding: 0px 15px;
+	color: #115460;
+}.logobtn{
+	float: right;
+	overflow: hidden;
+	margin-top: 40px;
+}
+.logobtn>a{
+	display: block;
+	float: left;
+	height: 40px;
+	font-size: 16px;
+	line-height: 40px;
+	padding: 0px 25px;
+	background: #169bd5;
+	color: #115460;
+	border-radius: 5px;
+}
+.logobtn>a:first-child{
+	margin-right: 20px;
+}
+/*****底部***/
+.footerboxs{
+    width: 100%;
+    background: #59d6ed;
+    color: #115460;
+    padding: 20px 0px;
+    min-width: 1200px;
+}
+.footerbox{
+    width: 1200px;
+    margin: 0px auto 0px auto;
+}
+.footerul{
+    width: 680px;
+    height: 40px;
+    margin: 0px auto 0px auto;
+}
+.footerul>li{
+    float: left;
+    line-height: 40px;
+    color: #545454;
+}
+.footerul>li>a{
+    color: white;
+    display: inline-block;
+    margin: 0px 10px;
+}
+.footerban{
+    padding: 30px 0px 10px 0px;
+    font-size: 14px;
+}
+.footerban>p{
+    width: 320px;
+    text-align: left;
+    margin: 0px auto;
+    height: 25px;
+    line-height: 25px;
+}
+.footerban>p>span{
+    margin: 0px 10px;
+}
+/*****面包屑******/
+.mnav{
+	overflow: hidden;
+	height: 60px;
+	line-height: 60px;
+}
+.mnav>p{
+	float: left;
+	margin-right: 3px;
+}
+.mnav>li{
+	float: left;
+}
+.mnav>li>a{
+	
+}
+.mnav>li>span{
+	margin: 0px 9px;
+}
+.mnav_active>a{
+	color: #cb0506;
+}
